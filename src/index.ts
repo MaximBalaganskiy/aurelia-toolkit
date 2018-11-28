@@ -31,6 +31,7 @@ export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 		PLATFORM.moduleName("./elements/filter/select-filter-line"),
 		PLATFORM.moduleName("./elements/filter/bool-filter-line"),
 		PLATFORM.moduleName("./elements/filter/filter-line-container"),
+		PLATFORM.moduleName("./elements/filter/filter-operator-converter"),
 
 		// converters
 		PLATFORM.moduleName("./converters/date"),
