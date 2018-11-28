@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.8.11"></a>
+## [2.8.11](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.10...v2.8.11) (2018-11-28)
+
+
+### Bug Fixes
+
+* **all:** clean up errors ([bc05d20](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/bc05d20))
+
+
+
 <a name="2.8.10"></a>
 ## [2.8.10](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.9...v2.8.10) (2018-11-28)
 
