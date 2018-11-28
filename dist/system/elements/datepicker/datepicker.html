@@ -1,0 +1,10 @@
+﻿<template>
+	<require from="./datepicker.scss"></require>
+
+	<div class="input-field" ref="validationContainer">
+		<input id="${controlId}" type="text" ref="input" inputmask="mask:datetime; input-format: dd/mm/yyyy; is-value-masked: true; value.bind: value | date: 'DD/MM/YYYY'" readonly.bind="readonly" blur.trigger="blur()" focus.trigger="focus()" />
+		<label for="${controlId}" ref="labelElement">${label}</label>
+		<i ref="icon" class="material-icons opener" click.delegate="open()">today</i>
+	</div>
+	<md-datepicker view-model.ref="mdDatepicker" container="body" type="date" hidden disabled readonly tabindex="-1" value.bind="value" change.delegate="suppressMaterializeChange($event)"></md-datepicker>
+</template>

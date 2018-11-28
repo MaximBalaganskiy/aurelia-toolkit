@@ -1,0 +1,12 @@
+<template class="collection-item">
+	<div class="label">${filterLine.label}</div>
+	<div class="operator">
+		<select md-select value.bind="filterLine.operator">
+			<option repeat.for="o of filterLine.operators" model.bind="o">${o | filterOperator}</option>
+		</select>
+	</div>
+	<div class="value">
+		<slot></slot>
+	</div>
+	<i class="material-icons red-text darken-4 cursor-pointer remove" click.delegate="remove()">clear</i>
+</template>

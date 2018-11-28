@@ -1,0 +1,14 @@
+﻿<template>
+	<require from="./at-progress.scss"></require>
+
+	<div if.bind="!global || progressCounter > 0">
+		<style>
+			at-progress #progress-background {
+				opacity: ${opacity};
+			}
+		</style>
+
+		<div id="progress-background"></div>
+		<md-progress type="circular" size.bind="size"></md-progress>
+	</div>
+</template>
