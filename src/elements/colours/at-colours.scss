@@ -14,7 +14,7 @@ lookup {
 	}
 }
 
-tw-select {
+at-select {
 	div.input-field {
 		div.select-wrapper {
 			&.invalid {
@@ -137,7 +137,7 @@ input {
 
 // put main progress indicator on top of everything
 body {
-	>div>tw-progress {
+	>div>at-progress {
 		z-index: 999;
 		position: fixed;
 	}

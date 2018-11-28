@@ -1,8 +1,8 @@
 ﻿import * as au from "../../aurelia";
 
-@au.customElement("tw-progress")
+@au.customElement("at-progress")
 @au.autoinject
-export class TwProgress {
+export class AtProgress {
 	constructor(private element: Element, private eventAggregator: au.EventAggregator) { }
 
 	@au.bindable

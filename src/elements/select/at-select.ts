@@ -3,7 +3,7 @@ import { ValidateResult } from "aurelia-validation";
 import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge";
 
 @au.autoinject
-export class TwSelect {
+export class AtSelect {
 	constructor(private element: Element) { }
 
 	@au.bindable

@@ -1,5 +1,4 @@
 ﻿import * as au from "../aurelia";
-import { ITokenPayload } from "./i-token-payload";
 
 export enum AuthStatus {
 	All,

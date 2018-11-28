@@ -5,7 +5,7 @@ export class ClientEditorValueConverter {
 		switch (value) {
 			case ClientEditor.Boolean: return "boolean";
 			case ClientEditor.Number: return "number";
-			case ClientEditor.PaymentProvider: return "payment-provider";
+			case ClientEditor.Select: return "select";
 			case ClientEditor.String: return "string";
 			case ClientEditor.Textarea: return "textarea";
 			case ClientEditor.Password: return "password";

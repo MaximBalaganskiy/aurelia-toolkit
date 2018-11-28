@@ -3,7 +3,7 @@ export enum ClientEditor {
 	Textarea = 1,
 	Number = 2,
 	Boolean = 3,
-	PaymentProvider = 4,
+	Select = 4,
 	Password = 5,
 	Colour = 6,
 	Date = 7

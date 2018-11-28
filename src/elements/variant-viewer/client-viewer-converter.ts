@@ -4,7 +4,7 @@ export class ClientViewerValueConverter {
 	toView(value: ClientEditor): string {
 		switch (value) {
 			case ClientEditor.Boolean: return "boolean";
-			case ClientEditor.PaymentProvider: return "payment-provider";
+			case ClientEditor.Select: return "select";
 			case ClientEditor.Password: return "password";
 			case ClientEditor.Date: return "date";
 			default: return "string";

@@ -1,6 +1,6 @@
 ﻿import * as au from "../../aurelia";
 import { ClientEditor } from "../settings-editor/client-editor";
-import { PaymentProvider } from "./payment-provider";
+import { ISelectOption } from "../settings-editor/i-select-option";
 
 @au.autoinject
 export class VariantViewer {
@@ -12,7 +12,8 @@ export class VariantViewer {
 	@au.bindable
 	dataType: ClientEditor;
 
-	PaymentProvider = PaymentProvider;
+	@au.bindable
+	options: ISelectOption[];
 
 	edit() {
 		au.fireEvent(this.element, "edit");

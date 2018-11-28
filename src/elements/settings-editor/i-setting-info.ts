@@ -1,9 +1,10 @@
 import { ClientEditor } from "./client-editor";
+import { ISelectOption } from "./i-select-option";
 
 export interface ISettingInfo {
 	key?: string | undefined;
 	value?: any | undefined;
-	typeName?: string | undefined;
+	options?: ISelectOption[];
 	name?: string | undefined;
 	description?: string | undefined;
 	clientEditor: ClientEditor;

@@ -14,10 +14,10 @@
 			<div class="field ${s.info.clientEditor === ClientEditor.Textarea ? 'textarea' : ''}" if.bind="!s.isObject">
 				<span class="key" title="${s.info.description}">${s.info.name}</span>
 				<div class="value">
-					<variant-viewer if.bind="!s.isEdited" value.bind="s.value" data-type.bind="s.info.clientEditor" edit.delegate="edit(s)" change.delegate="save(s)"></variant-viewer>
+					<variant-viewer if.bind="!s.isEdited" value.bind="s.value" options.bind="s.info.options" data-type.bind="s.info.clientEditor" edit.delegate="edit(s)" change.delegate="save(s)"></variant-viewer>
 					<div if.bind="s.isEdited" class="editor">
-						<tw-progress size="small" if.bind="s.isSaving"></tw-progress>
-						<variant-editor value.bind="s.value" data-type.bind="s.info.clientEditor"></variant-editor>
+						<at-progress size="small" if.bind="s.isSaving"></at-progress>
+						<variant-editor value.bind="s.value" options.bind="s.info.options" data-type.bind="s.info.clientEditor"></variant-editor>
 						<button md-button="flat: true;" class="success-text" click.delegate="save(s)"><i class="material-icons">done</i></button>
 						<button md-button="flat: true;" class="error-text" click.delegate="cancel(s)"><i class="material-icons">clear</i></button>
 					</div>

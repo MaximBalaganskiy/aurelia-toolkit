@@ -1,9 +1,9 @@
 import * as au from "../../aurelia";
-import { TwColoursService } from "../../services/tw-colours-service";
+import { AtColoursService } from "../../services/at-colours-service";
 
-@au.customElement("tw-colors")
-export class TwColors {
-	constructor(private colorsService: TwColoursService) { }
+@au.customElement("at-colors")
+export class AtColors {
+	constructor(private colorsService: AtColoursService) { }
 
 	@au.bindable
 	headerColor: string = this.colorsService.headerColor;
@@ -18,8 +18,8 @@ export class TwColors {
 	}
 
 	async attached() {
-		// let css = this.loader.loadText("!css-loader!sass-loader!./tw-colours.scss").toString();
-		let css = require("!css-loader!sass-loader!./tw-colours.scss").toString();
+		// let css = this.loader.loadText("!css-loader!sass-loader!./at-colours.scss").toString();
+		let css = require("!css-loader!sass-loader!./at-colours.scss").toString();
 		css = css
 			.replace(/secondaryColor/g, this.colorsService.colorsService.secondaryColor)
 			.replace(/errorColor/g, this.colorsService.colorsService.errorColor)

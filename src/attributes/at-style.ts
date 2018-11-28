@@ -1,7 +1,7 @@
 ﻿import * as au from "../aurelia";
 
 @au.autoinject
-export class TwStyleCustomAttribute {
+export class AtStyleCustomAttribute {
 	constructor(private element: Element) { }
 
 	style: any;

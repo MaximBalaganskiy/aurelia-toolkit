@@ -4,6 +4,8 @@ import { viewEngineHooks } from "../aurelia";
 export class EnhanceMask {
 	beforeCompile(template: DocumentFragment) {
 		let inputs = template.querySelectorAll("[inputmask]");
-		inputs.forEach(x => x.setAttribute("md-inputmask", ""));
+		for (let i of Array.from(inputs)) {
+			i.setAttribute("md-inputmask", "");
+		}
 	}
 }
