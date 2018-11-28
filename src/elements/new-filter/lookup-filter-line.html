@@ -1,0 +1,16 @@
+﻿<template>
+	<div css="max-width: ${maxWidth}px">
+		<template if.bind="getOptionHtml">
+			<md-lookup options-function.bind="optionsFunction" display-field-name.bind="displayFieldName" value-field-name.bind="valueFieldName" value.bind="value">
+				<template replace-part="option-template">
+					<div innerhtml.bind="getOptionHtml(option)">
+					</div>
+				</template>
+			</md-lookup>
+		</template>
+		<template if.bind="!getOptionHtml">
+			<md-lookup options-function.bind="optionsFunction" display-field-name.bind="displayFieldName" value-field-name.bind="valueFieldName" value.bind="value">
+			</md-lookup>
+		</template>
+	</div>
+</template>

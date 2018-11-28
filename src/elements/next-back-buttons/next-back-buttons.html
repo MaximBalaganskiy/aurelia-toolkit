@@ -1,0 +1,8 @@
+﻿<template>
+	<div>
+		<button md-button click.delegate="back()" class="left primary" if.bind="backCaption"><i class="left material-icons">${backIcon}</i> ${backCaption}</button>
+		<button md-button click.delegate="next()" class="right primary" if.bind="nextCaption">${nextCaption}<i class="right material-icons">${nextIcon}</i></button>
+		<button md-button click.delegate="save()" class="right" if.bind="saveCaption && !readonly" style="margin-right: 15px"><i class="left material-icons">${saveIcon}</i> ${saveCaption}</button>
+		<div style="clear: both;"></div>
+	</div>
+</template>

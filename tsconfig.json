@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"module": "es2015",
+		"moduleResolution": "node",
+		"target": "es2015",
+		"lib": [
+			"es2017",
+			"dom"
+		],
+		"outDir": "dist/es2015",
+		"noImplicitAny": false,
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noImplicitReturns": true,
+		"strictNullChecks": false,
+		"declaration": true,
+		"forceConsistentCasingInFileNames": true,
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": false,
+		"noEmitHelpers": false,
+		"stripInternal": true,
+		"strict": true
+	},
+	"exclude": [
+		".vscode",
+		"dist",
+		"doc",
+		"node_modules"
+	]
+}

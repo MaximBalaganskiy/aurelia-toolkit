@@ -1,0 +1,103 @@
+﻿<template>
+	<require from="./app-nav-bar.scss"></require>
+
+	<style>
+		/* show or hide collapse button depending on bound property */
+
+		/* 
+		only works in IE11 after resizing, comment out until we really need it
+		@media (min-width: ${sidenavVisibilityWidth}px) {
+				md-navbar ul {
+					display: inline-block;
+				}
+
+				md-navbar a[md-sidenav-collapse] {
+					display: none;
+				}
+			}
+	
+			@media (min-width: 1px) and (max-width: ${sidenavVisibilityWidth}px) {
+				*/
+
+		md-navbar ul {
+			display: none;
+		}
+
+		md-navbar a[md-sidenav-collapse] {
+			display: inline-block;
+		}
+
+		app-nav-bar .tap-target-wrapper {
+			transform: translateX(18px);
+		}
+
+		/* } */
+	</style>
+
+	<md-navbar fixed="true">
+		<div class="container">
+			<a href="#/" class="tw-brand-logo left valign" md-waves="color:light">
+				<img src.bind="logoUrl" />
+			</a>
+		</div>
+		<ul class="right">
+			<li repeat.for="mi of menuItems" class="${mi.navModel.isActive ? 'active' : ''}">
+				<template if.bind="!mi.menuItems">
+					<a href.bind="mi.href" md-waves="color:light" title.bind="mi.tooltip">
+						<i class="material-icons left" if.bind="mi.icon">${mi.icon}</i>${mi.title}
+					</a>
+				</template>
+				<template if.bind="mi.menuItems">
+					<a md-dropdown="activates.bind: 'dropdown-'+mi.title; below-origin: true; constrain-width: false;" md-waves="color:light">
+						${mi.title}
+						<i class="material-icons right">arrow_drop_down</i>
+					</a>
+					<ul id="dropdown-${mi.title}">
+						<li repeat.for="smi of mi.menuItems" class="${smi.navModel.isActive ? 'selected' : ''}">
+							<a href.bind="smi.href" md-waves="color:light">
+								${smi.title}
+							</a>
+						</li>
+					</ul>
+				</template>
+			</li>
+		</ul>
+		<a ref="menu" md-sidenav-collapse="ref.bind: sideNavRight;" md-waves="color:light" class="sidenav-trigger right" if.bind="menuItems && menuItems.length">
+			<i class="material-icons">menu</i>
+		</a>
+		<a href="#" class="center home" md-waves="color:light" title="Home" if.bind="showHome">
+			<i class="material-icons">home</i>Home
+		</a>
+	</md-navbar>
+
+	<md-tap-target ref.bind="menu" view-model.ref="tapTarget" if.bind="menuItems && menuItems.length">
+		<template replaceable part="highlight-template">
+			Click this to open the menu
+		</template>
+	</md-tap-target>
+
+	<md-sidenav view-model.ref="sideNavRight" edge="right">
+		<ul md-collapsible="accordion: true;">
+			<li repeat.for="mi of menuItems" class="${!mi.menuItems && mi.navModel.isActive ? 'active' : ''} ${mi.menuItems ? 'menu' : 'sidenav-close'}">
+				<template if.bind="!mi.menuItems">
+					<a href.bind="mi.href" md-waves="color:light" title.bind="mi.tooltip">
+						<i class="material-icons left" if.bind="mi.icon">${mi.icon}</i>${mi.title}
+					</a>
+				</template>
+				<template if.bind="mi.menuItems">
+					<div class="collapsible-header">
+						${mi.title}
+						<i class="material-icons right">arrow_drop_down</i>
+					</div>
+					<div class="collapsible-body">
+						<ul>
+							<li repeat.for="smi of mi.menuItems" class="${smi.navModel.isActive ? 'active' : ''} sidenav-close">
+								<a href.bind="smi.href" md-waves="color:light">${smi.title}</a>
+							</li>
+						</ul>
+					</div>
+				</template>
+			</li>
+		</ul>
+	</md-sidenav>
+</template>

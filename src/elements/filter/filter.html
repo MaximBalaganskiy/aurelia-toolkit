@@ -1,0 +1,41 @@
+﻿<template>
+	<require from="./filter.scss"></require>
+
+	<ul id="dropdown">
+		<li repeat.for="i of availableRows">
+			<a click.trigger="add(i)">${i.label}</a>
+		</li>
+	</ul>
+	<div id="items" class="collection">
+		<div class="collection-item" repeat.for="i of rows">
+			<div class="label">
+				${i.label}
+			</div>
+			<div class="operator">
+				<select md-select value.bind="i.operator">
+					<option repeat.for="o of i.operators" model.bind="o">${o | filterOperator}</option>
+				</select>
+			</div>
+			<div class="value" with.bind="i">
+				<compose view="./${i | filterRow}"></compose>
+			</div>
+			<i class="material-icons red-text darken-4 cursor-pointer remove" click.delegate="remove(i)">clear</i>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col input-field">
+			<a md-button md-dropdown="activates: dropdown; constrain-width: false; container: body">Add Filter</a>
+		</div>
+		<div class="col input-field">
+			<button md-button click.delegate="search()" class="primary">Search</button>
+		</div>
+		<div class="col right" if.bind="pageSizes">
+			<div style="width: 70px">
+				<select md-select="label: Page Size" value.bind="pageSize">
+					<option repeat.for="ps of pageSizes" model.bind="ps">${ps}</option>
+					<option model.bind="null">All</option>
+				</select>
+			</div>
+		</div>
+	</div>
+</template>

@@ -1,0 +1,10 @@
+﻿<template>
+	<div css="max-width: ${maxWidth}px">
+		<md-lookup options-function.bind="getOptions" display-field-name.bind="displayFieldName" value-field-name.bind="valueFieldName" value.bind="value" preload-options.bind="preloadOptions">
+			<template replace-part="option-template">
+				<div innerhtml.bind="getOptionHtml(option)">
+				</div>
+			</template>
+		</md-lookup>
+	</div>
+</template>

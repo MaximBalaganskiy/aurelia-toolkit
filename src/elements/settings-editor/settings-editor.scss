@@ -1,0 +1,60 @@
+﻿settings-editor {
+	li {
+		.object {
+			.header {
+				cursor: pointer;
+			}
+
+			.body {
+				height: 0;
+				transition: all .3s ease;
+				margin-left: 10px;
+				overflow: hidden;
+
+				settings-editor {
+					display: block;
+				}
+			}
+		}
+
+		.field {
+			height: 2.2rem;
+			align-items: center;
+			display: flex;
+
+			&.textarea {
+				align-items: flex-start;
+				height: auto;
+			}
+
+			.key {
+				flex: 0 1 auto;
+				margin-right: 10px;
+			}
+
+			.value {
+				flex: 1;
+
+				.editor {
+					display: flex;
+
+					variant-editor {
+						flex: 1;
+
+						.input-field {
+							margin: 0;
+
+							input {
+								margin: 0 !important;
+							}
+
+							textarea {
+								padding: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
