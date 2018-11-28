@@ -1,8 +1,4 @@
 ﻿import * as au from "../aurelia";
-import { MdInput, MdCheckbox, MdSelect } from "aurelia-materialize-bridge";
-import { Lookup } from "../elements/lookup/lookup";
-import { NextBackButtons } from "../elements/next-back-buttons/next-back-buttons";
-import { Datepicker } from "../elements/datepicker/datepicker";
 
 @au.autoinject
 export class ReadonlyChildrenCustomAttribute {
@@ -36,13 +32,6 @@ export class ReadonlyChildrenCustomAttribute {
 		let selects = this.element.querySelectorAll("select[md-select]");
 		for (let select of Array.from(selects)) {
 			select.au["md-select"].viewModel.readonly = this.value;
-		}
-
-		let lookups = this.element.querySelectorAll("lookup");
-		for (let lookup of Array.from(lookups)) {
-			if (!lookup.hasAttribute("readonly") && !lookup.hasAttribute("readonly.bind")) {
-				lookup.au["lookup"].viewModel.readonly = this.value;
-			}
 		}
 
 		let mdlookups = this.element.querySelectorAll("md-lookup");

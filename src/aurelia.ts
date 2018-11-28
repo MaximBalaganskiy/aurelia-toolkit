@@ -1,7 +1,7 @@
 ﻿export * from "aurelia-pal";
 export * from "aurelia-framework";
 export * from "aurelia-logging";
-export { ValidationRules } from "aurelia-validation";
+export { ValidationRules, ValidationControllerFactory, ValidationController, Validator, validateTrigger } from "aurelia-validation";
 export * from "aurelia-router";
 export { AuthService } from "aurelia-authentication";
 export { EventAggregator, Subscription } from "aurelia-event-aggregator";

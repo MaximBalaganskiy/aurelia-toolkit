@@ -18,6 +18,7 @@
 		"experimentalDecorators": true,
 		"emitDecoratorMetadata": false,
 		"noEmitHelpers": false,
+		"importHelpers": true,
 		"stripInternal": true,
 		"strict": true
 	},
