@@ -104,7 +104,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **new-filter:** rework filter lines generation ([a4e4921](http:///ThinkWinAurelia/commits/a4e4921))
+* **filter:** rework filter lines generation ([a4e4921](http:///ThinkWinAurelia/commits/a4e4921))
 
 
 
@@ -144,7 +144,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **new-filter:** add boolean filter ([8166298](http:///ThinkWinAurelia/commits/8166298))
+* **filter:** add boolean filter ([8166298](http:///ThinkWinAurelia/commits/8166298))
 
 
 
@@ -426,8 +426,8 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
-* **new-filter:** process children in a changed handler ([78bdda8](http:///ThinkWinAurelia/commits/78bdda8))
-* **new-filter:** set display to block to give elements real height ([d35e8ba](http:///ThinkWinAurelia/commits/d35e8ba))
+* **filter:** process children in a changed handler ([78bdda8](http:///ThinkWinAurelia/commits/78bdda8))
+* **filter:** set display to block to give elements real height ([d35e8ba](http:///ThinkWinAurelia/commits/d35e8ba))
 
 
 
@@ -462,7 +462,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* **new-filter:** finish element implementation ([a2845ce](http:///ThinkWinAurelia/commits/a2845ce))
+* **filter:** finish element implementation ([a2845ce](http:///ThinkWinAurelia/commits/a2845ce))
 
 
 
