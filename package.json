@@ -13,8 +13,8 @@
   "bugs": {
     "url": "https://github.com/MaximBalaganskiy/aurelia-toolkit/issues"
   },
-  "main": "dist/commonjs/index.js",
-  "typings": "dist/commonjs/index.d.ts",
+  "main": "src/index.ts",
+  "typings": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "tslint --project tsconfig.json",
