@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.8.9"></a>
+## 2.8.9 (2018-11-28)
+
+
+
 <a name="2.8.7"></a>
 ## [2.8.7](http:///ThinkWinAurelia/compare/v2.8.6...v2.8.7) (2018-11-23)
 
