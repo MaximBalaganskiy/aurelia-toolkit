@@ -50,7 +50,7 @@ au.ValidationRules.customRule("mustMatch",
 	otherPropertyName => ({ otherPropertyName })
 );
 
-declare module "aurelia-validation/dist/commonjs/implementation/validation-rules" {
+declare module "aurelia-validation" {
 	// tslint:disable-next-line:interface-name
 	interface FluentRules<TObject, TValue> {
 		password(requirements: IPasswordRequirements): FluentRuleCustomizer<TObject, TValue>;
