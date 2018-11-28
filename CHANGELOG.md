@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.8.14"></a>
+## [2.8.14](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.13...v2.8.14) (2018-11-28)
+
+
+### Bug Fixes
+
+* **dist:** remove ([ee7b3f6](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/ee7b3f6))
+* **filter:** bring back the converter ([603d6f2](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/603d6f2))
+
+
+
 <a name="2.8.13"></a>
 ## [2.8.13](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.12...v2.8.13) (2018-11-28)
 
