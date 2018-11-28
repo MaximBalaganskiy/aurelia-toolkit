@@ -2,7 +2,7 @@
 import { ILookupGetOptionsCriteria } from "./i-lookup-get-options-criteria";
 import { ValidateResult } from "aurelia-validation";
 import { TooManyRecordsException } from "../../exceptions/too-many-records";
-import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge";
+import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge/dist/aurelia-materialize-bridge";
 
 @au.autoinject
 export class Lookup {

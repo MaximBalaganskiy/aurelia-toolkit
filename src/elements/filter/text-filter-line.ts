@@ -1,6 +1,6 @@
 import * as au from "../../aurelia";
 import { FilterLineBase } from "./filter-line-base";
-import { FilterOperator } from "../filter/filter-operator";
+import { FilterOperator } from "./filter-operator";
 
 @au.customElement("text-filter-line")
 export class TextFilterLine extends FilterLineBase<string> {

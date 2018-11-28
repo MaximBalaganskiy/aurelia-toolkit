@@ -1,37 +1,56 @@
-﻿filter {
-	#items {
+filter {
+	>.collection {
 		overflow: visible;
 
-		.collection-item {
+		>.collection-item {
 			display: flex;
-			align-items: center;
-			padding-top: 5px;
-			padding-bottom: 5px;
+			align-items: baseline;
+			padding-top: 0;
+			padding-bottom: 0;
 
 			&:hover {
 				background-color: #f2f2f2;
 			}
 
-			.input-field {
-				margin-top: 0;
-				margin-bottom: 0;
-
-				input {
-					margin-bottom: 0px;
-				}
-			}
-
-			.operator {
+			>.operator {
 				width: 80px;
 				margin-left: 10px;
 				margin-right: 10px;
+
+				.input-field {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
 			}
 
-			.value {
+			>.value {
 				flex: 2;
+
+				compose {
+					// in IE11 these elements are not vertically aligned without these properties
+					display: block;
+
+					md-input {
+						display: block;
+					}
+				}
+
+				.input-field {
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+
+				// adjust checkbox filter vertical position
+				md-checkbox {
+					label {
+						span::before {
+							margin-top: 10px;
+						}
+					}
+				}
 			}
 
-			.remove {
+			>.remove {
 				align-self: center;
 				margin-left: 10px;
 			}

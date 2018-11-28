@@ -1,27 +1,17 @@
-﻿<template>
+<template>
 	<require from="./filter.scss"></require>
-
+	<div show.bind="false">
+		<slot></slot>
+	</div>
 	<ul id="dropdown">
-		<li repeat.for="i of availableRows">
-			<a click.trigger="add(i)">${i.label}</a>
+		<li repeat.for="l of availableFilterLines">
+			<a click.trigger="add(l)">${l.label}</a>
 		</li>
 	</ul>
-	<div id="items" class="collection">
-		<div class="collection-item" repeat.for="i of rows">
-			<div class="label">
-				${i.label}
-			</div>
-			<div class="operator">
-				<select md-select value.bind="i.operator">
-					<option repeat.for="o of i.operators" model.bind="o">${o | filterOperator}</option>
-				</select>
-			</div>
-			<div class="value" with.bind="i">
-				<compose view="./${i | filterRow}"></compose>
-			</div>
-			<i class="material-icons red-text darken-4 cursor-pointer remove" click.delegate="remove(i)">clear</i>
-		</div>
+
+	<div class="collection" ref="itemsCollection">
 	</div>
+
 	<div class="row">
 		<div class="col input-field">
 			<a md-button md-dropdown="activates: dropdown; constrain-width: false; container: body">Add Filter</a>
@@ -38,4 +28,5 @@
 			</div>
 		</div>
 	</div>
+
 </template>

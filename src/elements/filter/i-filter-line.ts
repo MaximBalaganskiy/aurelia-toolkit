@@ -1,4 +1,4 @@
-import { FilterOperator } from "../filter/filter-operator";
+import { FilterOperator } from "./filter-operator";
 
 export interface IFilterLine {
 	name: string;

@@ -14,9 +14,6 @@ export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 		PLATFORM.moduleName("./elements/app-nav-bar/app-nav-bar"),
 		PLATFORM.moduleName("./elements/datepicker/datepicker"),
 		PLATFORM.moduleName("./elements/files/files"),
-		PLATFORM.moduleName("./elements/filter/filter"),
-		PLATFORM.moduleName("./elements/filter/filter-row-converter"),
-		PLATFORM.moduleName("./elements/filter/filter-operator-converter"),
 		PLATFORM.moduleName("./elements/lookup/lookup"),
 		PLATFORM.moduleName("./elements/message/message"),
 		PLATFORM.moduleName("./elements/next-back-buttons/next-back-buttons"),
@@ -27,14 +24,14 @@ export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 		PLATFORM.moduleName("./elements/variant-editor/variant-editor"),
 		PLATFORM.moduleName("./elements/variant-viewer/variant-viewer"),
 
-		PLATFORM.moduleName("./elements/new-filter/new-filter"),
-		PLATFORM.moduleName("./elements/new-filter/text-filter-line"),
-		PLATFORM.moduleName("./elements/new-filter/lookup-filter-line"),
-		PLATFORM.moduleName("./elements/new-filter/date-filter-line"),
-		PLATFORM.moduleName("./elements/new-filter/number-filter-line"),
-		PLATFORM.moduleName("./elements/new-filter/select-filter-line"),
-		PLATFORM.moduleName("./elements/new-filter/bool-filter-line"),
-		PLATFORM.moduleName("./elements/new-filter/filter-line-container"),
+		PLATFORM.moduleName("./elements/filter/filter"),
+		PLATFORM.moduleName("./elements/filter/text-filter-line"),
+		PLATFORM.moduleName("./elements/filter/lookup-filter-line"),
+		PLATFORM.moduleName("./elements/filter/date-filter-line"),
+		PLATFORM.moduleName("./elements/filter/number-filter-line"),
+		PLATFORM.moduleName("./elements/filter/select-filter-line"),
+		PLATFORM.moduleName("./elements/filter/bool-filter-line"),
+		PLATFORM.moduleName("./elements/filter/filter-line-container"),
 
 		// converters
 		PLATFORM.moduleName("./converters/date"),
@@ -84,19 +81,8 @@ export { ValidationControllerFactory } from "./validation/validation-controller-
 export { IPasswordRequirements } from "./validation/i-password-requirements";
 
 export { IFileRow } from "./elements/files/i-file-row";
-export { IFilterRow } from "./elements/filter/i-filter-row";
-export { DateFilterRow } from "./elements/filter/date-filter-row";
-export { SelectFilterRow } from "./elements/filter/select-filter-row";
-export { LookupFilterRow } from "./elements/filter/lookup-filter-row";
-export { NumberFilterRow } from "./elements/filter/number-filter-row";
-export { TextFilterRow } from "./elements/filter/text-filter-row";
-export { IFilterLine } from "./elements/new-filter/i-filter-line";
-export { NewFilter } from "./elements/new-filter/new-filter";
-PLATFORM.moduleName("./elements/filter/date-filter-row-template.html");
-PLATFORM.moduleName("./elements/filter/select-filter-row-template.html");
-PLATFORM.moduleName("./elements/filter/lookup-filter-row-template.html");
-PLATFORM.moduleName("./elements/filter/number-filter-row-template.html");
-PLATFORM.moduleName("./elements/filter/text-filter-row-template.html");
+export { IFilterLine } from "./elements/filter/i-filter-line";
+export { Filter } from "./elements/filter/filter";
 export { FilterOperator } from "./elements/filter/filter-operator";
 export { Lookup } from "./elements/lookup/lookup";
 export { AppNavBar } from "./elements/app-nav-bar/app-nav-bar";

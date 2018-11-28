@@ -1,7 +1,7 @@
 import * as au from "../../aurelia";
 import { FilterLineBase } from "./filter-line-base";
 import { ILookupOptionsFunctionParameter } from "aurelia-materialize-bridge";
-import { FilterOperator } from "../filter/filter-operator";
+import { FilterOperator } from "./filter-operator";
 
 @au.customElement("lookup-filter-line")
 export class LookupFilterLine extends FilterLineBase<any> {

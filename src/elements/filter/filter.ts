@@ -1,31 +1,67 @@
-﻿import * as au from "../../aurelia";
-import { IFilterRow } from "./i-filter-row";
+import * as au from "../../aurelia";
+import { IFilterLine } from "./i-filter-line";
+import { FilterLineContainer } from "./filter-line-container";
 
-@au.autoinject
+@au.customElement("filter")
 export class Filter {
-	constructor(private element: Element) {
-
+	constructor(private element: Element, private templatingEngine: au.TemplatingEngine) {
+		this.filterId = Filter.id++;
 	}
 
-	@au.bindable
-	rows: IFilterRow[] = [];
+	static id: number = 1;
+	filterId: number;
+	itemsCollection: HTMLDivElement;
 
-	@au.bindable
-	availableRows: IFilterRow[] = [];
+	@au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line")
+	availableFilterLines: IFilterLine[];
+	availableFilterLinesChanged() {
+		if (!this.lines.length) {
+			this.availableFilterLines.filter(x => x.element.hasAttribute("default")).forEach(x => this.add(x));
+		}
+	}
 
 	@au.bindable
 	pageSizes: number[];
 
-	@au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
+	@au.ato.bindable.numberMd({ defaultBindingMode: au.bindingMode.twoWay })
 	pageSize: number;
 
-	add(i: IFilterRow) {
-		this.rows.push(i.clone());
+	@au.bindable
+	lines: IFilterLine[] = [];
+
+	attached() {
+		// this.itemsViewSlot = new au.ViewSlot(this.itemsCollection, true);
+		this.availableFilterLinesChanged();
+	}
+
+	add(i: IFilterLine) {
+		let container = au.DOM.createElement("filter-line-container");
+		container.setAttribute("remove.delegate", "remove($event.detail.filterLine)");
+		let filter = au.DOM.createElement(i.element.tagName.toLowerCase());
+		container.appendChild(filter);
+		let view = this.templatingEngine.enhance(container);
+		let filterVm = filter.au.controller.viewModel as IFilterLine;
+		let containerVm = container.au.controller.viewModel as FilterLineContainer;
+		containerVm.filterLine = filterVm;
+
+		i.hydrate(filterVm);
+		view.bind(this);
+		view.attached();
+		this.itemsCollection.appendChild(container);
+		// this.itemsViewSlot.add(view);
+		this.lines.push(filterVm);
 		au.fireEvent(this.element, "added");
 	}
 
-	remove(i: IFilterRow) {
-		this.rows.splice(this.rows.indexOf(i), 1);
+	remove(i: IFilterLine) {
+		this.lines.splice(this.lines.indexOf(i), 1);
+		let container = i.element.parentElement.parentElement;
+		this.itemsCollection.removeChild(container);
+		let containerView = container.au.controller.view;
+		// this.itemsViewSlot.remove(containerView, true, true);
+		containerView.detached();
+		containerView.unbind();
+		containerView.removeNodes();
 		au.fireEvent(this.element, "removed");
 	}
 

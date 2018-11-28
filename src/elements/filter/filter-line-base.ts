@@ -1,6 +1,6 @@
 import * as au from "../../aurelia";
 import { IFilterLine } from "./i-filter-line";
-import { FilterOperator } from "../filter/filter-operator";
+import { FilterOperator } from "./filter-operator";
 
 export abstract class FilterLineBase<T> implements IFilterLine {
 	constructor(public element: Element) { }
