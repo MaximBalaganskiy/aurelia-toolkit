@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.8.16"></a>
+## [2.8.16](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.15...v2.8.16) (2018-11-29)
+
+
+### Bug Fixes
+
+* **md-inputmask:** call change handler on setup ([ef9e2bf](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/ef9e2bf))
+
+
+
 <a name="2.8.15"></a>
 ## [2.8.15](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.14...v2.8.15) (2018-11-28)
 
