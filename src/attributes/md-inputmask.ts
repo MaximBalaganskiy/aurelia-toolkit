@@ -13,6 +13,7 @@ export class MdInputmaskCustomAttribute {
 		if (this.label) {
 			this.inputmask = this.element.au["inputmask"].viewModel;
 			this.element.addEventListener("inputmask-change", this.inputmaskChangeHandler);
+			this.inputmaskChangeHandler();
 		}
 	}
 
