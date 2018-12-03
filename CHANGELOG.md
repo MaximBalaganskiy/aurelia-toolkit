@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.8.17"></a>
+## [2.8.17](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.16...v2.8.17) (2018-12-03)
+
+
+### Bug Fixes
+
+* **password-converter:** display correct number of dots for passwords ([ce02ed3](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/ce02ed3))
+
+
+
 <a name="2.8.16"></a>
 ## [2.8.16](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.15...v2.8.16) (2018-11-29)
 
