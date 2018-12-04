@@ -8,5 +8,5 @@
 	<div class="value">
 		<slot></slot>
 	</div>
-	<i class="material-icons red-text darken-4 cursor-pointer remove" click.delegate="remove()">clear</i>
+	<i if.bind="!lock" class="material-icons red-text darken-4 cursor-pointer remove" click.delegate="remove()">clear</i>
 </template>

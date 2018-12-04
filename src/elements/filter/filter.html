@@ -3,7 +3,7 @@
 	<div show.bind="false">
 		<slot></slot>
 	</div>
-	<ul id="dropdown">
+	<ul id="dropdown" if.bind="!lock">
 		<li repeat.for="l of availableFilterLines">
 			<a click.trigger="add(l)">${l.label}</a>
 		</li>
@@ -13,7 +13,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col input-field">
+		<div class="col input-field" if.bind="!lock">
 			<a md-button md-dropdown="activates: dropdown; constrain-width: false; container: body">Add Filter</a>
 		</div>
 		<div class="col input-field">

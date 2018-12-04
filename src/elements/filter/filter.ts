@@ -29,6 +29,9 @@ export class Filter {
 	@au.bindable
 	lines: IFilterLine[] = [];
 
+	@au.ato.bindable.booleanMd
+	lock: boolean;
+
 	attached() {
 		// this.itemsViewSlot = new au.ViewSlot(this.itemsCollection, true);
 		this.availableFilterLinesChanged();
@@ -37,6 +40,9 @@ export class Filter {
 	add(i: IFilterLine) {
 		let container = au.DOM.createElement("filter-line-container");
 		container.setAttribute("remove.delegate", "remove($event.detail.filterLine)");
+		if (this.lock) {
+			container.setAttribute("lock", "");
+		}
 		let filter = au.DOM.createElement(i.element.tagName.toLowerCase());
 		container.appendChild(filter);
 		let view = this.templatingEngine.enhance(container);

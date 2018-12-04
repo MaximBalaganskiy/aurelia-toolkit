@@ -1,5 +1,6 @@
 import * as au from "./aurelia";
 import { PLATFORM } from "./aurelia";
+import "aurelia-materialize-bridge/dist/native-modules/augmentation/aurelia-typed-observable";
 
 import "./validation/validation-rules";
 

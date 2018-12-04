@@ -7,8 +7,8 @@ export class FilterLineContainer {
 
 	filterLine: IFilterLine;
 
-	@au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line")
-	availableFilterLines: IFilterLine[];
+	@au.ato.bindable.booleanMd
+	lock: boolean;
 
 	remove() {
 		au.fireEvent(this.element, "remove", { filterLine: this.filterLine });
