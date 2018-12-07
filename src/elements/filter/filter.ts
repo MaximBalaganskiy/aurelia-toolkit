@@ -14,11 +14,6 @@ export class Filter {
 
 	@au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line")
 	availableFilterLines: IFilterLine[];
-	availableFilterLinesChanged() {
-		if (!this.lines.length) {
-			this.availableFilterLines.filter(x => x.element.hasAttribute("default")).forEach(x => this.add(x));
-		}
-	}
 
 	@au.bindable
 	pageSizes: number[];
@@ -33,11 +28,23 @@ export class Filter {
 	lock: boolean;
 
 	attached() {
-		// this.itemsViewSlot = new au.ViewSlot(this.itemsCollection, true);
-		this.availableFilterLinesChanged();
+		if (this.lines.length) {
+			// remove prepopulated filters and add back via adding filter elements
+			let lines = [...this.lines];
+			this.lines.splice(0);
+			lines.forEach(x => {
+				let fl = this.availableFilterLines.find(l => l.name === x.name);
+				let newFilter = this.add(fl);
+				newFilter.operator = x.operator;
+				newFilter.value = x.value;
+			});
+		}
+		else {
+			this.availableFilterLines.filter(x => x.element.hasAttribute("default")).forEach(x => this.add(x));
+		}
 	}
 
-	add(i: IFilterLine) {
+	add(i: IFilterLine): IFilterLine {
 		let container = au.DOM.createElement("filter-line-container");
 		container.setAttribute("remove.delegate", "remove($event.detail.filterLine)");
 		if (this.lock) {
@@ -57,6 +64,7 @@ export class Filter {
 		// this.itemsViewSlot.add(view);
 		this.lines.push(filterVm);
 		au.fireEvent(this.element, "added");
+		return filterVm;
 	}
 
 	remove(i: IFilterLine) {
