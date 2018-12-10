@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.9.0"></a>
+# [2.9.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.20...v2.9.0) (2018-12-10)
+
+
+### Features
+
+* **datepicker:** upgrade inputmask ([b1d22d1](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/b1d22d1))
+
+
+
 <a name="2.8.20"></a>
 ## [2.8.20](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.8.19...v2.8.20) (2018-12-07)
 
