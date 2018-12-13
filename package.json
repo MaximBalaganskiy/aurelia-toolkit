@@ -1,6 +1,6 @@
 {
   "name": "aurelia-toolkit",
-  "version": "2.9.0",
+  "version": "2.9.1",
   "registry": "github",
   "description": "",
   "author": "Maxim Balaganskiy",
@@ -31,8 +31,8 @@
     "postbuild:system": "copyfiles --up 1 src/**/*.html src/**/*.css src/**/*.map dist/system",
     "prebuild": "rimraf dist",
     "compile-scss": "sass src/elements/colours/at-colours.scss src/elements/colours/at-colours.css --no-source-map --style=compressed",
-		"replace-css": "ts-node ./replace-css.ts",
-		"build:colours": "npm run compile-scss & npm run replace-css",
+    "replace-css": "ts-node ./replace-css.ts",
+    "build:colours": "npm run compile-scss & npm run replace-css",
     "build": "concurrently \"npm run build:amd\" \"npm run build:commonjs\" \"npm run build:es2015\" \"npm run build:native-modules\" \"npm run build:system\"",
     "postbuild": "concurrently \"npm run postbuild:amd\" \"npm run postbuild:commonjs\" \"npm run postbuild:es2015\" \"npm run postbuild:native-modules\" \"npm run postbuild:system\"",
     "release": "standard-version"
