@@ -30,6 +30,9 @@
     "build:system": "tsc --outDir dist/system --module system",
     "postbuild:system": "copyfiles --up 1 src/**/*.html src/**/*.css src/**/*.map dist/system",
     "prebuild": "rimraf dist",
+    "compile-scss": "sass src/elements/colours/at-colours.scss src/elements/colours/at-colours.css --no-source-map --style=compressed",
+		"replace-css": "ts-node ./replace-css.ts",
+		"build:colours": "npm run compile-scss & npm run replace-css",
     "build": "concurrently \"npm run build:amd\" \"npm run build:commonjs\" \"npm run build:es2015\" \"npm run build:native-modules\" \"npm run build:system\"",
     "postbuild": "concurrently \"npm run postbuild:amd\" \"npm run postbuild:commonjs\" \"npm run postbuild:es2015\" \"npm run postbuild:native-modules\" \"npm run postbuild:system\"",
     "release": "standard-version"
@@ -44,7 +47,7 @@
     "aurelia-authentication": ">=3.8.2",
     "aurelia-event-aggregator": ">=1.0.1",
     "aurelia-framework": ">=1.3.0",
-    "aurelia-inputmask": ">=1.0.2",
+    "aurelia-inputmask": "^1.1.0",
     "aurelia-materialize-bridge": ">=1.2.1",
     "aurelia-router": ">=1.6.3",
     "aurelia-validation": ">=1.3.2",
@@ -76,8 +79,10 @@
     "materialize-css": ">=1.0.0",
     "moment": ">=2.22.2",
     "numeral": ">=2.0.6",
+    "replace-in-file": "^3.4.2",
     "rimraf": "^2.6.2",
     "standard-version": "^4.4.0",
+    "ts-node": "^7.0.1",
     "tslib": ">=1.9.0",
     "typescript": "^3.1.6"
   }
