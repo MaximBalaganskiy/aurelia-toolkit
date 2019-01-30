@@ -14,6 +14,11 @@ export class Filter {
 
 	@au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line")
 	availableFilterLines: IFilterLine[];
+	availableFilterLinesResolve: () => void;
+	availableFilterLinesPromise = new Promise(resolve => this.availableFilterLinesResolve = resolve);
+	availableFilterLinesChanged() {
+		this.availableFilterLinesResolve();
+	}
 
 	@au.bindable
 	pageSizes: number[];
@@ -27,7 +32,9 @@ export class Filter {
 	@au.ato.bindable.booleanMd
 	lock: boolean;
 
-	attached() {
+	async attached() {
+		// in IE11 availableFilterLines is assigned after attached, so we need to wait till this happens
+		await this.availableFilterLinesPromise;
 		if (this.lines.length) {
 			// remove prepopulated filters and add back via adding filter elements
 			let lines = [...this.lines];
