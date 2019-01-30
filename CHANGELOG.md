@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.9.2"></a>
+## [2.9.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.1...v2.9.2) (2019-01-30)
+
+
+### Bug Fixes
+
+* **filter:** enforce initialisation order ([1f31d47](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/1f31d47))
+* **filter:** fix IE11 flex alignment issue ([935c8ac](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/935c8ac))
+
+
+
 <a name="2.9.1"></a>
 ## [2.9.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.0...v2.9.1) (2018-12-13)
 
