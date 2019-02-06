@@ -6,5 +6,5 @@
 	permission?: string | string[];
 	exp: number;
 	status: string;
-	nameid: string;
+	userid: string;
 }
