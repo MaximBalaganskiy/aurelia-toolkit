@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.9.3"></a>
+## [2.9.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.2...v2.9.3) (2019-02-06)
+
+
+### Bug Fixes
+
+* **auth:** rename id claim ([563eccf](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/563eccf))
+
+
+
 <a name="2.9.2"></a>
 ## [2.9.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.1...v2.9.2) (2019-01-30)
 
