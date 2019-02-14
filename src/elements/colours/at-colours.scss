@@ -55,11 +55,8 @@ a.home {
 // reserve enough space for validation messages so that inputs do not jump on validation
 .input-field {
 
-	input
-
-	/*,
-	.select-wrapper*/
-		{
+	input,
+	.select-wrapper {
 		margin-bottom: 18px !important;
 		position: relative;
 	}
