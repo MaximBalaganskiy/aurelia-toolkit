@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.9.4"></a>
+## [2.9.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.3...v2.9.4) (2019-02-14)
+
+
+### Bug Fixes
+
+* **select:** add back the margin to fit validation text ([76eefd8](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/76eefd8))
+
+
+
 <a name="2.9.3"></a>
 ## [2.9.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.2...v2.9.3) (2019-02-06)
 
