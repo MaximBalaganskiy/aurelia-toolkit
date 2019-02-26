@@ -35,6 +35,18 @@
 			.value {
 				flex: 1;
 
+				variant-viewer {
+					.input-field.md-select {
+						.select-wrapper {
+							margin: 0 !important;
+
+							input {
+								margin: 0 !important;
+							}
+						}
+					}
+				}
+
 				.editor {
 					display: flex;
 
