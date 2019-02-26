@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.9.6"></a>
+## [2.9.6](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.5...v2.9.6) (2019-02-26)
+
+
+### Bug Fixes
+
+* **settings-editor:** remove select bottom margin in settings editor ([a732233](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/a732233))
+
+
+
 <a name="2.9.5"></a>
 ## [2.9.5](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.4...v2.9.5) (2019-02-20)
 
