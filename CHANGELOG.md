@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.10.1"></a>
+## [2.10.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.10.0...v2.10.1) (2019-03-08)
+
+
+### Bug Fixes
+
+* **settings-editor:** focus an input in the right place ([8bed45e](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/8bed45e))
+* **variant-editor.integer:** use proper mask ([e57f11b](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/e57f11b))
+
+
+
 <a name="2.10.0"></a>
 # [2.10.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.9.6...v2.10.0) (2019-03-08)
 
