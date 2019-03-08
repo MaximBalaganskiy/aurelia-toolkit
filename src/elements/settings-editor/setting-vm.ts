@@ -13,6 +13,14 @@ export class SettingVM {
 	body?: HTMLDivElement;
 	editor?: HTMLUnknownElement;
 
+	@au.observable
+	variantEditor?: HTMLUnknownElement;
+	varianEditorChanged() {
+		if (this.variantEditor) {
+			this.variantEditor.querySelector("input").focus();
+		}
+	}
+
 	setBodyHeightToAuto = () => {
 		this.body.style.height = "auto";
 		this.body.removeEventListener("transitionend", this.setBodyHeightToAuto);
