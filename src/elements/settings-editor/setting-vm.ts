@@ -12,14 +12,7 @@ export class SettingVM {
 	isSaving?: boolean;
 	body?: HTMLDivElement;
 	editor?: HTMLUnknownElement;
-
-	@au.observable
 	variantEditor?: HTMLUnknownElement;
-	varianEditorChanged() {
-		if (this.variantEditor) {
-			this.variantEditor.querySelector("input").focus();
-		}
-	}
 
 	setBodyHeightToAuto = () => {
 		this.body.style.height = "auto";

@@ -23,6 +23,7 @@ export class SettingsEditor {
 	edit(s: SettingVM) {
 		s.isEdited = true;
 		s.oldValue = s.value;
+		this.taskQueue.queueTask(() => s.variantEditor.querySelector("input").focus());
 	}
 
 	cancel(s: SettingVM) {
