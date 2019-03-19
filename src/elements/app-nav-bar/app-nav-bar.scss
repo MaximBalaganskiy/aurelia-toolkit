@@ -9,6 +9,11 @@
 			}
 		}
 
+		a.sidenav-trigger i {
+			display: inline-block;
+			vertical-align: top;
+		}
+
 		a.home {
 			left: 50%;
 			transform: translateX(-50%);
