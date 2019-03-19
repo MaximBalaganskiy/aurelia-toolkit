@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.11.0"></a>
+# [2.11.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.10.1...v2.11.0) (2019-03-19)
+
+
+### Bug Fixes
+
+* **settings-editor:** focus textarea as well ([a302b21](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/a302b21))
+
+
+### Features
+
+* **app-nav-bar:** add menu button label ([b3dea70](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/b3dea70))
+
+
+
 <a name="2.10.1"></a>
 ## [2.10.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.10.0...v2.10.1) (2019-03-08)
 
