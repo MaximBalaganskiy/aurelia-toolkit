@@ -37,6 +37,9 @@ export class AppNavBar {
 	@au.ato.bindable.booleanMd
 	showHome: boolean;
 
+	@au.bindable
+	menuLabel: string;
+
 	tapTarget: au.MdTapTarget;
 
 	highlightMenuButton() {
