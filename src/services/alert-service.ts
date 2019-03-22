@@ -84,8 +84,7 @@ export async function using<T>(disposable: IDisposable, action: () => Promise<T>
 	}
 	catch (e) {
 		if (catchHandler) {
-			await catchHandler(e);
-			return Promise.resolve(undefined);
+			return await catchHandler(e);
 		}
 		else {
 			throw e;
