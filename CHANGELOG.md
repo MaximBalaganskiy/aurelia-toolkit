@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.11.3"></a>
+## [2.11.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.2...v2.11.3) (2019-03-22)
+
+
+### Bug Fixes
+
+* **alert-service:** return catch handler result ([1cd2442](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/1cd2442))
+
+
+
 <a name="2.11.2"></a>
 ## [2.11.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.1...v2.11.2) (2019-03-19)
 
