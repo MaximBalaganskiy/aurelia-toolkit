@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.11.4"></a>
+## [2.11.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.2...v2.11.4) (2019-03-25)
+
+
+### Bug Fixes
+
+* **alert-service:** return catch handler result ([1cd2442](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/1cd2442))
+* **app-nav-bar:** adjust tap target position ([a85d329](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/a85d329))
+
+
+
 <a name="2.11.3"></a>
 ## [2.11.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.2...v2.11.3) (2019-03-22)
 
