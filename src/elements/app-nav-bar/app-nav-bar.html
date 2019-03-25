@@ -27,10 +27,6 @@
 			display: inline-block;
 		}
 
-		app-nav-bar .tap-target-wrapper {
-			transform: translateX(18px);
-		}
-
 		/* } */
 	</style>
 
@@ -69,13 +65,13 @@
 		<a href="#" class="center home" md-waves="color:light" title="Home" if.bind="showHome">
 			<i class="material-icons">home</i>Home
 		</a>
+		<md-tap-target ref.bind="menu" view-model.ref="tapTarget" if.bind="menuItems && menuItems.length">
+			<template replaceable part="highlight-template">
+				Click this to open the menu
+			</template>
+		</md-tap-target>
 	</md-navbar>
 
-	<md-tap-target ref.bind="menu" view-model.ref="tapTarget" if.bind="menuItems && menuItems.length">
-		<template replaceable part="highlight-template">
-			Click this to open the menu
-		</template>
-	</md-tap-target>
 
 	<md-sidenav view-model.ref="sideNavRight" edge="right">
 		<ul md-collapsible="accordion: true;">

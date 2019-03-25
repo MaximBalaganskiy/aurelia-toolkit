@@ -9,10 +9,6 @@
 			}
 		}
 
-		a.sidenav-trigger i {
-			display: inline-block;
-			vertical-align: top;
-		}
 
 		a.home {
 			left: 50%;
@@ -20,6 +16,18 @@
 
 			i {
 				float: left;
+			}
+		}
+
+		a.sidenav-trigger i {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.tap-target-wrapper {
+			a.sidenav-trigger {
+				margin-right: 0;
+				margin-left: 0;
 			}
 		}
 
