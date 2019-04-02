@@ -15,6 +15,7 @@ export class SettingVM {
 	variantEditor?: HTMLUnknownElement;
 
 	setBodyHeightToAuto = () => {
+		this.body.style.overflow = "visible";
 		this.body.style.height = "auto";
 		this.body.removeEventListener("transitionend", this.setBodyHeightToAuto);
 	}
@@ -23,7 +24,10 @@ export class SettingVM {
 		if (this.isExpanded) {
 			// the following line is needed because height has been restored to auto"
 			this.body.style.height = this.editor.clientHeight + "px";
-			this.taskQueue.queueTask(() => { this.body.style.height = "0"; });
+			this.taskQueue.queueTask(() => {
+				this.body.style.overflow = "hidden";
+				this.body.style.height = "0";
+			});
 		}
 		else {
 			// after transition set body height to auto so that expandable children are visible
