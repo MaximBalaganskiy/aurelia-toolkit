@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.11.5"></a>
+## [2.11.5](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.4...v2.11.5) (2019-04-02)
+
+
+### Bug Fixes
+
+* **setting-editor:** allow overflow on expanded sections ([049de84](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/049de84))
+
+
+
 <a name="2.11.4"></a>
 ## [2.11.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.2...v2.11.4) (2019-03-25)
 
