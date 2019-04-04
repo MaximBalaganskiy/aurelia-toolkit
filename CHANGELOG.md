@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.12.0"></a>
+# [2.12.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.5...v2.12.0) (2019-04-04)
+
+
+### Features
+
+* **files:** allow custom file size text ([cc09fdf](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/cc09fdf))
+
+
+
 <a name="2.11.5"></a>
 ## [2.11.5](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.4...v2.11.5) (2019-04-02)
 
