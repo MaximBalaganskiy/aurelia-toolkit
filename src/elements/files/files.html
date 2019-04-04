@@ -3,9 +3,7 @@
 
 	<button md-button="disabled.bind: readonly" click.delegate="fileInput.click()">${buttonLabel}</button>
 	<input type="file" multiple accept=".jpg,.jpeg,.pdf" files.two-way="selectedFiles" ref="fileInput" hidden>
-	<div>
-		(Maximum allowed size is ${maxFileSize / 1024 / 1024} megabytes)
-	</div>
+	<div>${maxFileSizeText}</div>
 	<md-collection if.bind="files.length">
 		<md-collection-item repeat.for="f of files">
 			<div>

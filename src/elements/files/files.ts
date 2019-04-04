@@ -27,6 +27,9 @@ export class Files {
 	maxFileSize: number;
 
 	@au.bindable
+	maxFileSizeText: string;
+
+	@au.bindable
 	buttonLabel: string = "Select Files";
 
 	@au.bindable
