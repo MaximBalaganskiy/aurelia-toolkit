@@ -2,17 +2,20 @@
 import { ProgressHandle } from "./progress-handle";
 import { IDisposable } from "../interfaces/i-disposable";
 import { AlertModal } from "../elements/alert-modal/alert-modal";
+import { I18NResource } from "../interfaces/i18n-resource";
 
 @au.autoinject
 export class AlertService {
 	constructor(private toast: au.MdToastService, private eventAggregator: au.EventAggregator, private templatingEngine: au.TemplatingEngine,
-	private viewCompiler: au.ViewCompiler) {
+		private i18n: au.I18N) {
 		this.logger = au.getLogger("AlertService");
+		this.i18nResource = this.i18n.tr("aurelia-toolkit:alert", { returnObjects: true }) as any as I18NResource["alert"];
 	}
 
 	progressCounter: number = 0;
 	defaultTimeout: number = 4000;
 	logger: au.Logger;
+	i18nResource: I18NResource["alert"];
 
 	private showModal(message: string, icon: string, iconColour: string, button1Text: string, button2Text: string): Promise<boolean> {
 		let html = document.createElement("alert-modal");
@@ -38,11 +41,11 @@ export class AlertService {
 	}
 
 	alert(message: string, icon: string = "info", iconColour: string = "blue"): Promise<boolean> {
-		return this.showModal(message, icon, iconColour, "Ok", undefined);
+		return this.showModal(message, icon, iconColour, this.i18nResource.ok, undefined);
 	}
 
 	confirm(message: string, icon: string = "help", iconColour: string = "blue"): Promise<boolean> {
-		return this.showModal(message, icon, iconColour, "Yes", "No");
+		return this.showModal(message, icon, iconColour, this.i18nResource.yes, this.i18nResource.no);
 	}
 
 	error(message: string): Promise<boolean> {

@@ -2,11 +2,13 @@ import * as au from "./aurelia";
 import { PLATFORM } from "./aurelia";
 import "aurelia-materialize-bridge/dist/native-modules/augmentation/aurelia-typed-observable";
 
-import "./validation/validation-rules";
-
-// this is for webpack ts-loader to see JQuery ambient declaration
+// this is for webpack ts-loader to see ambient declaration
 import "./augmentation/aurelia-router";
 import "./augmentation/element";
+import { I18N } from "aurelia-i18n";
+import { I18NResource } from "./interfaces/i18n-resource";
+import { Logger } from "aurelia-logging";
+import { addCustomValidationRules } from "./validation/validation-rules";
 
 export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 	frameworkConfiguration.globalResources([
@@ -54,6 +56,48 @@ export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 
 		PLATFORM.moduleName("./helpers/enhance-inputmask"),
 	]);
+
+	let i18n = frameworkConfiguration.container.get(I18N) as I18N;
+	// i18n might not be initialised yet
+	if (i18n.i18nextDeferred) {
+		i18n.i18nextDeferred.then(i18next => i18next.addResourceBundle("en", "aurelia-toolkit", {
+			alert: {
+				ok: "Ok",
+				no: "No",
+				yes: "Yes"
+			},
+			validation: {
+				requiredLength: "${$displayName} must have at least ${$config.length} characters",
+				requireDigit: "${$displayName} must include digits",
+				requireLowercase: "${$displayName} must include lowercase letters",
+				requireUppercase: "${$displayName} must include uppercase letters",
+				requireNonAlphanumeric: "${$displayName} must include special characters",
+				requiredUniqueChars: "${$displayName} must have at least ${$config.length} unique characters",
+				mustMatch: "${$displayName} must match the ${$config.otherPropertyName}"
+			},
+			filter: {
+				addFilter: "Add Filter",
+				all: "All",
+				operator: {
+					is: "is",
+					isAfter: "is after",
+					isBefore: "is before",
+					isNot: "is not",
+					like: "like",
+					notLike: "not like"
+				},
+				search: "Search",
+				operatorWidth: "80px"
+			}
+		} as I18NResource, true, false));
+	}
+	else {
+		let logger = frameworkConfiguration.container.get(Logger) as Logger;
+		logger.error("Did you forget to initialise I18N plugin?");
+		throw Error();
+	}
+
+	addCustomValidationRules(i18n);
 }
 
 export { IAppRouteConfig, AuthStatus } from "./interfaces/i-app-route-config";
@@ -62,6 +106,7 @@ export { IDisposable } from "./interfaces/i-disposable";
 export { IHaveId } from "./interfaces/i-have-id";
 export { IApiException } from "./interfaces/i-api-exception";
 export { IServerDateProvider } from "./interfaces/i-server-date-provider";
+export { I18NResource } from "./interfaces/i18n-resource";
 
 export { AlertService, using } from "./services/alert-service";
 export { AuthService } from "./services/auth-service";

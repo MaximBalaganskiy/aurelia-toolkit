@@ -1,54 +1,60 @@
 ﻿import * as au from "../aurelia";
 import { FluentRuleCustomizer, FluentRules } from "aurelia-validation";
 import { IPasswordRequirements } from "./i-password-requirements";
+import { I18N } from "aurelia-i18n";
+import { I18NResource } from "../interfaces/i18n-resource";
 
-au.ValidationRules.customRule("requiredLength", (v: string, o, length: number) => {
-	return v && v.length >= length;
-}, "${$displayName} must have at least ${$config.length} characters.", (length: number) => ({ length }));
+export function addCustomValidationRules(i18n: I18N) {
+	let i18nResource = i18n.tr("aurelia-toolkit:validation", { returnObjects: true }) as any as I18NResource["validation"];
 
-au.ValidationRules.customRule("requireDigit", (v: string) => {
-	return /[0-9]+/.test(v);
-}, "${$displayName} must include digits.");
+	au.ValidationRules.customRule("requiredLength", (v: string, o, length: number) => {
+		return v && v.length >= length;
+	}, i18nResource.requiredLength, (length: number) => ({ length }));
 
-au.ValidationRules.customRule("requireLowercase", (v: string) => {
-	return /[a-z]+/.test(v);
-}, "${$displayName} must include lowercase letters.");
+	au.ValidationRules.customRule("requireDigit", (v: string) => {
+		return /[0-9]+/.test(v);
+	}, i18nResource.requireDigit);
 
-au.ValidationRules.customRule("requireUppercase", (v: string) => {
-	return /[A-Z]+/.test(v);
-}, "${$displayName} must include uppercase letters.");
+	au.ValidationRules.customRule("requireLowercase", (v: string) => {
+		return /[a-z]+/.test(v);
+	}, i18nResource.requireLowercase);
 
-au.ValidationRules.customRule("requireNonAlphanumeric", (v: string) => {
-	return /[\W]+/.test(v);
-}, "${$displayName} must include special characters.");
+	au.ValidationRules.customRule("requireUppercase", (v: string) => {
+		return /[A-Z]+/.test(v);
+	}, i18nResource.requireUppercase);
 
-au.ValidationRules.customRule("requiredUniqueChars", (v: string, o, length: number) => {
-	if (!v) {
-		return false;
-	}
-	let onlyUnique = "";
-	// tslint:disable-next-line:prefer-for-of
-	for (let i = 0; i < v.length; ++i) {
-		let char = v[i];
-		if (onlyUnique.indexOf(char) === -1) {
-			onlyUnique += char;
+	au.ValidationRules.customRule("requireNonAlphanumeric", (v: string) => {
+		return /[\W]+/.test(v);
+	}, i18nResource.requireNonAlphanumeric);
+
+	au.ValidationRules.customRule("requiredUniqueChars", (v: string, o, length: number) => {
+		if (!v) {
+			return false;
 		}
-	}
-	return onlyUnique.length >= length;
-}, "${$displayName} must have at least ${$config.length} unique characters.", (length: number) => ({ length }));
+		let onlyUnique = "";
+		// tslint:disable-next-line:prefer-for-of
+		for (let i = 0; i < v.length; ++i) {
+			let char = v[i];
+			if (onlyUnique.indexOf(char) === -1) {
+				onlyUnique += char;
+			}
+		}
+		return onlyUnique.length >= length;
+	}, i18nResource.requiredUniqueChars, (length: number) => ({ length }));
 
-au.ValidationRules.customRule("mustMatch",
-	(value, obj, otherPropertyName) =>
-		value === null
-		|| value === undefined
-		|| value === ""
-		|| obj[otherPropertyName] === null
-		|| obj[otherPropertyName] === undefined
-		|| obj[otherPropertyName] === ""
-		|| value === obj[otherPropertyName],
-	"${$displayName} must match the ${$config.otherPropertyName}.",
-	otherPropertyName => ({ otherPropertyName })
-);
+	au.ValidationRules.customRule("mustMatch",
+		(value, obj, otherPropertyName) =>
+			value === null
+			|| value === undefined
+			|| value === ""
+			|| obj[otherPropertyName] === null
+			|| obj[otherPropertyName] === undefined
+			|| obj[otherPropertyName] === ""
+			|| value === obj[otherPropertyName],
+			i18nResource.mustMatch,
+		otherPropertyName => ({ otherPropertyName })
+	);
+}
 
 declare module "aurelia-validation" {
 	// tslint:disable-next-line:interface-name

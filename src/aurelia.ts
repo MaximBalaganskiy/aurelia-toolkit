@@ -12,3 +12,4 @@ import * as moment from "moment";
 export { moment };
 import * as ato from "aurelia-typed-observable-plugin";
 export { ato };
+export { I18N } from "aurelia-i18n";

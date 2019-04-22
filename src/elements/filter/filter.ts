@@ -1,16 +1,19 @@
 import * as au from "../../aurelia";
 import { IFilterLine } from "./i-filter-line";
 import { FilterLineContainer } from "./filter-line-container";
+import { I18NResource } from "../../interfaces/i18n-resource";
 
 @au.customElement("filter")
 export class Filter {
-	constructor(private element: Element, private templatingEngine: au.TemplatingEngine) {
+	constructor(private element: Element, private templatingEngine: au.TemplatingEngine, private i18n: au.I18N) {
 		this.filterId = Filter.id++;
+		this.i18nResource = this.i18n.tr("aurelia-toolkit:filter", { returnObjects: true }) as any as I18NResource["filter"];
 	}
 
 	static id: number = 1;
 	filterId: number;
 	itemsCollection: HTMLDivElement;
+	i18nResource: I18NResource["filter"];
 
 	@au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line")
 	availableFilterLines: IFilterLine[];
