@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.13.0"></a>
+# [2.13.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.12.0...v2.13.0) (2019-04-22)
+
+
+### Features
+
+* **all:** allow custom locale ([f93a0cc](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/f93a0cc))
+
+
+
 <a name="2.12.0"></a>
 # [2.12.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.11.5...v2.12.0) (2019-04-04)
 
