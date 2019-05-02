@@ -60,44 +60,45 @@ export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 	let i18n = frameworkConfiguration.container.get(I18N) as I18N;
 	// i18n might not be initialised yet
 	if (i18n.i18nextDeferred) {
-		i18n.i18nextDeferred.then(i18next => i18next.addResourceBundle("en", "aurelia-toolkit", {
-			alert: {
-				ok: "Ok",
-				no: "No",
-				yes: "Yes"
-			},
-			validation: {
-				requiredLength: "${$displayName} must have at least ${$config.length} characters",
-				requireDigit: "${$displayName} must include digits",
-				requireLowercase: "${$displayName} must include lowercase letters",
-				requireUppercase: "${$displayName} must include uppercase letters",
-				requireNonAlphanumeric: "${$displayName} must include special characters",
-				requiredUniqueChars: "${$displayName} must have at least ${$config.length} unique characters",
-				mustMatch: "${$displayName} must match the ${$config.otherPropertyName}"
-			},
-			filter: {
-				addFilter: "Add Filter",
-				all: "All",
-				operator: {
-					is: "is",
-					isAfter: "is after",
-					isBefore: "is before",
-					isNot: "is not",
-					like: "like",
-					notLike: "not like"
+		i18n.i18nextDeferred.then(i18next => {
+			i18next.addResourceBundle("en", "aurelia-toolkit", {
+				alert: {
+					ok: "Ok",
+					no: "No",
+					yes: "Yes"
 				},
-				search: "Search",
-				operatorWidth: "80px"
-			}
-		} as I18NResource, true, false));
+				validation: {
+					requiredLength: "${$displayName} must have at least ${$config.length} characters",
+					requireDigit: "${$displayName} must include digits",
+					requireLowercase: "${$displayName} must include lowercase letters",
+					requireUppercase: "${$displayName} must include uppercase letters",
+					requireNonAlphanumeric: "${$displayName} must include special characters",
+					requiredUniqueChars: "${$displayName} must have at least ${$config.length} unique characters",
+					mustMatch: "${$displayName} must match the ${$config.otherPropertyName}"
+				},
+				filter: {
+					addFilter: "Add Filter",
+					all: "All",
+					operator: {
+						is: "is",
+						isAfter: "is after",
+						isBefore: "is before",
+						isNot: "is not",
+						like: "like",
+						notLike: "not like"
+					},
+					search: "Search",
+					operatorWidth: "80px"
+				}
+			} as I18NResource, true, false);
+			addCustomValidationRules(i18n);
+		});
 	}
 	else {
 		let logger = frameworkConfiguration.container.get(Logger) as Logger;
 		logger.error("Did you forget to initialise I18N plugin?");
 		throw Error();
 	}
-
-	addCustomValidationRules(i18n);
 }
 
 export { IAppRouteConfig, AuthStatus } from "./interfaces/i-app-route-config";
@@ -143,5 +144,6 @@ PLATFORM.moduleName("./elements/variant-viewer/variant-viewer.date.html");
 PLATFORM.moduleName("./elements/variant-viewer/variant-viewer.password.html");
 PLATFORM.moduleName("./elements/variant-viewer/variant-viewer.select.html");
 PLATFORM.moduleName("./elements/variant-viewer/variant-viewer.string.html");
+export { SettingsEditor } from "./elements/settings-editor/settings-editor";
 export { SettingVM } from "./elements/settings-editor/setting-vm";
 export { ISelectOption } from "./elements/settings-editor/i-select-option";
