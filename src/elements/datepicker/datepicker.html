@@ -6,5 +6,5 @@
 		<label for="${controlId}" ref="labelElement">${label}</label>
 		<i ref="icon" class="material-icons opener" click.delegate="open()">today</i>
 	</div>
-	<md-datepicker view-model.ref="mdDatepicker" container="body" type="date" hidden disabled readonly tabindex="-1" value.bind="value" change.delegate="suppressMaterializeChange($event)"></md-datepicker>
+	<md-datepicker view-model.ref="mdDatepicker" container="body" year-range.bind="yearRange" type="date" hidden disabled readonly tabindex="-1" value.bind="value" change.delegate="suppressMaterializeChange($event)"></md-datepicker>
 </template>

@@ -18,6 +18,9 @@ export class Datepicker {
 	@au.bindable
 	label: string;
 
+	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
+	yearRange: number | number[];
+
 	labelElement: HTMLLabelElement;
 
 	@au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
