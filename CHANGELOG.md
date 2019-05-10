@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.13.2"></a>
+## [2.13.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.13.1...v2.13.2) (2019-05-10)
+
+
+### Bug Fixes
+
+* **datepicker:** bind year-range ([e2ddd38](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/e2ddd38))
+
+
+
 <a name="2.13.1"></a>
 ## [2.13.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.13.0...v2.13.1) (2019-05-02)
 
