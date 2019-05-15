@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.13.3"></a>
+## [2.13.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.13.2...v2.13.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* **files:** fire change on removal ([0cdb4d1](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/0cdb4d1))
+
+
+
 <a name="2.13.2"></a>
 ## [2.13.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.13.1...v2.13.2) (2019-05-10)
 
