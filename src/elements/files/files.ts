@@ -4,6 +4,8 @@ import { IFileRow } from "./i-file-row";
 
 @au.autoinject
 export class Files {
+	constructor(private element: Element) { }
+
 	fileInput: HTMLInputElement;
 
 	@au.observable
@@ -43,5 +45,6 @@ export class Files {
 
 	remove(f: IFileRow) {
 		this.files.splice(this.files.indexOf(f), 1);
+		au.fireEvent(this.element, "change", { action: "remove", file: f });
 	}
 }
