@@ -21,6 +21,12 @@ export class Datepicker {
 	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
 	yearRange: number | number[];
 
+	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
+	minDate: Date;
+
+	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
+	maxDate: Date;
+
 	labelElement: HTMLLabelElement;
 
 	@au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
@@ -28,6 +34,12 @@ export class Datepicker {
 	valueChanged() {
 		au.fireEvent(this.element, "change");
 		au.fireEvent(this.element, "blur");
+		if (this.minDate && this.value < this.minDate) {
+			this.value = this.minDate;
+		}
+		if (this.maxDate && this.value > this.maxDate) {
+			this.value = this.maxDate;
+		}
 		this.taskQueue.queueTask(() => au.updateLabel(this.input, this.labelElement));
 	}
 
