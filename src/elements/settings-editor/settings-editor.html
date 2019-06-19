@@ -8,7 +8,7 @@
 					<div class="divider"></div>
 				</div>
 				<div class="body ${s.isExpanded ? 'expanded' : ''}" ref="s.body">
-					<settings-editor object.bind="s.value" key.bind="s.key" info.bind="s.info" ref="s.editor"></settings-editor>
+					<settings-editor object.bind="s.value" key.bind="s.key" info.bind="s.info" ref="s.editor" show-history.bind="showHistory"></settings-editor>
 				</div>
 			</div>
 			<div else class="field ${s.info.clientEditor === ClientEditor.Textarea ? 'textarea' : ''}">
@@ -19,6 +19,7 @@
 						<variant-editor value.bind="s.value" options.bind="s.info.options" data-type.bind="s.info.clientEditor" ref="s.variantEditor"></variant-editor>
 						<button md-button="flat: true;" class="success-text" click.delegate="save(s)"><i class="material-icons">done</i></button>
 						<button md-button="flat: true;" class="error-text" click.delegate="cancel(s)"><i class="material-icons">clear</i></button>
+						<button if.bind="showHistory" md-button="flat: true;" class="blue-text" click.delegate="history(s)"><i class="material-icons">history</i></button>
 					</div>
 					<variant-viewer else value.bind="s.value" options.bind="s.info.options" data-type.bind="s.info.clientEditor" edit.delegate="edit(s)" change.delegate="save(s)"></variant-viewer>
 				</div>

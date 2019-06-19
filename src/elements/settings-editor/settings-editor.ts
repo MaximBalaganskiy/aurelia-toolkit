@@ -11,6 +11,9 @@ export class SettingsEditor {
 	@au.bindable
 	info: ISettingInfo;
 
+	@au.ato.bindable.booleanMd
+	showHistory: boolean;
+
 	settings: SettingVM[];
 	ClientEditor = ClientEditor;
 
@@ -38,5 +41,9 @@ export class SettingsEditor {
 
 	async save(s: SettingVM) {
 		au.fireEvent(this.element, "save", s);
+	}
+
+	async history(s: SettingVM) {
+		au.fireEvent(this.element, "history", s);
 	}
 }
