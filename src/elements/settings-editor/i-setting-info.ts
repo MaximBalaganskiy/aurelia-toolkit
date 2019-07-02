@@ -9,4 +9,5 @@ export interface ISettingInfo {
 	description?: string | undefined;
 	clientEditor: ClientEditor;
 	children?: ISettingInfo[] | undefined;
+	width?: string;
 }

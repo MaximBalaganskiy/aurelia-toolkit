@@ -13,6 +13,9 @@ export class VariantViewer {
 	dataType: ClientEditor;
 
 	@au.bindable
+	selectWidth: string = "120px";
+
+	@au.bindable
 	options: ISelectOption[];
 
 	edit() {

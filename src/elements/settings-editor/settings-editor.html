@@ -21,7 +21,7 @@
 						<button md-button="flat: true;" class="error-text" click.delegate="cancel(s)"><i class="material-icons">clear</i></button>
 						<button if.bind="showHistory" md-button="flat: true;" class="blue-text" click.delegate="history(s)"><i class="material-icons">history</i></button>
 					</div>
-					<variant-viewer else value.bind="s.value" options.bind="s.info.options" data-type.bind="s.info.clientEditor" edit.delegate="edit(s)" change.delegate="save(s)"></variant-viewer>
+					<variant-viewer else value.bind="s.value" options.bind="s.info.options" data-type.bind="s.info.clientEditor" edit.delegate="edit(s)" change.delegate="save(s)" width.bind="s.info.width"></variant-viewer>
 				</div>
 			</div>
 		</li>
