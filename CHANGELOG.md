@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.16.0"></a>
+# [2.16.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.15.0...v2.16.0) (2019-07-02)
+
+
+### Bug Fixes
+
+* **md-attribute:** update label using the bridge's function ([e50e0db](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/e50e0db))
+
+
+### Features
+
+* **settings-editor:** allow setting the input width ([b20b0dc](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/b20b0dc))
+
+
+
 <a name="2.15.0"></a>
 # [2.15.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.14.0...v2.15.0) (2019-06-19)
 
