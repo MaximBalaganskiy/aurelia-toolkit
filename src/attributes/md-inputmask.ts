@@ -24,7 +24,7 @@ export class MdInputmaskCustomAttribute {
 	inputmaskChangeHandler = () => {
 		let inputmask = this.element.au["inputmask"].viewModel;
 		if (inputmask) {
-			this.label.classList.add(inputmask.value ? "active" : "inactive");
+			au.updateLabel(inputmask.input, this.label);
 		}
 	}
 }
