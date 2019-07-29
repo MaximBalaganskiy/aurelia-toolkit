@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.17.0"></a>
+# [2.17.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.16.0...v2.17.0) (2019-07-29)
+
+
+### Features
+
+* **app-insights-step:** upgrade app insights ([486204b](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/486204b))
+
+
+
 <a name="2.16.0"></a>
 # [2.16.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.15.0...v2.16.0) (2019-07-02)
 
