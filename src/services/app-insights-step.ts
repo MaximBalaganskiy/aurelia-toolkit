@@ -1,9 +1,9 @@
 ﻿import * as au from "../aurelia";
-import { AppInsights } from "applicationinsights-js";
+import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 
 @au.autoinject
 export class AppInsightsStep implements au.PipelineStep {
-	constructor() {
+	constructor(private appInsights: ApplicationInsights) {
 		this.logger = au.getLogger("AppInsightsStep");
 		this.logger.debug("Created");
 	}
@@ -14,7 +14,7 @@ export class AppInsightsStep implements au.PipelineStep {
 		let origin = window.location.pathname + window.location.hash;
 		let path = origin.replace("/#/", "/").replace("#", "");
 		this.logger.debug(`Tracking for ${path}`);
-		AppInsights.trackPageView(navigationInstruction.config.name, path, navigationInstruction.params);
+		this.appInsights.trackPageView({ name: navigationInstruction.config.name, uri: path, properties: navigationInstruction.params });
 		return next();
 	}
 }
