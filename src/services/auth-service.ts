@@ -14,6 +14,7 @@ export class AuthService extends au.AuthService {
 			&& this.config.autoUpdateToken
 			&& this.authentication.getAccessToken()
 			&& this.authentication.getRefreshToken()
+			&& this.authentication.getRefreshToken() !== "none"
 		) {
 			return this.updateToken()
 				.catch(error => logger.warn(error))
