@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.17.1"></a>
+## [2.17.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.17.0...v2.17.1) (2019-07-30)
+
+
+### Bug Fixes
+
+* **auth-service:** handle "none" refresh token ([cd08971](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/cd08971))
+
+
+
 <a name="2.17.0"></a>
 # [2.17.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.16.0...v2.17.0) (2019-07-29)
 
