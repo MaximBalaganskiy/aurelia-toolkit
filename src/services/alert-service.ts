@@ -3,11 +3,12 @@ import { ProgressHandle } from "./progress-handle";
 import { IDisposable } from "../interfaces/i-disposable";
 import { AlertModal } from "../elements/alert-modal/alert-modal";
 import { I18NResource } from "../interfaces/i18n-resource";
+import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 
 @au.autoinject
 export class AlertService {
 	constructor(private toast: au.MdToastService, private eventAggregator: au.EventAggregator, private templatingEngine: au.TemplatingEngine,
-		private i18n: au.I18N) {
+		private i18n: au.I18N, private appInsights: ApplicationInsights) {
 		this.logger = au.getLogger("AlertService");
 		this.i18nResource = this.i18n.tr("aurelia-toolkit:alert", { returnObjects: true }) as any as I18NResource["alert"];
 	}
@@ -49,6 +50,11 @@ export class AlertService {
 	}
 
 	error(message: string): Promise<boolean> {
+		return this.alert(message, "error", "red");
+	}
+
+	criticalError(message: string, error: any): Promise<boolean> {
+		this.appInsights.trackException(error);
 		return this.alert(message, "error", "red");
 	}
 
