@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.18.0"></a>
+# [2.18.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.17.1...v2.18.0) (2019-07-31)
+
+
+### Features
+
+* **alert-service:** log an error and display a message ([3144e76](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/3144e76))
+
+
+
 <a name="2.17.1"></a>
 ## [2.17.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.17.0...v2.17.1) (2019-07-30)
 
