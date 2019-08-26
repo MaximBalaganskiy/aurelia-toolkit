@@ -2,7 +2,7 @@
 	<require from="./files.scss"></require>
 
 	<button md-button="disabled.bind: readonly" click.delegate="fileInput.click()">${buttonLabel}</button>
-	<input type="file" multiple accept=".jpg,.jpeg,.pdf" files.two-way="selectedFiles" ref="fileInput" hidden>
+	<input type="file" multiple accept.bind="accept" files.two-way="selectedFiles" ref="fileInput" hidden>
 	<div>${maxFileSizeText}</div>
 	<md-collection if.bind="files.length">
 		<md-collection-item repeat.for="f of files">

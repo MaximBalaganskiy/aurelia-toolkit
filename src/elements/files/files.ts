@@ -38,6 +38,9 @@ export class Files {
 	selectTypeLabel: string = "Select Type";
 
 	@au.bindable
+	accept: string = ".jpg,.jpeg,.gif,.png,.bmp,.pdf,.doc,.docx";
+
+	@au.bindable
 	types: IDictionaryRow[];
 
 	@au.bindable
