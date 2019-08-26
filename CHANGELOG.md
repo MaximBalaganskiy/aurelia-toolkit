@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.19.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.18.2...v2.19.0) (2019-08-26)
+
+
+### Features
+
+* **files:** add accept attribute ([185af9e](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/185af9e))
+
 ### [2.18.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.18.1...v2.18.2) (2019-08-26)
 
 
