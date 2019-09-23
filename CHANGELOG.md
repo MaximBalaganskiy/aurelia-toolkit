@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.19.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.0...v2.19.1) (2019-09-23)
+
+
+### Bug Fixes
+
+* **validation:** use correct field ([50997e8](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/50997e8))
+
 ## [2.19.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.18.2...v2.19.0) (2019-08-26)
 
 
