@@ -88,7 +88,7 @@ FluentRules.prototype.password = function(r: IPasswordRequirements) {
 		result = result ? result.satisfiesRule("requireNonAlphanumeric") : this.satisfiesRule("requireNonAlphanumeric");
 	}
 	if (r.requiredUniqueChars) {
-		result = result ? result.satisfiesRule("requiredUniqueChars", r.requiredLength) : this.satisfiesRule("requiredUniqueChars", r.requiredLength);
+		result = result ? result.satisfiesRule("requiredUniqueChars", r.requiredUniqueChars) : this.satisfiesRule("requiredUniqueChars", r.requiredUniqueChars);
 	}
 	if (!result) {
 		throw new Error("Password requirements are not set");
@@ -114,7 +114,7 @@ FluentRuleCustomizer.prototype.password = function(r: IPasswordRequirements) {
 		result = result.satisfiesRule("requireNonAlphanumeric");
 	}
 	if (r.requiredUniqueChars) {
-		result = result.satisfiesRule("requiredUniqueChars", r.requiredLength);
+		result = result.satisfiesRule("requiredUniqueChars", r.requiredUniqueChars);
 	}
 	if (!result) {
 		throw new Error("Password requirements are not set");
