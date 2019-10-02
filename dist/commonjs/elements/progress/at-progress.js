@@ -1,50 +1,56 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const au = require("../../aurelia");
-let AtProgress = class AtProgress {
-    constructor(element, eventAggregator) {
+var tslib_1 = require("tslib");
+var au = require("../../aurelia");
+var AtProgress = /** @class */ (function () {
+    function AtProgress(element, eventAggregator) {
         this.element = element;
         this.eventAggregator = eventAggregator;
         this.size = "small";
         this.opacity = 0.7;
         this.progressCounter = 0;
     }
-    attached() {
+    AtProgress.prototype.attached = function () {
+        var _this = this;
         if (this.element.parentElement) {
             this.element.parentElement.style.position = "relative";
         }
         this.global = this.element.hasAttribute("global");
         if (this.global) {
-            this.onSubscription = this.eventAggregator.subscribe("progress:on", () => this.progressOn());
-            this.offSubscription = this.eventAggregator.subscribe("progress:off", () => this.progressOff());
+            this.onSubscription = this.eventAggregator.subscribe("progress:on", function () { return _this.progressOn(); });
+            this.offSubscription = this.eventAggregator.subscribe("progress:off", function () { return _this.progressOff(); });
         }
-    }
-    detached() {
+    };
+    AtProgress.prototype.detached = function () {
         if (this.onSubscription) {
             this.onSubscription.dispose();
         }
         if (this.offSubscription) {
             this.offSubscription.dispose();
         }
-    }
-    progressOn() {
+    };
+    AtProgress.prototype.progressOn = function () {
         this.progressCounter++;
-    }
-    progressOff() {
+    };
+    AtProgress.prototype.progressOff = function () {
         if (this.progressCounter > 0) {
             this.progressCounter--;
         }
-    }
-};
-tslib_1.__decorate([
-    au.bindable
-], AtProgress.prototype, "size", void 0);
-tslib_1.__decorate([
-    au.bindable
-], AtProgress.prototype, "opacity", void 0);
-AtProgress = tslib_1.__decorate([
-    au.customElement("at-progress"),
-    au.autoinject
-], AtProgress);
+    };
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", String)
+    ], AtProgress.prototype, "size", void 0);
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Number)
+    ], AtProgress.prototype, "opacity", void 0);
+    AtProgress = tslib_1.__decorate([
+        au.customElement("at-progress"),
+        au.autoinject,
+        tslib_1.__metadata("design:paramtypes", [Element, au.EventAggregator])
+    ], AtProgress);
+    return AtProgress;
+}());
 exports.AtProgress = AtProgress;
+//# sourceMappingURL=at-progress.js.map

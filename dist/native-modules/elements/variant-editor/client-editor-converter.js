@@ -1,6 +1,8 @@
 import { ClientEditor } from "../settings-editor/client-editor";
-export class ClientEditorValueConverter {
-    toView(value) {
+var ClientEditorValueConverter = /** @class */ (function () {
+    function ClientEditorValueConverter() {
+    }
+    ClientEditorValueConverter.prototype.toView = function (value) {
         switch (value) {
             case ClientEditor.Boolean: return "boolean";
             case ClientEditor.Integer: return "integer";
@@ -12,8 +14,11 @@ export class ClientEditorValueConverter {
             case ClientEditor.Decimal: return "decimal";
             default: return "string";
         }
-    }
-    fromView(value) {
+    };
+    ClientEditorValueConverter.prototype.fromView = function (value) {
         throw new Error("Not implemented");
-    }
-}
+    };
+    return ClientEditorValueConverter;
+}());
+export { ClientEditorValueConverter };
+//# sourceMappingURL=client-editor-converter.js.map

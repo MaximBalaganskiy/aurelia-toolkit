@@ -9,22 +9,24 @@ System.register(["../exceptions/exception"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            ExceptionService = class ExceptionService {
-                constructor() {
+            ExceptionService = /** @class */ (function () {
+                function ExceptionService() {
                     this.registry = new Map();
                 }
-                register(className, exceptionType) {
+                ExceptionService.prototype.register = function (className, exceptionType) {
                     this.registry.set(className, exceptionType);
-                }
-                throw(apiException) {
-                    let exceptionType = this.registry.get(apiException.ClassName);
+                };
+                ExceptionService.prototype.throw = function (apiException) {
+                    var exceptionType = this.registry.get(apiException.ClassName);
                     if (!exceptionType) {
                         exceptionType = exception_1.Exception;
                     }
                     throw new exceptionType(apiException);
-                }
-            };
+                };
+                return ExceptionService;
+            }());
             exports_1("ExceptionService", ExceptionService);
         }
     };
 });
+//# sourceMappingURL=exception-service.js.map

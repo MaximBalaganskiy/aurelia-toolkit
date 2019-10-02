@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
+var tslib_1 = require("tslib");
 tslib_1.__exportStar(require("aurelia-pal"), exports);
 tslib_1.__exportStar(require("aurelia-framework"), exports);
 tslib_1.__exportStar(require("aurelia-logging"), exports);
@@ -25,11 +25,12 @@ exports.discard = aurelia_materialize_bridge_1.discard;
 exports.MdLookup = aurelia_materialize_bridge_1.MdLookup;
 exports.MdTapTarget = aurelia_materialize_bridge_1.MdTapTarget;
 exports.updateLabel = aurelia_materialize_bridge_1.updateLabel;
-const numeral = require("numeral");
+var numeral = require("numeral");
 exports.numeral = numeral;
-const moment = require("moment");
+var moment = require("moment");
 exports.moment = moment;
-const ato = require("aurelia-typed-observable-plugin");
+var ato = require("aurelia-typed-observable-plugin");
 exports.ato = ato;
 var aurelia_i18n_1 = require("aurelia-i18n");
 exports.I18N = aurelia_i18n_1.I18N;
+//# sourceMappingURL=aurelia.js.map

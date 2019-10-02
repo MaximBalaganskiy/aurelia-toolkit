@@ -18,17 +18,19 @@ System.register(["tslib", "../../aurelia", "./filter-line-base", "./filter-opera
             }
         ],
         execute: function () {
-            SelectFilterLine = class SelectFilterLine extends filter_line_base_1.FilterLineBase {
-                constructor(element) {
-                    super(element);
-                    this.operators = [filter_operator_1.FilterOperator.Is, filter_operator_1.FilterOperator.IsNot];
+            SelectFilterLine = /** @class */ (function (_super) {
+                tslib_1.__extends(SelectFilterLine, _super);
+                function SelectFilterLine(element) {
+                    var _this = _super.call(this, element) || this;
+                    _this.operators = [filter_operator_1.FilterOperator.Is, filter_operator_1.FilterOperator.IsNot];
+                    return _this;
                 }
-                hydrateInternal(fl) {
+                SelectFilterLine.prototype.hydrateInternal = function (fl) {
                     fl.options = this.options;
                     fl.displayFieldName = this.displayFieldName;
                     fl.valueFieldName = this.valueFieldName;
-                }
-                getDisplay(option) {
+                };
+                SelectFilterLine.prototype.getDisplay = function (option) {
                     if (!this.displayFieldName) {
                         return option;
                     }
@@ -38,8 +40,8 @@ System.register(["tslib", "../../aurelia", "./filter-line-base", "./filter-opera
                     else {
                         return option[this.displayFieldName];
                     }
-                }
-                getValue(option) {
+                };
+                SelectFilterLine.prototype.getValue = function (option) {
                     if (!this.valueFieldName) {
                         return option;
                     }
@@ -49,21 +51,27 @@ System.register(["tslib", "../../aurelia", "./filter-line-base", "./filter-opera
                     else {
                         return option[this.valueFieldName];
                     }
-                }
-            };
-            tslib_1.__decorate([
-                au.bindable
-            ], SelectFilterLine.prototype, "options", void 0);
-            tslib_1.__decorate([
-                au.bindable
-            ], SelectFilterLine.prototype, "displayFieldName", void 0);
-            tslib_1.__decorate([
-                au.bindable
-            ], SelectFilterLine.prototype, "valueFieldName", void 0);
-            SelectFilterLine = tslib_1.__decorate([
-                au.customElement("select-filter-line")
-            ], SelectFilterLine);
+                };
+                tslib_1.__decorate([
+                    au.bindable,
+                    tslib_1.__metadata("design:type", Array)
+                ], SelectFilterLine.prototype, "options", void 0);
+                tslib_1.__decorate([
+                    au.bindable,
+                    tslib_1.__metadata("design:type", Object)
+                ], SelectFilterLine.prototype, "displayFieldName", void 0);
+                tslib_1.__decorate([
+                    au.bindable,
+                    tslib_1.__metadata("design:type", Object)
+                ], SelectFilterLine.prototype, "valueFieldName", void 0);
+                SelectFilterLine = tslib_1.__decorate([
+                    au.customElement("select-filter-line"),
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], SelectFilterLine);
+                return SelectFilterLine;
+            }(filter_line_base_1.FilterLineBase));
             exports_1("SelectFilterLine", SelectFilterLine);
         }
     };
 });
+//# sourceMappingURL=select-filter-line.js.map

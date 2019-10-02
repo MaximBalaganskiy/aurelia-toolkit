@@ -3,43 +3,45 @@ System.register(["../aurelia", "aurelia-validation"], function (exports_1, conte
     var au, aurelia_validation_1;
     var __moduleName = context_1 && context_1.id;
     function addCustomValidationRules(i18n) {
-        let i18nResource = i18n.tr("aurelia-toolkit:validation", { returnObjects: true });
-        au.ValidationRules.customRule("requiredLength", (v, o, length) => {
+        var i18nResource = i18n.tr("aurelia-toolkit:validation", { returnObjects: true });
+        au.ValidationRules.customRule("requiredLength", function (v, o, length) {
             return v && v.length >= length;
-        }, i18nResource.requiredLength, (length) => ({ length }));
-        au.ValidationRules.customRule("requireDigit", (v) => {
+        }, i18nResource.requiredLength, function (length) { return ({ length: length }); });
+        au.ValidationRules.customRule("requireDigit", function (v) {
             return /[0-9]+/.test(v);
         }, i18nResource.requireDigit);
-        au.ValidationRules.customRule("requireLowercase", (v) => {
+        au.ValidationRules.customRule("requireLowercase", function (v) {
             return /[a-z]+/.test(v);
         }, i18nResource.requireLowercase);
-        au.ValidationRules.customRule("requireUppercase", (v) => {
+        au.ValidationRules.customRule("requireUppercase", function (v) {
             return /[A-Z]+/.test(v);
         }, i18nResource.requireUppercase);
-        au.ValidationRules.customRule("requireNonAlphanumeric", (v) => {
+        au.ValidationRules.customRule("requireNonAlphanumeric", function (v) {
             return /[\W]+/.test(v);
         }, i18nResource.requireNonAlphanumeric);
-        au.ValidationRules.customRule("requiredUniqueChars", (v, o, length) => {
+        au.ValidationRules.customRule("requiredUniqueChars", function (v, o, length) {
             if (!v) {
                 return false;
             }
-            let onlyUnique = "";
+            var onlyUnique = "";
             // tslint:disable-next-line:prefer-for-of
-            for (let i = 0; i < v.length; ++i) {
-                let char = v[i];
+            for (var i = 0; i < v.length; ++i) {
+                var char = v[i];
                 if (onlyUnique.indexOf(char) === -1) {
                     onlyUnique += char;
                 }
             }
             return onlyUnique.length >= length;
-        }, i18nResource.requiredUniqueChars, (length) => ({ length }));
-        au.ValidationRules.customRule("mustMatch", (value, obj, otherPropertyName) => value === null
-            || value === undefined
-            || value === ""
-            || obj[otherPropertyName] === null
-            || obj[otherPropertyName] === undefined
-            || obj[otherPropertyName] === ""
-            || value === obj[otherPropertyName], i18nResource.mustMatch, otherPropertyName => ({ otherPropertyName }));
+        }, i18nResource.requiredUniqueChars, function (length) { return ({ length: length }); });
+        au.ValidationRules.customRule("mustMatch", function (value, obj, otherPropertyName) {
+            return value === null
+                || value === undefined
+                || value === ""
+                || obj[otherPropertyName] === null
+                || obj[otherPropertyName] === undefined
+                || obj[otherPropertyName] === ""
+                || value === obj[otherPropertyName];
+        }, i18nResource.mustMatch, function (otherPropertyName) { return ({ otherPropertyName: otherPropertyName }); });
     }
     exports_1("addCustomValidationRules", addCustomValidationRules);
     return {
@@ -53,7 +55,7 @@ System.register(["../aurelia", "aurelia-validation"], function (exports_1, conte
         ],
         execute: function () {
             aurelia_validation_1.FluentRules.prototype.password = function (r) {
-                let result;
+                var result;
                 if (r.requiredLength) {
                     result = result ? result.satisfiesRule("requiredLength", r.requiredLength) : this.satisfiesRule("requiredLength", r.requiredLength);
                 }
@@ -78,7 +80,7 @@ System.register(["../aurelia", "aurelia-validation"], function (exports_1, conte
                 return result;
             };
             aurelia_validation_1.FluentRuleCustomizer.prototype.password = function (r) {
-                let result = this;
+                var result = this;
                 if (r.requiredLength) {
                     result = result.satisfiesRule("requiredLength", r.requiredLength);
                 }
@@ -111,3 +113,4 @@ System.register(["../aurelia", "aurelia-validation"], function (exports_1, conte
         }
     };
 });
+//# sourceMappingURL=validation-rules.js.map

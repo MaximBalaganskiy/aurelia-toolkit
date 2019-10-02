@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const numeral = require("numeral");
-class CurrencyValueConverter {
-    toView(value) {
+var numeral = require("numeral");
+var CurrencyValueConverter = /** @class */ (function () {
+    function CurrencyValueConverter() {
+    }
+    CurrencyValueConverter.prototype.toView = function (value) {
         return numeral(value).format("$0,0.00");
-    }
-    fromView(value) {
+    };
+    CurrencyValueConverter.prototype.fromView = function (value) {
         throw new Error("Not implemented");
-    }
-}
+    };
+    return CurrencyValueConverter;
+}());
 exports.CurrencyValueConverter = CurrencyValueConverter;
+//# sourceMappingURL=currency.js.map

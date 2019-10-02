@@ -18,16 +18,21 @@ System.register(["tslib", "../../aurelia", "./filter-line-base", "./filter-opera
             }
         ],
         execute: function () {
-            TextFilterLine = class TextFilterLine extends filter_line_base_1.FilterLineBase {
-                constructor(element) {
-                    super(element);
-                    this.operators = [filter_operator_1.FilterOperator.Like, filter_operator_1.FilterOperator.NotLike];
+            TextFilterLine = /** @class */ (function (_super) {
+                tslib_1.__extends(TextFilterLine, _super);
+                function TextFilterLine(element) {
+                    var _this = _super.call(this, element) || this;
+                    _this.operators = [filter_operator_1.FilterOperator.Like, filter_operator_1.FilterOperator.NotLike];
+                    return _this;
                 }
-            };
-            TextFilterLine = tslib_1.__decorate([
-                au.customElement("text-filter-line")
-            ], TextFilterLine);
+                TextFilterLine = tslib_1.__decorate([
+                    au.customElement("text-filter-line"),
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], TextFilterLine);
+                return TextFilterLine;
+            }(filter_line_base_1.FilterLineBase));
             exports_1("TextFilterLine", TextFilterLine);
         }
     };
 });
+//# sourceMappingURL=text-filter-line.js.map

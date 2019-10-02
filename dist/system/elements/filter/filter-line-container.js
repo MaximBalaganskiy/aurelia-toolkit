@@ -12,21 +12,25 @@ System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            FilterLineContainer = class FilterLineContainer {
-                constructor(element) {
+            FilterLineContainer = /** @class */ (function () {
+                function FilterLineContainer(element) {
                     this.element = element;
                 }
-                remove() {
+                FilterLineContainer.prototype.remove = function () {
                     au.fireEvent(this.element, "remove", { filterLine: this.filterLine });
-                }
-            };
-            tslib_1.__decorate([
-                au.ato.bindable.booleanMd
-            ], FilterLineContainer.prototype, "lock", void 0);
-            FilterLineContainer = tslib_1.__decorate([
-                au.customElement("filter-line-container")
-            ], FilterLineContainer);
+                };
+                tslib_1.__decorate([
+                    au.ato.bindable.booleanMd,
+                    tslib_1.__metadata("design:type", Boolean)
+                ], FilterLineContainer.prototype, "lock", void 0);
+                FilterLineContainer = tslib_1.__decorate([
+                    au.customElement("filter-line-container"),
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], FilterLineContainer);
+                return FilterLineContainer;
+            }());
             exports_1("FilterLineContainer", FilterLineContainer);
         }
     };
 });
+//# sourceMappingURL=filter-line-container.js.map

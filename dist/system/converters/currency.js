@@ -9,15 +9,19 @@ System.register(["numeral"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            CurrencyValueConverter = class CurrencyValueConverter {
-                toView(value) {
+            CurrencyValueConverter = /** @class */ (function () {
+                function CurrencyValueConverter() {
+                }
+                CurrencyValueConverter.prototype.toView = function (value) {
                     return numeral(value).format("$0,0.00");
-                }
-                fromView(value) {
+                };
+                CurrencyValueConverter.prototype.fromView = function (value) {
                     throw new Error("Not implemented");
-                }
-            };
+                };
+                return CurrencyValueConverter;
+            }());
             exports_1("CurrencyValueConverter", CurrencyValueConverter);
         }
     };
 });
+//# sourceMappingURL=currency.js.map

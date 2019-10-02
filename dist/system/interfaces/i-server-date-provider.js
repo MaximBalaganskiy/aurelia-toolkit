@@ -5,9 +5,13 @@ System.register([], function (exports_1, context_1) {
     return {
         setters: [],
         execute: function () {
-            IServerDateProvider = class IServerDateProvider {
-            };
+            IServerDateProvider = /** @class */ (function () {
+                function IServerDateProvider() {
+                }
+                return IServerDateProvider;
+            }());
             exports_1("IServerDateProvider", IServerDateProvider);
         }
     };
 });
+//# sourceMappingURL=i-server-date-provider.js.map

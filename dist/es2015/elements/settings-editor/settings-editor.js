@@ -2,50 +2,63 @@ import * as tslib_1 from "tslib";
 import * as au from "../../aurelia";
 import { SettingVM } from "./setting-vm";
 import { ClientEditor } from "./client-editor";
-let SettingsEditor = class SettingsEditor {
-    constructor(element, taskQueue, alertService) {
+import { AlertService } from "../../services/alert-service";
+var SettingsEditor = /** @class */ (function () {
+    function SettingsEditor(element, taskQueue, alertService) {
         this.element = element;
         this.taskQueue = taskQueue;
         this.alertService = alertService;
         this.ClientEditor = ClientEditor;
     }
-    bind() {
+    SettingsEditor.prototype.bind = function () {
+        var _this = this;
         this.settings = this.info.children
-            .map(x => new SettingVM(x.key, x.value, !!x.children, x, this.taskQueue, this.alertService))
-            .sort((a, b) => (a.isObject - b.isObject) * 2 + a.info.name.localeCompare(b.info.name));
-    }
-    edit(s) {
+            .map(function (x) { return new SettingVM(x.key, x.value, !!x.children, x, _this.taskQueue, _this.alertService); })
+            .sort(function (a, b) { return (a.isObject - b.isObject) * 2 + a.info.name.localeCompare(b.info.name); });
+    };
+    SettingsEditor.prototype.edit = function (s) {
         s.isEdited = true;
         s.oldValue = s.value;
-        this.taskQueue.queueTask(() => {
-            let element = s.variantEditor.querySelector("input,textarea");
+        this.taskQueue.queueTask(function () {
+            var element = s.variantEditor.querySelector("input,textarea");
             if (element) {
                 element.focus();
             }
         });
-    }
-    cancel(s) {
+    };
+    SettingsEditor.prototype.cancel = function (s) {
         s.isEdited = false;
         s.value = s.oldValue;
-    }
-    save(s) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            au.fireEvent(this.element, "save", s);
+    };
+    SettingsEditor.prototype.save = function (s) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            return tslib_1.__generator(this, function (_a) {
+                au.fireEvent(this.element, "save", s);
+                return [2 /*return*/];
+            });
         });
-    }
-    history(s) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            au.fireEvent(this.element, "history", s);
+    };
+    SettingsEditor.prototype.history = function (s) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            return tslib_1.__generator(this, function (_a) {
+                au.fireEvent(this.element, "history", s);
+                return [2 /*return*/];
+            });
         });
-    }
-};
-tslib_1.__decorate([
-    au.bindable
-], SettingsEditor.prototype, "info", void 0);
-tslib_1.__decorate([
-    au.ato.bindable.booleanMd
-], SettingsEditor.prototype, "showHistory", void 0);
-SettingsEditor = tslib_1.__decorate([
-    au.autoinject
-], SettingsEditor);
+    };
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Object)
+    ], SettingsEditor.prototype, "info", void 0);
+    tslib_1.__decorate([
+        au.ato.bindable.booleanMd,
+        tslib_1.__metadata("design:type", Boolean)
+    ], SettingsEditor.prototype, "showHistory", void 0);
+    SettingsEditor = tslib_1.__decorate([
+        au.autoinject,
+        tslib_1.__metadata("design:paramtypes", [Element, au.TaskQueue, AlertService])
+    ], SettingsEditor);
+    return SettingsEditor;
+}());
 export { SettingsEditor };
+//# sourceMappingURL=settings-editor.js.map

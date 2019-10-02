@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const moment = require("moment");
-class DateValueConverter {
-    toView(value, format) {
+var moment = require("moment");
+var DateValueConverter = /** @class */ (function () {
+    function DateValueConverter() {
+    }
+    DateValueConverter.prototype.toView = function (value, format) {
         if (!value) {
             return "";
         }
-        const m = moment(value);
+        var m = moment(value);
         if (m.isAfter("9999-12-31")) {
             return "";
         }
@@ -18,12 +20,14 @@ class DateValueConverter {
                 return m.format(format);
             }
         }
-    }
-    fromView(value) {
+    };
+    DateValueConverter.prototype.fromView = function (value) {
         if (!value) {
             return undefined;
         }
         return moment(value, "DD/MM/YYYY").toDate();
-    }
-}
+    };
+    return DateValueConverter;
+}());
 exports.DateValueConverter = DateValueConverter;
+//# sourceMappingURL=date.js.map

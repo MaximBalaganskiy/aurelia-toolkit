@@ -5,8 +5,8 @@ System.register([], function (exports_1, context_1) {
     return {
         setters: [],
         execute: function () {
-            Exception = class Exception {
-                constructor(apiException) {
+            Exception = /** @class */ (function () {
+                function Exception(apiException) {
                     this.name = "Exception";
                     if (apiException) {
                         this.message = apiException.Message;
@@ -15,8 +15,10 @@ System.register([], function (exports_1, context_1) {
                         this.stack = apiException.StackTraceString;
                     }
                 }
-            };
+                return Exception;
+            }());
             exports_1("Exception", Exception);
         }
     };
 });
+//# sourceMappingURL=exception.js.map

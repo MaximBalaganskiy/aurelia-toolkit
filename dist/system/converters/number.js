@@ -9,23 +9,27 @@ System.register(["numeral"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            NumberValueConverter = class NumberValueConverter {
-                toView(value) {
+            NumberValueConverter = /** @class */ (function () {
+                function NumberValueConverter() {
+                }
+                NumberValueConverter.prototype.toView = function (value) {
                     if (!value) {
                         return undefined;
                     }
                     else {
                         return numeral(value).format("0");
                     }
-                }
-                fromView(value) {
+                };
+                NumberValueConverter.prototype.fromView = function (value) {
                     if (!value) {
                         return undefined;
                     }
                     return numeral(value).value();
-                }
-            };
+                };
+                return NumberValueConverter;
+            }());
             exports_1("NumberValueConverter", NumberValueConverter);
         }
     };
 });
+//# sourceMappingURL=number.js.map

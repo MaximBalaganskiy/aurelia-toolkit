@@ -1,19 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const au = require("../aurelia");
-let AtStyleCustomAttribute = class AtStyleCustomAttribute {
-    constructor(element) {
+var tslib_1 = require("tslib");
+var au = require("../aurelia");
+var AtStyleCustomAttribute = /** @class */ (function () {
+    function AtStyleCustomAttribute(element) {
         this.element = element;
     }
-    valueChanged() {
+    AtStyleCustomAttribute.prototype.valueChanged = function () {
         this.element.style.cssText = this.value;
-    }
-    attached() {
+    };
+    AtStyleCustomAttribute.prototype.attached = function () {
         this.valueChanged();
-    }
-};
-AtStyleCustomAttribute = tslib_1.__decorate([
-    au.autoinject
-], AtStyleCustomAttribute);
+    };
+    AtStyleCustomAttribute = tslib_1.__decorate([
+        au.autoinject,
+        tslib_1.__metadata("design:paramtypes", [Element])
+    ], AtStyleCustomAttribute);
+    return AtStyleCustomAttribute;
+}());
 exports.AtStyleCustomAttribute = AtStyleCustomAttribute;
+//# sourceMappingURL=at-style.js.map

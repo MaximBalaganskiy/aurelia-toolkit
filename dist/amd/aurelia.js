@@ -26,3 +26,4 @@ define(["require", "exports", "tslib", "aurelia-pal", "aurelia-framework", "aure
     exports.ato = ato;
     exports.I18N = aurelia_i18n_1.I18N;
 });
+//# sourceMappingURL=aurelia.js.map

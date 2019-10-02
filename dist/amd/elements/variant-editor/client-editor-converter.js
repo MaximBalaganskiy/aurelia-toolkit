@@ -1,8 +1,10 @@
 define(["require", "exports", "../settings-editor/client-editor"], function (require, exports, client_editor_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    class ClientEditorValueConverter {
-        toView(value) {
+    var ClientEditorValueConverter = /** @class */ (function () {
+        function ClientEditorValueConverter() {
+        }
+        ClientEditorValueConverter.prototype.toView = function (value) {
             switch (value) {
                 case client_editor_1.ClientEditor.Boolean: return "boolean";
                 case client_editor_1.ClientEditor.Integer: return "integer";
@@ -14,10 +16,12 @@ define(["require", "exports", "../settings-editor/client-editor"], function (req
                 case client_editor_1.ClientEditor.Decimal: return "decimal";
                 default: return "string";
             }
-        }
-        fromView(value) {
+        };
+        ClientEditorValueConverter.prototype.fromView = function (value) {
             throw new Error("Not implemented");
-        }
-    }
+        };
+        return ClientEditorValueConverter;
+    }());
     exports.ClientEditorValueConverter = ClientEditorValueConverter;
 });
+//# sourceMappingURL=client-editor-converter.js.map

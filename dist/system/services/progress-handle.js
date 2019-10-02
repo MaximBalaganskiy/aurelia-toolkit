@@ -5,16 +5,18 @@ System.register([], function (exports_1, context_1) {
     return {
         setters: [],
         execute: function () {
-            ProgressHandle = class ProgressHandle {
-                constructor(alertService) {
+            ProgressHandle = /** @class */ (function () {
+                function ProgressHandle(alertService) {
                     this.alertService = alertService;
                     this.alertService.showProgress();
                 }
-                dispose() {
+                ProgressHandle.prototype.dispose = function () {
                     this.alertService.hideProgress();
-                }
-            };
+                };
+                return ProgressHandle;
+            }());
             exports_1("ProgressHandle", ProgressHandle);
         }
     };
 });
+//# sourceMappingURL=progress-handle.js.map

@@ -43,10 +43,10 @@ System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/au
             aurelia_1.PLATFORM.moduleName("./behaviours/notify"),
             aurelia_1.PLATFORM.moduleName("./helpers/enhance-inputmask"),
         ]);
-        let i18n = frameworkConfiguration.container.get(aurelia_i18n_1.I18N);
+        var i18n = frameworkConfiguration.container.get(aurelia_i18n_1.I18N);
         // i18n might not be initialised yet
         if (i18n.i18nextDeferred) {
-            i18n.i18nextDeferred.then(i18next => {
+            i18n.i18nextDeferred.then(function (i18next) {
                 i18next.addResourceBundle("en", "aurelia-toolkit", {
                     alert: {
                         ok: "Ok",
@@ -81,7 +81,7 @@ System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/au
             });
         }
         else {
-            let logger = frameworkConfiguration.container.get(aurelia_logging_1.Logger);
+            var logger = frameworkConfiguration.container.get(aurelia_logging_1.Logger);
             logger.error("Did you forget to initialise I18N plugin?");
             throw Error();
         }
@@ -226,3 +226,4 @@ System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/au
         }
     };
 });
+//# sourceMappingURL=index.js.map

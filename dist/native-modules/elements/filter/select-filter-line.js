@@ -2,17 +2,19 @@ import * as tslib_1 from "tslib";
 import * as au from "../../aurelia";
 import { FilterLineBase } from "./filter-line-base";
 import { FilterOperator } from "./filter-operator";
-let SelectFilterLine = class SelectFilterLine extends FilterLineBase {
-    constructor(element) {
-        super(element);
-        this.operators = [FilterOperator.Is, FilterOperator.IsNot];
+var SelectFilterLine = /** @class */ (function (_super) {
+    tslib_1.__extends(SelectFilterLine, _super);
+    function SelectFilterLine(element) {
+        var _this = _super.call(this, element) || this;
+        _this.operators = [FilterOperator.Is, FilterOperator.IsNot];
+        return _this;
     }
-    hydrateInternal(fl) {
+    SelectFilterLine.prototype.hydrateInternal = function (fl) {
         fl.options = this.options;
         fl.displayFieldName = this.displayFieldName;
         fl.valueFieldName = this.valueFieldName;
-    }
-    getDisplay(option) {
+    };
+    SelectFilterLine.prototype.getDisplay = function (option) {
         if (!this.displayFieldName) {
             return option;
         }
@@ -22,8 +24,8 @@ let SelectFilterLine = class SelectFilterLine extends FilterLineBase {
         else {
             return option[this.displayFieldName];
         }
-    }
-    getValue(option) {
+    };
+    SelectFilterLine.prototype.getValue = function (option) {
         if (!this.valueFieldName) {
             return option;
         }
@@ -33,18 +35,24 @@ let SelectFilterLine = class SelectFilterLine extends FilterLineBase {
         else {
             return option[this.valueFieldName];
         }
-    }
-};
-tslib_1.__decorate([
-    au.bindable
-], SelectFilterLine.prototype, "options", void 0);
-tslib_1.__decorate([
-    au.bindable
-], SelectFilterLine.prototype, "displayFieldName", void 0);
-tslib_1.__decorate([
-    au.bindable
-], SelectFilterLine.prototype, "valueFieldName", void 0);
-SelectFilterLine = tslib_1.__decorate([
-    au.customElement("select-filter-line")
-], SelectFilterLine);
+    };
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Array)
+    ], SelectFilterLine.prototype, "options", void 0);
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Object)
+    ], SelectFilterLine.prototype, "displayFieldName", void 0);
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Object)
+    ], SelectFilterLine.prototype, "valueFieldName", void 0);
+    SelectFilterLine = tslib_1.__decorate([
+        au.customElement("select-filter-line"),
+        tslib_1.__metadata("design:paramtypes", [Element])
+    ], SelectFilterLine);
+    return SelectFilterLine;
+}(FilterLineBase));
 export { SelectFilterLine };
+//# sourceMappingURL=select-filter-line.js.map

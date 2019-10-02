@@ -9,3 +9,4 @@ export var FilterOperator;
     FilterOperator[FilterOperator["IsBefore"] = 6] = "IsBefore";
     FilterOperator[FilterOperator["IsAfter"] = 7] = "IsAfter";
 })(FilterOperator || (FilterOperator = {}));
+//# sourceMappingURL=filter-operator.js.map

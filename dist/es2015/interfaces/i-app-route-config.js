@@ -4,3 +4,4 @@ export var AuthStatus;
     AuthStatus[AuthStatus["Authenticated"] = 1] = "Authenticated";
     AuthStatus[AuthStatus["NonAuthenticated"] = 2] = "NonAuthenticated";
 })(AuthStatus || (AuthStatus = {}));
+//# sourceMappingURL=i-app-route-config.js.map

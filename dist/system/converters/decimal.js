@@ -9,20 +9,24 @@ System.register(["numeral"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            DecimalValueConverter = class DecimalValueConverter {
-                toView(value) {
+            DecimalValueConverter = /** @class */ (function () {
+                function DecimalValueConverter() {
+                }
+                DecimalValueConverter.prototype.toView = function (value) {
                     if (!value) {
                         return undefined;
                     }
                     else {
                         return numeral(value).format("0,0.00");
                     }
-                }
-                fromView(value) {
+                };
+                DecimalValueConverter.prototype.fromView = function (value) {
                     throw new Error("Not implemented");
-                }
-            };
+                };
+                return DecimalValueConverter;
+            }());
             exports_1("DecimalValueConverter", DecimalValueConverter);
         }
     };
 });
+//# sourceMappingURL=decimal.js.map

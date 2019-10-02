@@ -9,7 +9,8 @@ System.register(["aurelia-router"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            Object.defineProperty(aurelia_router_1.NavModel.prototype, "configEx", { get() { return this.config; } });
+            Object.defineProperty(aurelia_router_1.NavModel.prototype, "configEx", { get: function () { return this.config; } });
         }
     };
 });
+//# sourceMappingURL=aurelia-router.js.map

@@ -1,8 +1,10 @@
 import * as tslib_1 from "tslib";
 import * as au from "../aurelia";
 import { ProgressHandle } from "./progress-handle";
-let AlertService = class AlertService {
-    constructor(toast, eventAggregator, templatingEngine, i18n, appInsights) {
+import { ApplicationInsights } from "@microsoft/applicationinsights-web";
+import { autoinject } from "../aurelia";
+var AlertService = /** @class */ (function () {
+    function AlertService(toast, eventAggregator, templatingEngine, i18n, appInsights) {
         this.toast = toast;
         this.eventAggregator = eventAggregator;
         this.templatingEngine = templatingEngine;
@@ -13,84 +15,99 @@ let AlertService = class AlertService {
         this.logger = au.getLogger("AlertService");
         this.i18nResource = this.i18n.tr("aurelia-toolkit:alert", { returnObjects: true });
     }
-    showModal(message, icon, iconColour, button1Text, button2Text) {
-        let html = document.createElement("alert-modal");
-        let view = this.templatingEngine.enhance(html);
+    AlertService.prototype.showModal = function (message, icon, iconColour, button1Text, button2Text) {
+        var html = document.createElement("alert-modal");
+        var view = this.templatingEngine.enhance(html);
         view.bind({});
         view.attached();
         document.querySelector("[aurelia-app]").appendChild(html);
-        let alertModal = html.au["alert-modal"].viewModel;
-        return new Promise(resolve => alertModal.open({
-            icon,
-            iconColour,
-            message,
-            button1Text,
-            button2Text,
-            button1Click: () => resolve(true),
-            button2Click: () => resolve(false)
-        })).then(x => {
+        var alertModal = html.au["alert-modal"].viewModel;
+        return new Promise(function (resolve) { return alertModal.open({
+            icon: icon,
+            iconColour: iconColour,
+            message: message,
+            button1Text: button1Text,
+            button2Text: button2Text,
+            button1Click: function () { return resolve(true); },
+            button2Click: function () { return resolve(false); }
+        }); }).then(function (x) {
             html.remove();
             view.unbind();
             view.detached();
             return x;
         });
-    }
-    alert(message, icon = "info", iconColour = "blue") {
+    };
+    AlertService.prototype.alert = function (message, icon, iconColour) {
+        if (icon === void 0) { icon = "info"; }
+        if (iconColour === void 0) { iconColour = "blue"; }
         return this.showModal(message, icon, iconColour, this.i18nResource.ok, undefined);
-    }
-    confirm(message, icon = "help", iconColour = "blue") {
+    };
+    AlertService.prototype.confirm = function (message, icon, iconColour) {
+        if (icon === void 0) { icon = "help"; }
+        if (iconColour === void 0) { iconColour = "blue"; }
         return this.showModal(message, icon, iconColour, this.i18nResource.yes, this.i18nResource.no);
-    }
-    error(message) {
+    };
+    AlertService.prototype.error = function (message) {
         return this.alert(message, "error", "red");
-    }
-    criticalError(message, error) {
+    };
+    AlertService.prototype.criticalError = function (message, error) {
         this.appInsights.trackException(error);
         return this.alert(message, "error", "red");
-    }
-    confirmToast(message, timeout) {
+    };
+    AlertService.prototype.confirmToast = function (message, timeout) {
         this.toast.show(message, timeout || this.defaultTimeout);
-    }
-    errorToast(message, timeout) {
+    };
+    AlertService.prototype.errorToast = function (message, timeout) {
         this.toast.show(message, timeout || this.defaultTimeout, "red");
-    }
-    warningToast(message, timeout) {
+    };
+    AlertService.prototype.warningToast = function (message, timeout) {
         this.toast.show(message, timeout || this.defaultTimeout, "orange darken-2");
-    }
-    showProgress() {
+    };
+    AlertService.prototype.showProgress = function () {
         this.eventAggregator.publish("progress:on");
-    }
-    hideProgress() {
+    };
+    AlertService.prototype.hideProgress = function () {
         this.eventAggregator.publish("progress:off");
-    }
-    usingProgress(action, catchHandler) {
-        return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            return using(this.progress(), action, catchHandler);
+    };
+    AlertService.prototype.usingProgress = function (action, catchHandler) {
+        return tslib_1.__awaiter(this, void 0, void 0, function () {
+            return tslib_1.__generator(this, function (_a) {
+                return [2 /*return*/, using(this.progress(), action, catchHandler)];
+            });
         });
-    }
-    progress() {
+    };
+    AlertService.prototype.progress = function () {
         return new ProgressHandle(this);
-    }
-};
-AlertService = tslib_1.__decorate([
-    au.autoinject
-], AlertService);
+    };
+    AlertService = tslib_1.__decorate([
+        autoinject,
+        tslib_1.__metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, ApplicationInsights])
+    ], AlertService);
+    return AlertService;
+}());
 export { AlertService };
 export function using(disposable, action, catchHandler) {
-    return tslib_1.__awaiter(this, void 0, void 0, function* () {
-        try {
-            return yield action();
-        }
-        catch (e) {
-            if (catchHandler) {
-                return yield catchHandler(e);
+    return tslib_1.__awaiter(this, void 0, void 0, function () {
+        var e_1;
+        return tslib_1.__generator(this, function (_a) {
+            switch (_a.label) {
+                case 0:
+                    _a.trys.push([0, 2, 6, 7]);
+                    return [4 /*yield*/, action()];
+                case 1: return [2 /*return*/, _a.sent()];
+                case 2:
+                    e_1 = _a.sent();
+                    if (!catchHandler) return [3 /*break*/, 4];
+                    return [4 /*yield*/, catchHandler(e_1)];
+                case 3: return [2 /*return*/, _a.sent()];
+                case 4: throw e_1;
+                case 5: return [3 /*break*/, 7];
+                case 6:
+                    disposable.dispose();
+                    return [7 /*endfinally*/];
+                case 7: return [2 /*return*/];
             }
-            else {
-                throw e;
-            }
-        }
-        finally {
-            disposable.dispose();
-        }
+        });
     });
 }
+//# sourceMappingURL=alert-service.js.map

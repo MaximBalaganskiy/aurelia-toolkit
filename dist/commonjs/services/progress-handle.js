@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class ProgressHandle {
-    constructor(alertService) {
+var ProgressHandle = /** @class */ (function () {
+    function ProgressHandle(alertService) {
         this.alertService = alertService;
         this.alertService.showProgress();
     }
-    dispose() {
+    ProgressHandle.prototype.dispose = function () {
         this.alertService.hideProgress();
-    }
-}
+    };
+    return ProgressHandle;
+}());
 exports.ProgressHandle = ProgressHandle;
+//# sourceMappingURL=progress-handle.js.map

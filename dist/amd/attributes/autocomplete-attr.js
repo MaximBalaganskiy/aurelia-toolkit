@@ -1,11 +1,11 @@
 define(["require", "exports", "tslib", "../aurelia"], function (require, exports, tslib_1, au) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    let AutocompleteAttrCustomAttribute = class AutocompleteAttrCustomAttribute {
-        constructor(element) {
+    var AutocompleteAttrCustomAttribute = /** @class */ (function () {
+        function AutocompleteAttrCustomAttribute(element) {
             this.element = element;
         }
-        attached() {
+        AutocompleteAttrCustomAttribute.prototype.attached = function () {
             switch (this.element.tagName) {
                 case "MD-INPUT":
                     this.attributeManager = new au.AttributeManager(this.element.querySelector("input"));
@@ -15,14 +15,17 @@ define(["require", "exports", "tslib", "../aurelia"], function (require, exports
                     break;
             }
             this.attributeManager.addAttributes({ autocomplete: this.value });
-        }
-        detached() {
+        };
+        AutocompleteAttrCustomAttribute.prototype.detached = function () {
             this.attributeManager.removeAttributes(["autocomplete"]);
-        }
-    };
-    AutocompleteAttrCustomAttribute = tslib_1.__decorate([
-        au.customAttribute("autocomplete-attr"),
-        au.autoinject
-    ], AutocompleteAttrCustomAttribute);
+        };
+        AutocompleteAttrCustomAttribute = tslib_1.__decorate([
+            au.customAttribute("autocomplete-attr"),
+            au.autoinject,
+            tslib_1.__metadata("design:paramtypes", [Element])
+        ], AutocompleteAttrCustomAttribute);
+        return AutocompleteAttrCustomAttribute;
+    }());
     exports.AutocompleteAttrCustomAttribute = AutocompleteAttrCustomAttribute;
 });
+//# sourceMappingURL=autocomplete-attr.js.map

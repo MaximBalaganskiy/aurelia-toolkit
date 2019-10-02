@@ -1,31 +1,38 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const tslib_1 = require("tslib");
-const au = require("../../aurelia");
-const client_editor_1 = require("../settings-editor/client-editor");
-let VariantEditor = class VariantEditor {
-    valueChanged() {
+var tslib_1 = require("tslib");
+var au = require("../../aurelia");
+var client_editor_1 = require("../settings-editor/client-editor");
+var VariantEditor = /** @class */ (function () {
+    function VariantEditor() {
+    }
+    VariantEditor.prototype.valueChanged = function () {
         if (this.dataType === client_editor_1.ClientEditor.Decimal) {
             this.valueDecimal = this.value.toString();
         }
-    }
-    bind() {
+    };
+    VariantEditor.prototype.bind = function () {
         this.valueChanged();
-    }
-    updateDecimalValue() {
+    };
+    VariantEditor.prototype.updateDecimalValue = function () {
         this.value = parseFloat(this.valueDecimal);
-    }
-};
-tslib_1.__decorate([
-    au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
-], VariantEditor.prototype, "value", void 0);
-tslib_1.__decorate([
-    au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
-], VariantEditor.prototype, "valueDecimal", void 0);
-tslib_1.__decorate([
-    au.bindable
-], VariantEditor.prototype, "dataType", void 0);
-VariantEditor = tslib_1.__decorate([
-    au.autoinject
-], VariantEditor);
+    };
+    tslib_1.__decorate([
+        au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
+        tslib_1.__metadata("design:type", Object)
+    ], VariantEditor.prototype, "value", void 0);
+    tslib_1.__decorate([
+        au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
+        tslib_1.__metadata("design:type", String)
+    ], VariantEditor.prototype, "valueDecimal", void 0);
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Number)
+    ], VariantEditor.prototype, "dataType", void 0);
+    VariantEditor = tslib_1.__decorate([
+        au.autoinject
+    ], VariantEditor);
+    return VariantEditor;
+}());
 exports.VariantEditor = VariantEditor;
+//# sourceMappingURL=variant-editor.js.map

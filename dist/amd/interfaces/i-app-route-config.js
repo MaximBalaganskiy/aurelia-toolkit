@@ -8,3 +8,4 @@ define(["require", "exports"], function (require, exports) {
         AuthStatus[AuthStatus["NonAuthenticated"] = 2] = "NonAuthenticated";
     })(AuthStatus = exports.AuthStatus || (exports.AuthStatus = {}));
 });
+//# sourceMappingURL=i-app-route-config.js.map

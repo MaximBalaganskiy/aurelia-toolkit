@@ -6,3 +6,4 @@ var AuthStatus;
     AuthStatus[AuthStatus["Authenticated"] = 1] = "Authenticated";
     AuthStatus[AuthStatus["NonAuthenticated"] = 2] = "NonAuthenticated";
 })(AuthStatus = exports.AuthStatus || (exports.AuthStatus = {}));
+//# sourceMappingURL=i-app-route-config.js.map

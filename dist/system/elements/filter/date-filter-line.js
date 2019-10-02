@@ -18,17 +18,22 @@ System.register(["tslib", "../../aurelia", "./filter-line-base", "./filter-opera
             }
         ],
         execute: function () {
-            DateFilterLine = class DateFilterLine extends filter_line_base_1.FilterLineBase {
-                constructor(element) {
-                    super(element);
-                    this.operators = [filter_operator_1.FilterOperator.Is, filter_operator_1.FilterOperator.IsNot, filter_operator_1.FilterOperator.IsBefore, filter_operator_1.FilterOperator.IsAfter];
-                    this.maxWidth = 150;
+            DateFilterLine = /** @class */ (function (_super) {
+                tslib_1.__extends(DateFilterLine, _super);
+                function DateFilterLine(element) {
+                    var _this = _super.call(this, element) || this;
+                    _this.operators = [filter_operator_1.FilterOperator.Is, filter_operator_1.FilterOperator.IsNot, filter_operator_1.FilterOperator.IsBefore, filter_operator_1.FilterOperator.IsAfter];
+                    _this.maxWidth = 150;
+                    return _this;
                 }
-            };
-            DateFilterLine = tslib_1.__decorate([
-                au.customElement("date-filter-line")
-            ], DateFilterLine);
+                DateFilterLine = tslib_1.__decorate([
+                    au.customElement("date-filter-line"),
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], DateFilterLine);
+                return DateFilterLine;
+            }(filter_line_base_1.FilterLineBase));
             exports_1("DateFilterLine", DateFilterLine);
         }
     };
 });
+//# sourceMappingURL=date-filter-line.js.map

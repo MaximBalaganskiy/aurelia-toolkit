@@ -18,23 +18,29 @@ System.register(["tslib", "../../aurelia", "./filter-line-base", "./filter-opera
             }
         ],
         execute: function () {
-            NumberFilterLine = class NumberFilterLine extends filter_line_base_1.FilterLineBase {
-                constructor(element) {
-                    super(element);
-                    this.operators = [filter_operator_1.FilterOperator.Is, filter_operator_1.FilterOperator.IsNot, filter_operator_1.FilterOperator.GreaterThan, filter_operator_1.FilterOperator.LessThan];
-                    this.maxWidth = 150;
+            NumberFilterLine = /** @class */ (function (_super) {
+                tslib_1.__extends(NumberFilterLine, _super);
+                function NumberFilterLine(element) {
+                    var _this = _super.call(this, element) || this;
+                    _this.operators = [filter_operator_1.FilterOperator.Is, filter_operator_1.FilterOperator.IsNot, filter_operator_1.FilterOperator.GreaterThan, filter_operator_1.FilterOperator.LessThan];
+                    _this.maxWidth = 150;
+                    return _this;
                 }
-                valueTextChanged() {
+                NumberFilterLine.prototype.valueTextChanged = function () {
                     this.value = au.numeral(this.valueText).value();
-                }
-            };
-            tslib_1.__decorate([
-                au.observable
-            ], NumberFilterLine.prototype, "valueText", void 0);
-            NumberFilterLine = tslib_1.__decorate([
-                au.customElement("number-filter-line")
-            ], NumberFilterLine);
+                };
+                tslib_1.__decorate([
+                    au.observable,
+                    tslib_1.__metadata("design:type", String)
+                ], NumberFilterLine.prototype, "valueText", void 0);
+                NumberFilterLine = tslib_1.__decorate([
+                    au.customElement("number-filter-line"),
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], NumberFilterLine);
+                return NumberFilterLine;
+            }(filter_line_base_1.FilterLineBase));
             exports_1("NumberFilterLine", NumberFilterLine);
         }
     };
 });
+//# sourceMappingURL=number-filter-line.js.map

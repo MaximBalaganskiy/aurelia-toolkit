@@ -1,5 +1,5 @@
-export class Exception {
-    constructor(apiException) {
+var Exception = /** @class */ (function () {
+    function Exception(apiException) {
         this.name = "Exception";
         if (apiException) {
             this.message = apiException.Message;
@@ -8,4 +8,7 @@ export class Exception {
             this.stack = apiException.StackTraceString;
         }
     }
-}
+    return Exception;
+}());
+export { Exception };
+//# sourceMappingURL=exception.js.map

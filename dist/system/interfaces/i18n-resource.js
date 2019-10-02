@@ -7,3 +7,4 @@ System.register([], function (exports_1, context_1) {
         }
     };
 });
+//# sourceMappingURL=i18n-resource.js.map

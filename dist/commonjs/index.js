@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const aurelia_1 = require("./aurelia");
+var aurelia_1 = require("./aurelia");
 require("aurelia-materialize-bridge/dist/native-modules/augmentation/aurelia-typed-observable");
 // this is for webpack ts-loader to see ambient declaration
 require("./augmentation/aurelia-router");
 require("./augmentation/element");
-const aurelia_i18n_1 = require("aurelia-i18n");
-const aurelia_logging_1 = require("aurelia-logging");
-const validation_rules_1 = require("./validation/validation-rules");
+var aurelia_i18n_1 = require("aurelia-i18n");
+var aurelia_logging_1 = require("aurelia-logging");
+var validation_rules_1 = require("./validation/validation-rules");
 function configure(frameworkConfiguration) {
     frameworkConfiguration.globalResources([
         // elements
@@ -49,10 +49,10 @@ function configure(frameworkConfiguration) {
         aurelia_1.PLATFORM.moduleName("./behaviours/notify"),
         aurelia_1.PLATFORM.moduleName("./helpers/enhance-inputmask"),
     ]);
-    let i18n = frameworkConfiguration.container.get(aurelia_i18n_1.I18N);
+    var i18n = frameworkConfiguration.container.get(aurelia_i18n_1.I18N);
     // i18n might not be initialised yet
     if (i18n.i18nextDeferred) {
-        i18n.i18nextDeferred.then(i18next => {
+        i18n.i18nextDeferred.then(function (i18next) {
             i18next.addResourceBundle("en", "aurelia-toolkit", {
                 alert: {
                     ok: "Ok",
@@ -87,7 +87,7 @@ function configure(frameworkConfiguration) {
         });
     }
     else {
-        let logger = frameworkConfiguration.container.get(aurelia_logging_1.Logger);
+        var logger = frameworkConfiguration.container.get(aurelia_logging_1.Logger);
         logger.error("Did you forget to initialise I18N plugin?");
         throw Error();
     }
@@ -147,3 +147,4 @@ var settings_editor_1 = require("./elements/settings-editor/settings-editor");
 exports.SettingsEditor = settings_editor_1.SettingsEditor;
 var setting_vm_1 = require("./elements/settings-editor/setting-vm");
 exports.SettingVM = setting_vm_1.SettingVM;
+//# sourceMappingURL=index.js.map

@@ -5,15 +5,19 @@ System.register([], function (exports_1, context_1) {
     return {
         setters: [],
         execute: function () {
-            PasswordValueConverter = class PasswordValueConverter {
-                toView(value, isPassword) {
+            PasswordValueConverter = /** @class */ (function () {
+                function PasswordValueConverter() {
+                }
+                PasswordValueConverter.prototype.toView = function (value, isPassword) {
                     return isPassword ? (value.length ? Array(value.length + 1).join("•") : "") : value;
-                }
-                fromView(value) {
+                };
+                PasswordValueConverter.prototype.fromView = function (value) {
                     throw new Error("Not implemented");
-                }
-            };
+                };
+                return PasswordValueConverter;
+            }());
             exports_1("PasswordValueConverter", PasswordValueConverter);
         }
     };
 });
+//# sourceMappingURL=password.js.map

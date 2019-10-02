@@ -15,32 +15,39 @@ System.register(["tslib", "../../aurelia", "../settings-editor/client-editor"], 
             }
         ],
         execute: function () {
-            VariantEditor = class VariantEditor {
-                valueChanged() {
+            VariantEditor = /** @class */ (function () {
+                function VariantEditor() {
+                }
+                VariantEditor.prototype.valueChanged = function () {
                     if (this.dataType === client_editor_1.ClientEditor.Decimal) {
                         this.valueDecimal = this.value.toString();
                     }
-                }
-                bind() {
+                };
+                VariantEditor.prototype.bind = function () {
                     this.valueChanged();
-                }
-                updateDecimalValue() {
+                };
+                VariantEditor.prototype.updateDecimalValue = function () {
                     this.value = parseFloat(this.valueDecimal);
-                }
-            };
-            tslib_1.__decorate([
-                au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
-            ], VariantEditor.prototype, "value", void 0);
-            tslib_1.__decorate([
-                au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
-            ], VariantEditor.prototype, "valueDecimal", void 0);
-            tslib_1.__decorate([
-                au.bindable
-            ], VariantEditor.prototype, "dataType", void 0);
-            VariantEditor = tslib_1.__decorate([
-                au.autoinject
-            ], VariantEditor);
+                };
+                tslib_1.__decorate([
+                    au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
+                    tslib_1.__metadata("design:type", Object)
+                ], VariantEditor.prototype, "value", void 0);
+                tslib_1.__decorate([
+                    au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
+                    tslib_1.__metadata("design:type", String)
+                ], VariantEditor.prototype, "valueDecimal", void 0);
+                tslib_1.__decorate([
+                    au.bindable,
+                    tslib_1.__metadata("design:type", Number)
+                ], VariantEditor.prototype, "dataType", void 0);
+                VariantEditor = tslib_1.__decorate([
+                    au.autoinject
+                ], VariantEditor);
+                return VariantEditor;
+            }());
             exports_1("VariantEditor", VariantEditor);
         }
     };
 });
+//# sourceMappingURL=variant-editor.js.map

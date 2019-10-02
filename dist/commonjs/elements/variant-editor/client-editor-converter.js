@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const client_editor_1 = require("../settings-editor/client-editor");
-class ClientEditorValueConverter {
-    toView(value) {
+var client_editor_1 = require("../settings-editor/client-editor");
+var ClientEditorValueConverter = /** @class */ (function () {
+    function ClientEditorValueConverter() {
+    }
+    ClientEditorValueConverter.prototype.toView = function (value) {
         switch (value) {
             case client_editor_1.ClientEditor.Boolean: return "boolean";
             case client_editor_1.ClientEditor.Integer: return "integer";
@@ -14,9 +16,11 @@ class ClientEditorValueConverter {
             case client_editor_1.ClientEditor.Decimal: return "decimal";
             default: return "string";
         }
-    }
-    fromView(value) {
+    };
+    ClientEditorValueConverter.prototype.fromView = function (value) {
         throw new Error("Not implemented");
-    }
-}
+    };
+    return ClientEditorValueConverter;
+}());
 exports.ClientEditorValueConverter = ClientEditorValueConverter;
+//# sourceMappingURL=client-editor-converter.js.map

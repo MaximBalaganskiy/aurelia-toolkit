@@ -10,3 +10,4 @@ export var ClientEditor;
     ClientEditor[ClientEditor["Date"] = 7] = "Date";
     ClientEditor[ClientEditor["Decimal"] = 8] = "Decimal";
 })(ClientEditor || (ClientEditor = {}));
+//# sourceMappingURL=client-editor.js.map

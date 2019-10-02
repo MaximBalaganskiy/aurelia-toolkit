@@ -1,12 +1,12 @@
 export function loadScript(url) {
-    return new Promise((resolve, reject) => {
-        if (!document.querySelectorAll(`[src="${url}"]`).length) {
+    return new Promise(function (resolve, reject) {
+        if (!document.querySelectorAll("[src=\"" + url + "\"]").length) {
             try {
-                let script = Object.assign(document.createElement("script"), {
+                var script = Object.assign(document.createElement("script"), {
                     type: "text/javascript",
                     src: url,
-                    onload: () => resolve(),
-                    onerror: e => reject(e)
+                    onload: function () { return resolve(); },
+                    onerror: function (e) { return reject(e); }
                 });
                 document.body.appendChild(script);
             }
@@ -19,3 +19,4 @@ export function loadScript(url) {
         }
     });
 }
+//# sourceMappingURL=load-script.js.map

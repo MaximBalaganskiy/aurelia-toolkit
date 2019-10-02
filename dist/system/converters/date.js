@@ -9,12 +9,14 @@ System.register(["moment"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            DateValueConverter = class DateValueConverter {
-                toView(value, format) {
+            DateValueConverter = /** @class */ (function () {
+                function DateValueConverter() {
+                }
+                DateValueConverter.prototype.toView = function (value, format) {
                     if (!value) {
                         return "";
                     }
-                    const m = moment(value);
+                    var m = moment(value);
                     if (m.isAfter("9999-12-31")) {
                         return "";
                     }
@@ -26,15 +28,17 @@ System.register(["moment"], function (exports_1, context_1) {
                             return m.format(format);
                         }
                     }
-                }
-                fromView(value) {
+                };
+                DateValueConverter.prototype.fromView = function (value) {
                     if (!value) {
                         return undefined;
                     }
                     return moment(value, "DD/MM/YYYY").toDate();
-                }
-            };
+                };
+                return DateValueConverter;
+            }());
             exports_1("DateValueConverter", DateValueConverter);
         }
     };
 });
+//# sourceMappingURL=date.js.map

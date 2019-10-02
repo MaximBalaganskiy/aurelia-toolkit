@@ -2,14 +2,14 @@ define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     function loadScript(url) {
-        return new Promise((resolve, reject) => {
-            if (!document.querySelectorAll(`[src="${url}"]`).length) {
+        return new Promise(function (resolve, reject) {
+            if (!document.querySelectorAll("[src=\"" + url + "\"]").length) {
                 try {
-                    let script = Object.assign(document.createElement("script"), {
+                    var script = Object.assign(document.createElement("script"), {
                         type: "text/javascript",
                         src: url,
-                        onload: () => resolve(),
-                        onerror: e => reject(e)
+                        onload: function () { return resolve(); },
+                        onerror: function (e) { return reject(e); }
                     });
                     document.body.appendChild(script);
                 }
@@ -24,3 +24,4 @@ define(["require", "exports"], function (require, exports) {
     }
     exports.loadScript = loadScript;
 });
+//# sourceMappingURL=load-script.js.map

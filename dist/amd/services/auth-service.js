@@ -1,11 +1,16 @@
-define(["require", "exports", "../aurelia"], function (require, exports, au) {
+define(["require", "exports", "tslib", "../aurelia"], function (require, exports, tslib_1, au) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    let logger = au.getLogger("AuthService");
-    class AuthService extends au.AuthService {
-        isAuthenticatedAsync() {
+    var logger = au.getLogger("AuthService");
+    var AuthService = /** @class */ (function (_super) {
+        tslib_1.__extends(AuthService, _super);
+        function AuthService() {
+            return _super !== null && _super.apply(this, arguments) || this;
+        }
+        AuthService.prototype.isAuthenticatedAsync = function () {
+            var _this = this;
             this.authentication.responseAnalyzed = false;
-            let authenticated = this.authentication.isAuthenticated();
+            var authenticated = this.authentication.isAuthenticated();
             // auto-update token?
             if (!authenticated
                 && this.config.autoUpdateToken
@@ -13,14 +18,16 @@ define(["require", "exports", "../aurelia"], function (require, exports, au) {
                 && this.authentication.getRefreshToken()
                 && this.authentication.getRefreshToken() !== "none") {
                 return this.updateToken()
-                    .catch(error => logger.warn(error))
-                    .then(() => this.authenticated);
+                    .catch(function (error) { return logger.warn(error); })
+                    .then(function () { return _this.authenticated; });
             }
             return Promise.resolve(authenticated);
-        }
-        getTokenPayload() {
-            return super.getTokenPayload();
-        }
-    }
+        };
+        AuthService.prototype.getTokenPayload = function () {
+            return _super.prototype.getTokenPayload.call(this);
+        };
+        return AuthService;
+    }(au.AuthService));
     exports.AuthService = AuthService;
 });
+//# sourceMappingURL=auth-service.js.map

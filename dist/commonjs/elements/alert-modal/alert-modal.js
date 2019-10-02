@@ -1,9 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class AlertModal {
-    open(options) {
+var AlertModal = /** @class */ (function () {
+    function AlertModal() {
+    }
+    AlertModal.prototype.open = function (options) {
         this.options = options;
         this.mdModal.open();
-    }
-}
+    };
+    return AlertModal;
+}());
 exports.AlertModal = AlertModal;
+//# sourceMappingURL=alert-modal.js.map

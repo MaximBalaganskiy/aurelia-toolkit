@@ -1,17 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const numeral = require("numeral");
-class DecimalValueConverter {
-    toView(value) {
+var numeral = require("numeral");
+var DecimalValueConverter = /** @class */ (function () {
+    function DecimalValueConverter() {
+    }
+    DecimalValueConverter.prototype.toView = function (value) {
         if (!value) {
             return undefined;
         }
         else {
             return numeral(value).format("0,0.00");
         }
-    }
-    fromView(value) {
+    };
+    DecimalValueConverter.prototype.fromView = function (value) {
         throw new Error("Not implemented");
-    }
-}
+    };
+    return DecimalValueConverter;
+}());
 exports.DecimalValueConverter = DecimalValueConverter;
+//# sourceMappingURL=decimal.js.map

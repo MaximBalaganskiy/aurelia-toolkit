@@ -12,24 +12,29 @@ System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            Message = class Message {
-                constructor() {
+            Message = /** @class */ (function () {
+                function Message() {
                     this.card = true;
                 }
-            };
-            tslib_1.__decorate([
-                au.bindable
-            ], Message.prototype, "icon", void 0);
-            tslib_1.__decorate([
-                au.bindable
-            ], Message.prototype, "colour", void 0);
-            tslib_1.__decorate([
-                au.ato.bindable.booleanMd
-            ], Message.prototype, "card", void 0);
-            Message = tslib_1.__decorate([
-                au.autoinject
-            ], Message);
+                tslib_1.__decorate([
+                    au.bindable,
+                    tslib_1.__metadata("design:type", String)
+                ], Message.prototype, "icon", void 0);
+                tslib_1.__decorate([
+                    au.bindable,
+                    tslib_1.__metadata("design:type", String)
+                ], Message.prototype, "colour", void 0);
+                tslib_1.__decorate([
+                    au.ato.bindable.booleanMd,
+                    tslib_1.__metadata("design:type", Boolean)
+                ], Message.prototype, "card", void 0);
+                Message = tslib_1.__decorate([
+                    au.autoinject
+                ], Message);
+                return Message;
+            }());
             exports_1("Message", Message);
         }
     };
 });
+//# sourceMappingURL=message.js.map

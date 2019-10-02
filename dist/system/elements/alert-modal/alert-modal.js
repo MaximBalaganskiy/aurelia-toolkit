@@ -5,13 +5,17 @@ System.register([], function (exports_1, context_1) {
     return {
         setters: [],
         execute: function () {
-            AlertModal = class AlertModal {
-                open(options) {
+            AlertModal = /** @class */ (function () {
+                function AlertModal() {
+                }
+                AlertModal.prototype.open = function (options) {
                     this.options = options;
                     this.mdModal.open();
-                }
-            };
+                };
+                return AlertModal;
+            }());
             exports_1("AlertModal", AlertModal);
         }
     };
 });
+//# sourceMappingURL=alert-modal.js.map

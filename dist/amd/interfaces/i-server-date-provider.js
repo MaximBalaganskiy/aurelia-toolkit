@@ -1,7 +1,11 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    class IServerDateProvider {
-    }
+    var IServerDateProvider = /** @class */ (function () {
+        function IServerDateProvider() {
+        }
+        return IServerDateProvider;
+    }());
     exports.IServerDateProvider = IServerDateProvider;
 });
+//# sourceMappingURL=i-server-date-provider.js.map

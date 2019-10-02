@@ -12,11 +12,11 @@ System.register(["tslib", "../aurelia"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            AutocompleteAttrCustomAttribute = class AutocompleteAttrCustomAttribute {
-                constructor(element) {
+            AutocompleteAttrCustomAttribute = /** @class */ (function () {
+                function AutocompleteAttrCustomAttribute(element) {
                     this.element = element;
                 }
-                attached() {
+                AutocompleteAttrCustomAttribute.prototype.attached = function () {
                     switch (this.element.tagName) {
                         case "MD-INPUT":
                             this.attributeManager = new au.AttributeManager(this.element.querySelector("input"));
@@ -26,16 +26,19 @@ System.register(["tslib", "../aurelia"], function (exports_1, context_1) {
                             break;
                     }
                     this.attributeManager.addAttributes({ autocomplete: this.value });
-                }
-                detached() {
+                };
+                AutocompleteAttrCustomAttribute.prototype.detached = function () {
                     this.attributeManager.removeAttributes(["autocomplete"]);
-                }
-            };
-            AutocompleteAttrCustomAttribute = tslib_1.__decorate([
-                au.customAttribute("autocomplete-attr"),
-                au.autoinject
-            ], AutocompleteAttrCustomAttribute);
+                };
+                AutocompleteAttrCustomAttribute = tslib_1.__decorate([
+                    au.customAttribute("autocomplete-attr"),
+                    au.autoinject,
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], AutocompleteAttrCustomAttribute);
+                return AutocompleteAttrCustomAttribute;
+            }());
             exports_1("AutocompleteAttrCustomAttribute", AutocompleteAttrCustomAttribute);
         }
     };
 });
+//# sourceMappingURL=autocomplete-attr.js.map

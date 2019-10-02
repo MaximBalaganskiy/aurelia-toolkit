@@ -47,10 +47,10 @@ export function configure(frameworkConfiguration) {
         PLATFORM.moduleName("./behaviours/notify"),
         PLATFORM.moduleName("./helpers/enhance-inputmask"),
     ]);
-    let i18n = frameworkConfiguration.container.get(I18N);
+    var i18n = frameworkConfiguration.container.get(I18N);
     // i18n might not be initialised yet
     if (i18n.i18nextDeferred) {
-        i18n.i18nextDeferred.then(i18next => {
+        i18n.i18nextDeferred.then(function (i18next) {
             i18next.addResourceBundle("en", "aurelia-toolkit", {
                 alert: {
                     ok: "Ok",
@@ -85,7 +85,7 @@ export function configure(frameworkConfiguration) {
         });
     }
     else {
-        let logger = frameworkConfiguration.container.get(Logger);
+        var logger = frameworkConfiguration.container.get(Logger);
         logger.error("Did you forget to initialise I18N plugin?");
         throw Error();
     }
@@ -123,3 +123,4 @@ PLATFORM.moduleName("./elements/variant-viewer/variant-viewer.select.html");
 PLATFORM.moduleName("./elements/variant-viewer/variant-viewer.string.html");
 export { SettingsEditor } from "./elements/settings-editor/settings-editor";
 export { SettingVM } from "./elements/settings-editor/setting-vm";
+//# sourceMappingURL=index.js.map

@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const client_editor_1 = require("../settings-editor/client-editor");
-class ClientViewerValueConverter {
-    toView(value) {
+var client_editor_1 = require("../settings-editor/client-editor");
+var ClientViewerValueConverter = /** @class */ (function () {
+    function ClientViewerValueConverter() {
+    }
+    ClientViewerValueConverter.prototype.toView = function (value) {
         switch (value) {
             case client_editor_1.ClientEditor.Boolean: return "boolean";
             case client_editor_1.ClientEditor.Select: return "select";
@@ -10,9 +12,11 @@ class ClientViewerValueConverter {
             case client_editor_1.ClientEditor.Date: return "date";
             default: return "string";
         }
-    }
-    fromView(value) {
+    };
+    ClientViewerValueConverter.prototype.fromView = function (value) {
         throw new Error("Not implemented");
-    }
-}
+    };
+    return ClientViewerValueConverter;
+}());
 exports.ClientViewerValueConverter = ClientViewerValueConverter;
+//# sourceMappingURL=client-viewer-converter.js.map

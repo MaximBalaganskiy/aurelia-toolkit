@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const originalUpdateSource = "originalUpdateSource";
-class NotifyBindingBehavior {
-    bind(binding, scope, notified) {
+var originalUpdateSource = "originalUpdateSource";
+var NotifyBindingBehavior = /** @class */ (function () {
+    function NotifyBindingBehavior() {
+    }
+    NotifyBindingBehavior.prototype.bind = function (binding, scope, notified) {
         if (binding[originalUpdateSource]) {
             return;
         }
@@ -11,10 +13,12 @@ class NotifyBindingBehavior {
             this.originalUpdateSource(value);
             notified.call(binding.source.bindingContext, value);
         };
-    }
-    unbind(binding, scope) {
+    };
+    NotifyBindingBehavior.prototype.unbind = function (binding, scope) {
         binding.updateSource = binding[originalUpdateSource];
         delete binding[originalUpdateSource];
-    }
-}
+    };
+    return NotifyBindingBehavior;
+}());
 exports.NotifyBindingBehavior = NotifyBindingBehavior;
+//# sourceMappingURL=notify.js.map

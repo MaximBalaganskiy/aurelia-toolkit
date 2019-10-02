@@ -6,8 +6,10 @@ System.register([], function (exports_1, context_1) {
         setters: [],
         execute: function () {
             originalUpdateSource = "originalUpdateSource";
-            NotifyBindingBehavior = class NotifyBindingBehavior {
-                bind(binding, scope, notified) {
+            NotifyBindingBehavior = /** @class */ (function () {
+                function NotifyBindingBehavior() {
+                }
+                NotifyBindingBehavior.prototype.bind = function (binding, scope, notified) {
                     if (binding[originalUpdateSource]) {
                         return;
                     }
@@ -16,13 +18,15 @@ System.register([], function (exports_1, context_1) {
                         this.originalUpdateSource(value);
                         notified.call(binding.source.bindingContext, value);
                     };
-                }
-                unbind(binding, scope) {
+                };
+                NotifyBindingBehavior.prototype.unbind = function (binding, scope) {
                     binding.updateSource = binding[originalUpdateSource];
                     delete binding[originalUpdateSource];
-                }
-            };
+                };
+                return NotifyBindingBehavior;
+            }());
             exports_1("NotifyBindingBehavior", NotifyBindingBehavior);
         }
     };
 });
+//# sourceMappingURL=notify.js.map

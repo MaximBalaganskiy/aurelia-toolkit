@@ -1,17 +1,22 @@
 import * as numeral from "numeral";
-export class NumberValueConverter {
-    toView(value) {
+var NumberValueConverter = /** @class */ (function () {
+    function NumberValueConverter() {
+    }
+    NumberValueConverter.prototype.toView = function (value) {
         if (!value) {
             return undefined;
         }
         else {
             return numeral(value).format("0");
         }
-    }
-    fromView(value) {
+    };
+    NumberValueConverter.prototype.fromView = function (value) {
         if (!value) {
             return undefined;
         }
         return numeral(value).value();
-    }
-}
+    };
+    return NumberValueConverter;
+}());
+export { NumberValueConverter };
+//# sourceMappingURL=number.js.map

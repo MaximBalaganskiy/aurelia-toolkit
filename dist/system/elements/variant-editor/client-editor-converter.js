@@ -9,8 +9,10 @@ System.register(["../settings-editor/client-editor"], function (exports_1, conte
             }
         ],
         execute: function () {
-            ClientEditorValueConverter = class ClientEditorValueConverter {
-                toView(value) {
+            ClientEditorValueConverter = /** @class */ (function () {
+                function ClientEditorValueConverter() {
+                }
+                ClientEditorValueConverter.prototype.toView = function (value) {
                     switch (value) {
                         case client_editor_1.ClientEditor.Boolean: return "boolean";
                         case client_editor_1.ClientEditor.Integer: return "integer";
@@ -22,12 +24,14 @@ System.register(["../settings-editor/client-editor"], function (exports_1, conte
                         case client_editor_1.ClientEditor.Decimal: return "decimal";
                         default: return "string";
                     }
-                }
-                fromView(value) {
+                };
+                ClientEditorValueConverter.prototype.fromView = function (value) {
                     throw new Error("Not implemented");
-                }
-            };
+                };
+                return ClientEditorValueConverter;
+            }());
             exports_1("ClientEditorValueConverter", ClientEditorValueConverter);
         }
     };
 });
+//# sourceMappingURL=client-editor-converter.js.map

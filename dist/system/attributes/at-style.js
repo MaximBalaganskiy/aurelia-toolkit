@@ -12,21 +12,24 @@ System.register(["tslib", "../aurelia"], function (exports_1, context_1) {
             }
         ],
         execute: function () {
-            AtStyleCustomAttribute = class AtStyleCustomAttribute {
-                constructor(element) {
+            AtStyleCustomAttribute = /** @class */ (function () {
+                function AtStyleCustomAttribute(element) {
                     this.element = element;
                 }
-                valueChanged() {
+                AtStyleCustomAttribute.prototype.valueChanged = function () {
                     this.element.style.cssText = this.value;
-                }
-                attached() {
+                };
+                AtStyleCustomAttribute.prototype.attached = function () {
                     this.valueChanged();
-                }
-            };
-            AtStyleCustomAttribute = tslib_1.__decorate([
-                au.autoinject
-            ], AtStyleCustomAttribute);
+                };
+                AtStyleCustomAttribute = tslib_1.__decorate([
+                    au.autoinject,
+                    tslib_1.__metadata("design:paramtypes", [Element])
+                ], AtStyleCustomAttribute);
+                return AtStyleCustomAttribute;
+            }());
             exports_1("AtStyleCustomAttribute", AtStyleCustomAttribute);
         }
     };
 });
+//# sourceMappingURL=at-style.js.map

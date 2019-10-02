@@ -2,14 +2,19 @@ import * as tslib_1 from "tslib";
 import * as au from "../../aurelia";
 import { FilterLineBase } from "./filter-line-base";
 import { FilterOperator } from "./filter-operator";
-let DateFilterLine = class DateFilterLine extends FilterLineBase {
-    constructor(element) {
-        super(element);
-        this.operators = [FilterOperator.Is, FilterOperator.IsNot, FilterOperator.IsBefore, FilterOperator.IsAfter];
-        this.maxWidth = 150;
+var DateFilterLine = /** @class */ (function (_super) {
+    tslib_1.__extends(DateFilterLine, _super);
+    function DateFilterLine(element) {
+        var _this = _super.call(this, element) || this;
+        _this.operators = [FilterOperator.Is, FilterOperator.IsNot, FilterOperator.IsBefore, FilterOperator.IsAfter];
+        _this.maxWidth = 150;
+        return _this;
     }
-};
-DateFilterLine = tslib_1.__decorate([
-    au.customElement("date-filter-line")
-], DateFilterLine);
+    DateFilterLine = tslib_1.__decorate([
+        au.customElement("date-filter-line"),
+        tslib_1.__metadata("design:paramtypes", [Element])
+    ], DateFilterLine);
+    return DateFilterLine;
+}(FilterLineBase));
 export { DateFilterLine };
+//# sourceMappingURL=date-filter-line.js.map

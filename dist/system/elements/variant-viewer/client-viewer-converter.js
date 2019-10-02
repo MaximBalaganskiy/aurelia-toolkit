@@ -9,8 +9,10 @@ System.register(["../settings-editor/client-editor"], function (exports_1, conte
             }
         ],
         execute: function () {
-            ClientViewerValueConverter = class ClientViewerValueConverter {
-                toView(value) {
+            ClientViewerValueConverter = /** @class */ (function () {
+                function ClientViewerValueConverter() {
+                }
+                ClientViewerValueConverter.prototype.toView = function (value) {
                     switch (value) {
                         case client_editor_1.ClientEditor.Boolean: return "boolean";
                         case client_editor_1.ClientEditor.Select: return "select";
@@ -18,12 +20,14 @@ System.register(["../settings-editor/client-editor"], function (exports_1, conte
                         case client_editor_1.ClientEditor.Date: return "date";
                         default: return "string";
                     }
-                }
-                fromView(value) {
+                };
+                ClientViewerValueConverter.prototype.fromView = function (value) {
                     throw new Error("Not implemented");
-                }
-            };
+                };
+                return ClientViewerValueConverter;
+            }());
             exports_1("ClientViewerValueConverter", ClientViewerValueConverter);
         }
     };
 });
+//# sourceMappingURL=client-viewer-converter.js.map

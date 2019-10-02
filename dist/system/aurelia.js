@@ -99,3 +99,4 @@ System.register(["aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia
         }
     };
 });
+//# sourceMappingURL=aurelia.js.map

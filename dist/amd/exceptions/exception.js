@@ -1,8 +1,8 @@
 define(["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    class Exception {
-        constructor(apiException) {
+    var Exception = /** @class */ (function () {
+        function Exception(apiException) {
             this.name = "Exception";
             if (apiException) {
                 this.message = apiException.Message;
@@ -11,6 +11,8 @@ define(["require", "exports"], function (require, exports) {
                 this.stack = apiException.StackTraceString;
             }
         }
-    }
+        return Exception;
+    }());
     exports.Exception = Exception;
 });
+//# sourceMappingURL=exception.js.map
