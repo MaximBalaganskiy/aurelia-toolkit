@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.19.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.2...v2.19.3) (2019-10-02)
+
+
+### Bug Fixes
+
+* **build:** emit decorators ([cb111aa](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/cb111aa))
+
 ### [2.19.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.1...v2.19.2) (2019-10-02)
 
 
