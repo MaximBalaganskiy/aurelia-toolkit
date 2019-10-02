@@ -1,0 +1,15 @@
+<template>
+	<div ref="modal" md-modal="dismissible: false;" md-modal.ref="mdModal">
+		<div class="modal-content">
+			<message icon.bind="options.icon" colour.bind="options.iconColour" card.bind="false">
+				${options.message}
+			</message>
+		</div>
+		<div class="modal-footer">
+			<a md-button="flat: true;" click.delegate="options.button1Click()" class="modal-action modal-close"
+			  if.bind="options.button1Text">${options.button1Text}</a>
+			<a md-button="flat: true;" click.delegate="options.button2Click()" class="modal-action modal-close"
+			  if.bind="options.button2Text">${options.button2Text}</a>
+		</div>
+	</div>
+</template>

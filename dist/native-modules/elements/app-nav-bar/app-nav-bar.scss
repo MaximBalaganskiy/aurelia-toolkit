@@ -1,0 +1,60 @@
+﻿app-nav-bar {
+	nav {
+		.at-brand-logo {
+			height: 100%;
+			position: absolute;
+
+			img {
+				height: 100%;
+			}
+		}
+
+
+		a.home {
+			left: 50%;
+			transform: translateX(-50%);
+
+			i {
+				float: left;
+			}
+		}
+
+		a.sidenav-trigger i {
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		.tap-target-wrapper {
+			a.sidenav-trigger {
+				margin-right: 0;
+				margin-left: 0;
+			}
+		}
+
+		ul {
+			a {
+				padding: 0 10px;
+
+				i.material-icons {
+					margin-right: 5px;
+				}
+			}
+		}
+	}
+
+	// make collapsible and not collapsible menu items look the same
+	md-sidenav {
+		.sidenav li.active:not(.menu)>a {
+			color: #fff !important;
+		}
+
+		ul[md-collapsible]>li>a {
+			padding: 0 16px;
+			font-weight: normal;
+		}
+
+		.collapsible-body li>a {
+			font-weight: normal;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+﻿datepicker {
+	.input-field {
+		input {
+			width: 100%;
+		}
+		.opener {
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin-top: 4px;
+			cursor: pointer;
+		}
+	}
+}

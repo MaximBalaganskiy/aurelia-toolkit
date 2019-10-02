@@ -1,0 +1,37 @@
+<template>
+	<require from="./filter.scss"></require>
+	<style>
+		filter>.collection>.collection-item>.operator {
+			width: ${i18nResource.operatorWidth};
+		}
+	</style>
+	<div show.bind="false">
+		<slot></slot>
+	</div>
+	<ul id="dropdown" if.bind="!lock">
+		<li repeat.for="l of availableFilterLines">
+			<a click.trigger="add(l)">${l.label}</a>
+		</li>
+	</ul>
+
+	<div class="collection" ref="itemsCollection">
+	</div>
+
+	<div class="row">
+		<div class="col input-field" if.bind="!lock">
+			<a md-button md-dropdown="activates: dropdown; constrain-width: false; container: body">${i18nResource.addFilter}</a>
+		</div>
+		<div class="col input-field">
+			<button md-button click.delegate="search()" class="primary">${i18nResource.search}</button>
+		</div>
+		<div class="col right" if.bind="pageSizes">
+			<div style="width: 70px">
+				<select md-select="label: Page Size" value.bind="pageSize">
+					<option repeat.for="ps of pageSizes" model.bind="ps">${ps}</option>
+					<option model.bind="null">${i18nResource.all}</option>
+				</select>
+			</div>
+		</div>
+	</div>
+
+</template>

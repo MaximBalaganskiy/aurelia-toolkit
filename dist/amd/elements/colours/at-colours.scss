@@ -1,0 +1,144 @@
+md-sidenav .sidenav li.active:not(.menu) {
+	background-color: primaryColor !important;
+}
+
+lookup {
+	.dropdown-div {
+		li {
+			color: secondaryColor;
+
+			a {
+				color: secondaryColor;
+			}
+		}
+	}
+}
+
+at-select {
+	div.input-field {
+		div.select-wrapper {
+			&.invalid {
+				div[md-dropdown] {
+					border-bottom: 1px solid errorColor;
+					box-shadow: 0 1px 0 0 errorColor;
+				}
+			}
+
+			&.valid {
+				div[md-dropdown] {
+					border-bottom: 1px solid successColor;
+					box-shadow: 0 1px 0 0 successColor;
+				}
+			}
+		}
+	}
+}
+
+nav {
+	border-bottom: 2px solid primaryColor;
+	background-color: headerColor !important;
+	box-shadow: none !important;
+}
+
+nav,
+nav a[md-sidenav-collapse],
+.tap-target-wrapper .sidenav-trigger,
+a.home {
+	color: menuButtonColor !important;
+}
+
+// rows are too high
+.row {
+	margin-bottom: 0 !important;
+}
+
+// reserve enough space for validation messages so that inputs do not jump on validation
+.input-field {
+
+	input,
+	.select-wrapper {
+		margin-bottom: 18px !important;
+		position: relative;
+	}
+
+	// adjust first helper-text vertical position to fit into the above margin
+	// following helper-texts will be pulled up automatically
+	label+.helper-text,
+	.select-wrapper+.helper-text,
+	i.opener+.helper-text {
+		margin-top: -18px;
+		width: 100%;
+	}
+}
+
+filter,
+nav {
+	.input-field {
+
+		input,
+		.select-wrapper {
+			margin-bottom: 8px !important;
+		}
+	}
+}
+
+validation-container {
+	>div.wrapper {
+		>.helper-text {
+			position: absolute;
+			bottom: -18px;
+			width: 100%;
+		}
+	}
+}
+
+// cursor pointer
+.cursor-pointer {
+	cursor: pointer;
+}
+
+// reduce the height of inputs
+$input-height: 2.2rem;
+
+input {
+	height: $input-height !important;
+}
+
+.select-wrapper {
+	input.select-dropdown {
+		line-height: $input-height !important;
+	}
+}
+
+[md-datepicker]+i.material-icons.std-icon-fixup {
+	margin-top: 4px !important;
+}
+
+.select-wrapper {
+	span.caret {
+		margin-top: 12px;
+	}
+}
+
+.bold {
+	font-weight: bold;
+}
+
+//fix checkbox height in .input-field
+.input-field {
+	md-checkbox {
+		label {
+			height: 3rem;
+			margin-bottom: 21px;
+			line-height: unset;
+		}
+	}
+}
+
+// put main progress indicator on top of everything
+body {
+	>div>at-progress {
+		z-index: 999;
+		position: fixed;
+	}
+}
