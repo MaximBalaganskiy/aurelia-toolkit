@@ -34,13 +34,15 @@ export class Datepicker {
 	valueChanged() {
 		au.fireEvent(this.element, "change");
 		au.fireEvent(this.element, "blur");
-		if (this.minDate && this.value < this.minDate) {
-			this.value = this.minDate;
-		}
-		if (this.maxDate && this.value > this.maxDate) {
-			this.value = this.maxDate;
-		}
-		this.taskQueue.queueTask(() => au.updateLabel(this.input, this.labelElement));
+		this.taskQueue.queueTask(() => {
+			if (this.minDate && this.value < this.minDate) {
+				this.value = this.minDate;
+			}
+			if (this.maxDate && this.value > this.maxDate) {
+				this.value = this.maxDate;
+			}
+			au.updateLabel(this.input, this.labelElement);
+		});
 	}
 
 	icon: HTMLElement;
