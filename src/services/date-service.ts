@@ -7,19 +7,18 @@ export class DateService {
 	}
 
 	now(): Date {
-		return new Date();
+		if (this.differenceWithServer === undefined) {
+			throw new Error("DateService is not initialised");
+		}
+		else {
+			return new Date(Date.now() - this.differenceWithServer);
+		}
 	}
 
 	differenceWithServer: number = undefined;
 
-	async getServerDate(): Promise<Date> {
-		if (this.differenceWithServer === undefined) {
-			let serverDate = await this.dateClient.getServerDate();
-			this.differenceWithServer = this.now().getTime() - serverDate.getTime();
-			return serverDate;
-		}
-		else {
-			return new Date(this.now().getTime() - this.differenceWithServer);
-		}
+	async initialise(): Promise<void> {
+		let serverDate = await this.dateClient.getServerDate();
+		this.differenceWithServer = Date.now() - serverDate.getTime();
 	}
 }
