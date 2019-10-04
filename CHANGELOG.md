@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.19.5](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.4...v2.19.5) (2019-10-04)
+
+
+### Bug Fixes
+
+* **datepicker:** set value async ([7f9d01f](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/7f9d01f))
+
 ### [2.19.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.3...v2.19.4) (2019-10-04)
 
 ### [2.19.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.2...v2.19.3) (2019-10-02)
