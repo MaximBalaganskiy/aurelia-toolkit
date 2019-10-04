@@ -12,6 +12,7 @@ export declare class Datepicker {
     yearRange: number | number[];
     minDate: Date;
     maxDate: Date;
+    disableDayFn: (day: Date) => boolean;
     labelElement: HTMLLabelElement;
     value: Date;
     valueChanged(): void;

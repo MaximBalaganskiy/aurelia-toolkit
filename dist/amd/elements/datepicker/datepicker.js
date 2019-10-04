@@ -58,6 +58,9 @@ define(["require", "exports", "tslib", "../../aurelia", "aurelia-materialize-bri
                 if (_this.maxDate && _this.value > _this.maxDate) {
                     _this.value = _this.maxDate;
                 }
+                if (_this.disableDayFn && _this.disableDayFn(_this.value)) {
+                    _this.value = undefined;
+                }
                 au.updateLabel(_this.input, _this.labelElement);
             });
         };
@@ -112,6 +115,10 @@ define(["require", "exports", "tslib", "../../aurelia", "aurelia-materialize-bri
             au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
             tslib_1.__metadata("design:type", Date)
         ], Datepicker.prototype, "maxDate", void 0);
+        tslib_1.__decorate([
+            au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
+            tslib_1.__metadata("design:type", Function)
+        ], Datepicker.prototype, "disableDayFn", void 0);
         tslib_1.__decorate([
             au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
             tslib_1.__metadata("design:type", Date)
