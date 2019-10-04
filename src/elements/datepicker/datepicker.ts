@@ -27,6 +27,9 @@ export class Datepicker {
 	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
 	maxDate: Date;
 
+	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
+	disableDayFn: (day: Date) => boolean;
+
 	labelElement: HTMLLabelElement;
 
 	@au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
@@ -40,6 +43,9 @@ export class Datepicker {
 			}
 			if (this.maxDate && this.value > this.maxDate) {
 				this.value = this.maxDate;
+			}
+			if (this.disableDayFn && this.disableDayFn(this.value)) {
+				this.value = undefined;
 			}
 			au.updateLabel(this.input, this.labelElement);
 		});
