@@ -1,4 +1,4 @@
-define(["require", "exports", "tslib", "../aurelia", "./progress-handle", "@microsoft/applicationinsights-web", "../aurelia"], function (require, exports, tslib_1, au, progress_handle_1, applicationinsights_web_1, aurelia_1) {
+define(["require", "exports", "tslib", "../aurelia", "./progress-handle", "@microsoft/applicationinsights-web"], function (require, exports, tslib_1, au, progress_handle_1, applicationinsights_web_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var AlertService = /** @class */ (function () {
@@ -78,7 +78,7 @@ define(["require", "exports", "tslib", "../aurelia", "./progress-handle", "@micr
             return new progress_handle_1.ProgressHandle(this);
         };
         AlertService = tslib_1.__decorate([
-            aurelia_1.autoinject,
+            au.autoinject,
             tslib_1.__metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, applicationinsights_web_1.ApplicationInsights])
         ], AlertService);
         return AlertService;

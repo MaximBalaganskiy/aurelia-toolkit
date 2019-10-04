@@ -4,7 +4,6 @@ var tslib_1 = require("tslib");
 var au = require("../aurelia");
 var progress_handle_1 = require("./progress-handle");
 var applicationinsights_web_1 = require("@microsoft/applicationinsights-web");
-var aurelia_1 = require("../aurelia");
 var AlertService = /** @class */ (function () {
     function AlertService(toast, eventAggregator, templatingEngine, i18n, appInsights) {
         this.toast = toast;
@@ -82,7 +81,7 @@ var AlertService = /** @class */ (function () {
         return new progress_handle_1.ProgressHandle(this);
     };
     AlertService = tslib_1.__decorate([
-        aurelia_1.autoinject,
+        au.autoinject,
         tslib_1.__metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, applicationinsights_web_1.ApplicationInsights])
     ], AlertService);
     return AlertService;

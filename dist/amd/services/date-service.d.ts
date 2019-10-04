@@ -4,5 +4,5 @@ export declare class DateService {
     constructor(dateClient: IServerDateProvider);
     now(): Date;
     differenceWithServer: number;
-    getServerDate(): Promise<Date>;
+    initialise(): Promise<void>;
 }

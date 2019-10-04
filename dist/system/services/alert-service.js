@@ -1,6 +1,6 @@
 System.register(["tslib", "../aurelia", "./progress-handle", "@microsoft/applicationinsights-web"], function (exports_1, context_1) {
     "use strict";
-    var tslib_1, au, progress_handle_1, applicationinsights_web_1, aurelia_1, AlertService;
+    var tslib_1, au, progress_handle_1, applicationinsights_web_1, AlertService;
     var __moduleName = context_1 && context_1.id;
     function using(disposable, action, catchHandler) {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
@@ -34,7 +34,6 @@ System.register(["tslib", "../aurelia", "./progress-handle", "@microsoft/applica
             },
             function (au_1) {
                 au = au_1;
-                aurelia_1 = au_1;
             },
             function (progress_handle_1_1) {
                 progress_handle_1 = progress_handle_1_1;
@@ -121,7 +120,7 @@ System.register(["tslib", "../aurelia", "./progress-handle", "@microsoft/applica
                     return new progress_handle_1.ProgressHandle(this);
                 };
                 AlertService = tslib_1.__decorate([
-                    aurelia_1.autoinject,
+                    au.autoinject,
                     tslib_1.__metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, applicationinsights_web_1.ApplicationInsights])
                 ], AlertService);
                 return AlertService;

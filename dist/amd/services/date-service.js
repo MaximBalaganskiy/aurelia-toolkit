@@ -7,21 +7,23 @@ define(["require", "exports", "tslib", "../aurelia", "../interfaces/i-server-dat
             this.differenceWithServer = undefined;
         }
         DateService.prototype.now = function () {
-            return new Date();
+            if (this.differenceWithServer === undefined) {
+                throw new Error("DateService is not initialised");
+            }
+            else {
+                return new Date(Date.now() - this.differenceWithServer);
+            }
         };
-        DateService.prototype.getServerDate = function () {
+        DateService.prototype.initialise = function () {
             return tslib_1.__awaiter(this, void 0, void 0, function () {
                 var serverDate;
                 return tslib_1.__generator(this, function (_a) {
                     switch (_a.label) {
-                        case 0:
-                            if (!(this.differenceWithServer === undefined)) return [3 /*break*/, 2];
-                            return [4 /*yield*/, this.dateClient.getServerDate()];
+                        case 0: return [4 /*yield*/, this.dateClient.getServerDate()];
                         case 1:
                             serverDate = _a.sent();
-                            this.differenceWithServer = this.now().getTime() - serverDate.getTime();
-                            return [2 /*return*/, serverDate];
-                        case 2: return [2 /*return*/, new Date(this.now().getTime() - this.differenceWithServer)];
+                            this.differenceWithServer = Date.now() - serverDate.getTime();
+                            return [2 /*return*/];
                     }
                 });
             });

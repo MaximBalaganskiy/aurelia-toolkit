@@ -2,7 +2,6 @@ import * as tslib_1 from "tslib";
 import * as au from "../aurelia";
 import { ProgressHandle } from "./progress-handle";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
-import { autoinject } from "../aurelia";
 var AlertService = /** @class */ (function () {
     function AlertService(toast, eventAggregator, templatingEngine, i18n, appInsights) {
         this.toast = toast;
@@ -80,7 +79,7 @@ var AlertService = /** @class */ (function () {
         return new ProgressHandle(this);
     };
     AlertService = tslib_1.__decorate([
-        autoinject,
+        au.autoinject,
         tslib_1.__metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, ApplicationInsights])
     ], AlertService);
     return AlertService;

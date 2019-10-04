@@ -65,13 +65,15 @@ System.register(["tslib", "../../aurelia", "aurelia-materialize-bridge"], functi
                     var _this = this;
                     au.fireEvent(this.element, "change");
                     au.fireEvent(this.element, "blur");
-                    if (this.minDate && this.value < this.minDate) {
-                        this.value = this.minDate;
-                    }
-                    if (this.maxDate && this.value > this.maxDate) {
-                        this.value = this.maxDate;
-                    }
-                    this.taskQueue.queueTask(function () { return au.updateLabel(_this.input, _this.labelElement); });
+                    this.taskQueue.queueTask(function () {
+                        if (_this.minDate && _this.value < _this.minDate) {
+                            _this.value = _this.minDate;
+                        }
+                        if (_this.maxDate && _this.value > _this.maxDate) {
+                            _this.value = _this.maxDate;
+                        }
+                        au.updateLabel(_this.input, _this.labelElement);
+                    });
                 };
                 Datepicker.prototype.bind = function () {
                     //
