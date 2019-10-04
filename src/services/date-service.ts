@@ -15,6 +15,10 @@ export class DateService {
 		}
 	}
 
+	momentNow(): au.moment.Moment {
+		return au.moment(this.now());
+	}
+
 	differenceWithServer: number = undefined;
 
 	async initialise(): Promise<void> {
