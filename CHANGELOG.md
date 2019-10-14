@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.20.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.7...v2.20.0) (2019-10-14)
+
+
+### Features
+
+* **all:** replace momentJS with date-fns ([a07e8bf](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/a07e8bf))
+
 ### [2.19.7](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.6...v2.19.7) (2019-10-04)
 
 ### [2.19.6](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.5...v2.19.6) (2019-10-04)
