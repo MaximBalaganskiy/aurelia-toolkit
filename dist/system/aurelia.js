@@ -1,10 +1,9 @@
-System.register(["aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia-validation", "aurelia-router", "aurelia-authentication", "aurelia-event-aggregator", "aurelia-materialize-bridge", "numeral", "moment", "aurelia-typed-observable-plugin", "aurelia-i18n"], function (exports_1, context_1) {
+System.register(["aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia-validation", "aurelia-router", "aurelia-authentication", "aurelia-event-aggregator", "aurelia-materialize-bridge", "numeral", "aurelia-typed-observable-plugin", "aurelia-i18n"], function (exports_1, context_1) {
     "use strict";
-    var numeral, moment, ato;
+    var numeral, ato;
     var __moduleName = context_1 && context_1.id;
     var exportedNames_1 = {
         "numeral": true,
-        "moment": true,
         "ato": true,
         "ValidationRules": true,
         "ValidationControllerFactory": true,
@@ -80,9 +79,6 @@ System.register(["aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia
             function (numeral_1) {
                 numeral = numeral_1;
             },
-            function (moment_1) {
-                moment = moment_1;
-            },
             function (ato_1) {
                 ato = ato_1;
             },
@@ -94,7 +90,6 @@ System.register(["aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia
         ],
         execute: function () {
             exports_1("numeral", numeral);
-            exports_1("moment", moment);
             exports_1("ato", ato);
         }
     };

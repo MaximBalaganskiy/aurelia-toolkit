@@ -16,9 +16,6 @@ var DateService = /** @class */ (function () {
             return new Date(Date.now() - this.differenceWithServer);
         }
     };
-    DateService.prototype.momentNow = function () {
-        return au.moment(this.now());
-    };
     DateService.prototype.initialise = function () {
         return tslib_1.__awaiter(this, void 0, void 0, function () {
             var serverDate;
