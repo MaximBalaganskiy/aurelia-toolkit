@@ -1,4 +1,4 @@
-define(["require", "exports", "tslib", "aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia-validation", "aurelia-router", "aurelia-authentication", "aurelia-event-aggregator", "aurelia-materialize-bridge", "numeral", "aurelia-typed-observable-plugin", "aurelia-i18n"], function (require, exports, tslib_1, aurelia_pal_1, aurelia_framework_1, aurelia_logging_1, aurelia_validation_1, aurelia_router_1, aurelia_authentication_1, aurelia_event_aggregator_1, aurelia_materialize_bridge_1, numeral, ato, aurelia_i18n_1) {
+define(["require", "exports", "tslib", "aurelia-pal", "aurelia-framework", "aurelia-logging", "aurelia-validation", "aurelia-router", "aurelia-authentication", "aurelia-event-aggregator", "aurelia-materialize-bridge", "numeral", "moment", "aurelia-typed-observable-plugin", "aurelia-i18n"], function (require, exports, tslib_1, aurelia_pal_1, aurelia_framework_1, aurelia_logging_1, aurelia_validation_1, aurelia_router_1, aurelia_authentication_1, aurelia_event_aggregator_1, aurelia_materialize_bridge_1, numeral, moment, ato, aurelia_i18n_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     tslib_1.__exportStar(aurelia_pal_1, exports);
@@ -22,6 +22,7 @@ define(["require", "exports", "tslib", "aurelia-pal", "aurelia-framework", "aure
     exports.MdTapTarget = aurelia_materialize_bridge_1.MdTapTarget;
     exports.updateLabel = aurelia_materialize_bridge_1.updateLabel;
     exports.numeral = numeral;
+    exports.moment = moment;
     exports.ato = ato;
     exports.I18N = aurelia_i18n_1.I18N;
 });

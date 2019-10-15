@@ -1,33 +1,39 @@
-System.register(["date-fns"], function (exports_1, context_1) {
+System.register(["moment"], function (exports_1, context_1) {
     "use strict";
-    var date_fns_1, DateValueConverter;
+    var moment, DateValueConverter;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
-            function (date_fns_1_1) {
-                date_fns_1 = date_fns_1_1;
+            function (moment_1) {
+                moment = moment_1;
             }
         ],
         execute: function () {
             DateValueConverter = /** @class */ (function () {
                 function DateValueConverter() {
                 }
-                DateValueConverter.prototype.toView = function (value, formatStr) {
+                DateValueConverter.prototype.toView = function (value, format) {
                     if (!value) {
                         return "";
                     }
-                    if (typeof (value) === "string") {
-                        value = date_fns_1.parseISO(value);
+                    var m = moment(value);
+                    if (m.isAfter("9999-12-31")) {
+                        return "";
                     }
-                    formatStr = formatStr || "DD/MM/YYYY";
-                    return date_fns_1.format(value, formatStr);
+                    else {
+                        if (!format) {
+                            return m.toDate().toLocaleDateString("en-AU");
+                        }
+                        else {
+                            return m.format(format);
+                        }
+                    }
                 };
-                DateValueConverter.prototype.fromView = function (value, formatStr) {
+                DateValueConverter.prototype.fromView = function (value) {
                     if (!value) {
                         return undefined;
                     }
-                    formatStr = formatStr || "DD/MM/YYYY";
-                    return date_fns_1.parse(value, formatStr, Date.now());
+                    return moment(value, "DD/MM/YYYY").toDate();
                 };
                 return DateValueConverter;
             }());

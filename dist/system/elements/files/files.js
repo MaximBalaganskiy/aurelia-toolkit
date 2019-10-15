@@ -26,7 +26,7 @@ System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
                         return;
                     }
                     var _loop_1 = function (newFile) {
-                        if (!this_1.files.find(function (x) { return x.fileName === newFile.name && x.file.size === newFile.size && x.file.lastModified === newFile.lastModified; })) {
+                        if (!this_1.files.find(function (x) { return x.fileName === newFile.name && x.file.size === newFile.size && au.moment(x.file.lastModified).isSame(newFile.lastModified); })) {
                             this_1.files.push({ file: newFile, fileName: newFile.name, type: null, isTooBig: newFile.size > this_1.maxFileSize });
                         }
                     };

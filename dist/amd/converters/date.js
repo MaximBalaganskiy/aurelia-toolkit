@@ -1,25 +1,31 @@
-define(["require", "exports", "date-fns"], function (require, exports, date_fns_1) {
+define(["require", "exports", "moment"], function (require, exports, moment) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var DateValueConverter = /** @class */ (function () {
         function DateValueConverter() {
         }
-        DateValueConverter.prototype.toView = function (value, formatStr) {
+        DateValueConverter.prototype.toView = function (value, format) {
             if (!value) {
                 return "";
             }
-            if (typeof (value) === "string") {
-                value = date_fns_1.parseISO(value);
+            var m = moment(value);
+            if (m.isAfter("9999-12-31")) {
+                return "";
             }
-            formatStr = formatStr || "DD/MM/YYYY";
-            return date_fns_1.format(value, formatStr);
+            else {
+                if (!format) {
+                    return m.toDate().toLocaleDateString("en-AU");
+                }
+                else {
+                    return m.format(format);
+                }
+            }
         };
-        DateValueConverter.prototype.fromView = function (value, formatStr) {
+        DateValueConverter.prototype.fromView = function (value) {
             if (!value) {
                 return undefined;
             }
-            formatStr = formatStr || "DD/MM/YYYY";
-            return date_fns_1.parse(value, formatStr, Date.now());
+            return moment(value, "DD/MM/YYYY").toDate();
         };
         return DateValueConverter;
     }());
