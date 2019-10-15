@@ -1,22 +1,28 @@
-﻿import { parse, parseISO, format } from "date-fns";
+﻿import * as moment from "moment";
 
 export class DateValueConverter {
-	toView(value: string | Date, formatStr: string): string {
+	toView(value: string | Date | moment.Moment, format: string): string {
 		if (!value) {
 			return "";
 		}
-		if (typeof (value) === "string") {
-			value = parseISO(value);
+		const m = moment(value);
+		if (m.isAfter("9999-12-31")) {
+			return "";
 		}
-		formatStr = formatStr || "DD/MM/YYYY";
-		return format(value, formatStr);
+		else {
+			if (!format) {
+				return m.toDate().toLocaleDateString("en-AU");
+			}
+			else {
+				return m.format(format);
+			}
+		}
 	}
 
-	fromView(value: string, formatStr: string): Date {
+	fromView(value: string): Date {
 		if (!value) {
 			return undefined;
 		}
-		formatStr = formatStr || "DD/MM/YYYY";
-		return parse(value, formatStr, Date.now());
+		return moment(value, "DD/MM/YYYY").toDate();
 	}
 }
