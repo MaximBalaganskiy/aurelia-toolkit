@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.20.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.1...v2.20.2) (2019-10-23)
+
+
+### Refactoring
+
+* delegate validation rendering to aurelia ([18b1793](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/18b1793))
+
 ### [2.20.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.0...v2.20.1) (2019-10-15)
 
 ## [2.20.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.19.7...v2.20.0) (2019-10-14)
