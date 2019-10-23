@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.20.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.3...v2.20.4) (2019-10-23)
+
+
+### Bug Fixes
+
+* **at-select:** class attribute ([9c3d3b0](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/9c3d3b0))
+
 ### [2.20.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.2...v2.20.3) (2019-10-23)
 
 
