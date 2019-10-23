@@ -19,8 +19,9 @@ export declare class Datepicker {
     icon: HTMLElement;
     pickerInput: HTMLInputElement;
     mdDatepicker: MdDatePicker;
-    validationContainer: HTMLElement;
     input: HTMLInputElement;
+    validateResults: ValidateResult[];
+    validationClass: string;
     bind(): void;
     attached(): void;
     detached(): void;

@@ -1,6 +1,6 @@
-System.register(["tslib", "../../aurelia", "aurelia-materialize-bridge"], function (exports_1, context_1) {
+System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
     "use strict";
-    var tslib_1, au, aurelia_materialize_bridge_1, Datepicker;
+    var tslib_1, au, Datepicker;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -9,9 +9,6 @@ System.register(["tslib", "../../aurelia", "aurelia-materialize-bridge"], functi
             },
             function (au_1) {
                 au = au_1;
-            },
-            function (aurelia_materialize_bridge_1_1) {
-                aurelia_materialize_bridge_1 = aurelia_materialize_bridge_1_1;
             }
         ],
         execute: function () {
@@ -20,43 +17,15 @@ System.register(["tslib", "../../aurelia", "aurelia-materialize-bridge"], functi
                     var _this = this;
                     this.element = element;
                     this.taskQueue = taskQueue;
+                    this.validateResults = [];
                     this.mdUnrenderValidateResults = function (results, renderer) {
-                        var e_1, _a;
-                        try {
-                            for (var results_1 = tslib_1.__values(results), results_1_1 = results_1.next(); !results_1_1.done; results_1_1 = results_1.next()) {
-                                var result = results_1_1.value;
-                                if (!result.valid) {
-                                    renderer.removeMessage(_this.validationContainer, result);
-                                }
-                            }
-                        }
-                        catch (e_1_1) { e_1 = { error: e_1_1 }; }
-                        finally {
-                            try {
-                                if (results_1_1 && !results_1_1.done && (_a = results_1.return)) _a.call(results_1);
-                            }
-                            finally { if (e_1) throw e_1.error; }
-                        }
-                        renderer.removeValidationClasses(_this.input);
+                        _this.validateResults = _this.validateResults.filter(function (x) { return !results.find(function (y) { return y.id === x.id; }); });
+                        _this.validationClass = undefined;
                     };
                     this.mdRenderValidateResults = function (results, renderer) {
-                        var e_2, _a;
-                        try {
-                            for (var results_2 = tslib_1.__values(results), results_2_1 = results_2.next(); !results_2_1.done; results_2_1 = results_2.next()) {
-                                var result = results_2_1.value;
-                                if (!result.valid) {
-                                    renderer.addMessage(_this.validationContainer, result);
-                                }
-                            }
-                        }
-                        catch (e_2_1) { e_2 = { error: e_2_1 }; }
-                        finally {
-                            try {
-                                if (results_2_1 && !results_2_1.done && (_a = results_2.return)) _a.call(results_2);
-                            }
-                            finally { if (e_2) throw e_2.error; }
-                        }
-                        renderer.addValidationClasses(_this.input, !results.find(function (x) { return !x.valid; }));
+                        var _a;
+                        (_a = _this.validateResults).push.apply(_a, tslib_1.__spread(results.filter(function (x) { return !x.valid; })));
+                        _this.validationClass = results.find(function (x) { return !x.valid; }) ? "invalid" : "valid";
                     };
                     this.controlId = "datepicker-" + Datepicker_1.id++;
                 }
@@ -87,7 +56,6 @@ System.register(["tslib", "../../aurelia", "aurelia-materialize-bridge"], functi
                     this.labelElement.classList.add(this.value ? "active" : "inactive");
                 };
                 Datepicker.prototype.detached = function () {
-                    aurelia_materialize_bridge_1.MaterializeFormValidationRenderer.removeValidation(this.validationContainer, this.input);
                     this.element.mdRenderValidateResults = null;
                     this.element.mdUnrenderValidateResults = null;
                 };

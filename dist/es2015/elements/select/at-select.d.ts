@@ -10,7 +10,8 @@ export declare class AtSelect {
     readonly: boolean;
     allowEmpty: boolean;
     input: HTMLDivElement;
-    validationContainer: HTMLElement;
+    validateResults: ValidateResult[];
+    validationClass: string;
     select(o: any): void;
     attached(): void;
     detached(): void;

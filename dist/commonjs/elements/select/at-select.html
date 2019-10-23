@@ -1,8 +1,8 @@
 ﻿<template>
 	<require from="./at-select.scss"></require>
 
-	<div class="input-field" ref="validationContainer">
-		<div class="select-wrapper" ref="input">
+	<div class="input-field">
+		<div class="select-wrapper" ref="input" class="${validationClass}">
 			<div class="dropdown" if.bind="readonly">
 				<div class="selector-caption">
 					<template replaceable part="value-template">
@@ -33,5 +33,6 @@
 			</template>
 		</div>
 		<label if.bind="label">${label}</label>
+		<span repeat.for="r of validateResults" class="helper-text" data-error.bind="r.message"></span>
 	</div>
 </template>

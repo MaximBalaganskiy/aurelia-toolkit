@@ -1,48 +1,19 @@
 import * as tslib_1 from "tslib";
 import * as au from "../../aurelia";
-import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge";
 var AtSelect = /** @class */ (function () {
     function AtSelect(element) {
         var _this = this;
         this.element = element;
         this.options = [];
+        this.validateResults = [];
         this.mdUnrenderValidateResults = function (results, renderer) {
-            var e_1, _a;
-            try {
-                for (var results_1 = tslib_1.__values(results), results_1_1 = results_1.next(); !results_1_1.done; results_1_1 = results_1.next()) {
-                    var result = results_1_1.value;
-                    if (!result.valid) {
-                        renderer.removeMessage(_this.validationContainer, result);
-                    }
-                }
-            }
-            catch (e_1_1) { e_1 = { error: e_1_1 }; }
-            finally {
-                try {
-                    if (results_1_1 && !results_1_1.done && (_a = results_1.return)) _a.call(results_1);
-                }
-                finally { if (e_1) throw e_1.error; }
-            }
-            renderer.removeValidationClasses(_this.input);
+            _this.validateResults = _this.validateResults.filter(function (x) { return !results.find(function (y) { return y.id === x.id; }); });
+            _this.validationClass = undefined;
         };
         this.mdRenderValidateResults = function (results, renderer) {
-            var e_2, _a;
-            try {
-                for (var results_2 = tslib_1.__values(results), results_2_1 = results_2.next(); !results_2_1.done; results_2_1 = results_2.next()) {
-                    var result = results_2_1.value;
-                    if (!result.valid) {
-                        renderer.addMessage(_this.validationContainer, result);
-                    }
-                }
-            }
-            catch (e_2_1) { e_2 = { error: e_2_1 }; }
-            finally {
-                try {
-                    if (results_2_1 && !results_2_1.done && (_a = results_2.return)) _a.call(results_2);
-                }
-                finally { if (e_2) throw e_2.error; }
-            }
-            renderer.addValidationClasses(_this.input, !results.find(function (x) { return !x.valid; }));
+            var _a;
+            (_a = _this.validateResults).push.apply(_a, tslib_1.__spread(results.filter(function (x) { return !x.valid; })));
+            _this.validationClass = results.find(function (x) { return !x.valid; }) ? "invalid" : "valid";
         };
     }
     AtSelect.prototype.select = function (o) {
@@ -55,7 +26,6 @@ var AtSelect = /** @class */ (function () {
         this.element.mdUnrenderValidateResults = this.mdUnrenderValidateResults;
     };
     AtSelect.prototype.detached = function () {
-        MaterializeFormValidationRenderer.removeValidation(this.validationContainer, this.input);
         this.element.mdRenderValidateResults = null;
         this.element.mdUnrenderValidateResults = null;
     };
