@@ -6,6 +6,7 @@
 			inputmask="mask:datetime; options.bind: { inputFormat: 'dd/mm/yyyy' }; is-value-masked: true; value.bind: value | date: 'DD/MM/YYYY'" />
 		<label for="${controlId}" ref="labelElement">${label}</label>
 		<i ref="icon" class="material-icons opener" click.delegate="open()">today</i>
+		<span repeat.for="r of validateResults" class="helper-text" data-error.bind="r.message"></span>
 	</div>
 	<md-datepicker view-model.ref="mdDatepicker" container="body" year-range.bind="yearRange" type="date" hidden disabled 
 		readonly tabindex="-1" value.bind="value" change.delegate="suppressMaterializeChange($event)"
