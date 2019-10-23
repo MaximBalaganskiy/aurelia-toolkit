@@ -25,7 +25,8 @@ export class AtSelect {
 	allowEmpty: boolean;
 
 	input: HTMLDivElement;
-	validationContainer: HTMLElement;
+	validateResults: ValidateResult[] = [];
+	validationClass: string;
 
 	select(o) {
 		if (o || this.allowEmpty) {
@@ -39,26 +40,17 @@ export class AtSelect {
 	}
 
 	detached() {
-		MaterializeFormValidationRenderer.removeValidation(this.validationContainer, this.input as any);
 		this.element.mdRenderValidateResults = null;
 		this.element.mdUnrenderValidateResults = null;
 	}
 
 	mdUnrenderValidateResults = (results: ValidateResult[], renderer: MaterializeFormValidationRenderer) => {
-		for (let result of results) {
-			if (!result.valid) {
-				renderer.removeMessage(this.validationContainer, result);
-			}
-		}
-		renderer.removeValidationClasses(this.input);
+		this.validateResults = this.validateResults.filter(x => !results.find(y => y.id === x.id));
+		this.validationClass = undefined;
 	}
 
 	mdRenderValidateResults = (results: ValidateResult[], renderer: MaterializeFormValidationRenderer) => {
-		for (let result of results) {
-			if (!result.valid) {
-				renderer.addMessage(this.validationContainer, result);
-			}
-		}
-		renderer.addValidationClasses(this.input, !results.find(x => !x.valid));
+		this.validateResults.push(...results.filter(x => !x.valid));
+		this.validationClass = results.find(x => !x.valid) ? "invalid" : "valid";
 	}
 }

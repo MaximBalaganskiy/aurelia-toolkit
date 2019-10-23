@@ -54,8 +54,9 @@ export class Datepicker {
 	icon: HTMLElement;
 	pickerInput: HTMLInputElement;
 	mdDatepicker: MdDatePicker;
-	validationContainer: HTMLElement;
 	input: HTMLInputElement;
+	validateResults: ValidateResult[] = [];
+	validationClass: string;
 
 	bind() {
 		//
@@ -68,7 +69,6 @@ export class Datepicker {
 	}
 
 	detached() {
-		MaterializeFormValidationRenderer.removeValidation(this.validationContainer, this.input);
 		this.element.mdRenderValidateResults = null;
 		this.element.mdUnrenderValidateResults = null;
 	}
@@ -81,21 +81,13 @@ export class Datepicker {
 	}
 
 	mdUnrenderValidateResults = (results: ValidateResult[], renderer: MaterializeFormValidationRenderer) => {
-		for (let result of results) {
-			if (!result.valid) {
-				renderer.removeMessage(this.validationContainer, result);
-			}
-		}
-		renderer.removeValidationClasses(this.input);
+		this.validateResults = this.validateResults.filter(x => !results.find(y => y.id === x.id));
+		this.validationClass = undefined;
 	}
 
 	mdRenderValidateResults = (results: ValidateResult[], renderer: MaterializeFormValidationRenderer) => {
-		for (let result of results) {
-			if (!result.valid) {
-				renderer.addMessage(this.validationContainer, result);
-			}
-		}
-		renderer.addValidationClasses(this.input, !results.find(x => !x.valid));
+		this.validateResults.push(...results.filter(x => !x.valid));
+		this.validationClass = results.find(x => !x.valid) ? "invalid" : "valid";
 	}
 
 	blur() {
