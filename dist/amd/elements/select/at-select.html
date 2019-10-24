@@ -2,7 +2,7 @@
 	<require from="./at-select.scss"></require>
 
 	<div class="input-field">
-		<div class="select-wrapper" ref="input" class="${validationClass}">
+		<div class="select-wrapper ${validationClass}" ref="input">
 			<div class="dropdown" if.bind="readonly">
 				<div class="selector-caption">
 					<template replaceable part="value-template">
