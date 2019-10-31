@@ -4,6 +4,7 @@ export interface IAlertModalOptions {
 	icon: string;
 	iconColour: string;
 	message: string;
+	allowHtml?: boolean;
 	button1Text: string;
 	button2Text: string;
 

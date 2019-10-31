@@ -18,7 +18,7 @@ export class AlertService {
 	logger: au.Logger;
 	i18nResource: I18NResource["alert"];
 
-	private showModal(message: string, icon: string, iconColour: string, button1Text: string, button2Text: string): Promise<boolean> {
+	private showModal(message: string, icon: string, iconColour: string, button1Text: string, button2Text: string, allowHtml: boolean): Promise<boolean> {
 		let html = document.createElement("alert-modal");
 		let view = this.templatingEngine.enhance(html);
 		view.bind({});
@@ -29,6 +29,7 @@ export class AlertService {
 			icon,
 			iconColour,
 			message,
+			allowHtml,
 			button1Text,
 			button2Text,
 			button1Click: () => resolve(true),
@@ -41,21 +42,21 @@ export class AlertService {
 		});
 	}
 
-	alert(message: string, icon: string = "info", iconColour: string = "blue"): Promise<boolean> {
-		return this.showModal(message, icon, iconColour, this.i18nResource.ok, undefined);
+	alert(message: string, icon: string = "info", iconColour: string = "blue", allowHtml = false): Promise<boolean> {
+		return this.showModal(message, icon, iconColour, this.i18nResource.ok, undefined, allowHtml);
 	}
 
-	confirm(message: string, icon: string = "help", iconColour: string = "blue"): Promise<boolean> {
-		return this.showModal(message, icon, iconColour, this.i18nResource.yes, this.i18nResource.no);
+	confirm(message: string, icon: string = "help", iconColour: string = "blue", allowHtml = false): Promise<boolean> {
+		return this.showModal(message, icon, iconColour, this.i18nResource.yes, this.i18nResource.no, allowHtml);
 	}
 
-	error(message: string): Promise<boolean> {
-		return this.alert(message, "error", "red");
+	error(message: string, allowHtml = false): Promise<boolean> {
+		return this.alert(message, "error", "red", allowHtml);
 	}
 
-	criticalError(message: string, error: any): Promise<boolean> {
+	criticalError(message: string, error: any, allowHtml = false): Promise<boolean> {
 		this.appInsights.trackException(error);
-		return this.alert(message, "error", "red");
+		return this.alert(message, "error", "red", allowHtml);
 	}
 
 	confirmToast(message: string, timeout?: number) {
