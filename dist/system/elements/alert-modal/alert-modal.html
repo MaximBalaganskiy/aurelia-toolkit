@@ -2,7 +2,8 @@
 	<div ref="modal" md-modal="dismissible: false;" md-modal.ref="mdModal">
 		<div class="modal-content">
 			<message icon.bind="options.icon" colour.bind="options.iconColour" card.bind="false">
-				${options.message}
+				<span if.bind="options.allowHtml" innerhtml.bind="options.message"></span>
+				<spam else>${options.message}</spam>
 			</message>
 		</div>
 		<div class="modal-footer">

@@ -15,10 +15,10 @@ export declare class AlertService {
     logger: au.Logger;
     i18nResource: I18NResource["alert"];
     private showModal;
-    alert(message: string, icon?: string, iconColour?: string): Promise<boolean>;
-    confirm(message: string, icon?: string, iconColour?: string): Promise<boolean>;
-    error(message: string): Promise<boolean>;
-    criticalError(message: string, error: any): Promise<boolean>;
+    alert(message: string, icon?: string, iconColour?: string, allowHtml?: boolean): Promise<boolean>;
+    confirm(message: string, icon?: string, iconColour?: string, allowHtml?: boolean): Promise<boolean>;
+    error(message: string, allowHtml?: boolean): Promise<boolean>;
+    criticalError(message: string, error: any, allowHtml?: boolean): Promise<boolean>;
     confirmToast(message: string, timeout?: number): void;
     errorToast(message: string, timeout?: number): void;
     warningToast(message: string, timeout?: number): void;

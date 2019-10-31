@@ -55,7 +55,7 @@ System.register(["tslib", "../aurelia", "./progress-handle", "@microsoft/applica
                     this.logger = au.getLogger("AlertService");
                     this.i18nResource = this.i18n.tr("aurelia-toolkit:alert", { returnObjects: true });
                 }
-                AlertService.prototype.showModal = function (message, icon, iconColour, button1Text, button2Text) {
+                AlertService.prototype.showModal = function (message, icon, iconColour, button1Text, button2Text, allowHtml) {
                     var html = document.createElement("alert-modal");
                     var view = this.templatingEngine.enhance(html);
                     view.bind({});
@@ -66,6 +66,7 @@ System.register(["tslib", "../aurelia", "./progress-handle", "@microsoft/applica
                         icon: icon,
                         iconColour: iconColour,
                         message: message,
+                        allowHtml: allowHtml,
                         button1Text: button1Text,
                         button2Text: button2Text,
                         button1Click: function () { return resolve(true); },
@@ -77,22 +78,26 @@ System.register(["tslib", "../aurelia", "./progress-handle", "@microsoft/applica
                         return x;
                     });
                 };
-                AlertService.prototype.alert = function (message, icon, iconColour) {
+                AlertService.prototype.alert = function (message, icon, iconColour, allowHtml) {
                     if (icon === void 0) { icon = "info"; }
                     if (iconColour === void 0) { iconColour = "blue"; }
-                    return this.showModal(message, icon, iconColour, this.i18nResource.ok, undefined);
+                    if (allowHtml === void 0) { allowHtml = false; }
+                    return this.showModal(message, icon, iconColour, this.i18nResource.ok, undefined, allowHtml);
                 };
-                AlertService.prototype.confirm = function (message, icon, iconColour) {
+                AlertService.prototype.confirm = function (message, icon, iconColour, allowHtml) {
                     if (icon === void 0) { icon = "help"; }
                     if (iconColour === void 0) { iconColour = "blue"; }
-                    return this.showModal(message, icon, iconColour, this.i18nResource.yes, this.i18nResource.no);
+                    if (allowHtml === void 0) { allowHtml = false; }
+                    return this.showModal(message, icon, iconColour, this.i18nResource.yes, this.i18nResource.no, allowHtml);
                 };
-                AlertService.prototype.error = function (message) {
-                    return this.alert(message, "error", "red");
+                AlertService.prototype.error = function (message, allowHtml) {
+                    if (allowHtml === void 0) { allowHtml = false; }
+                    return this.alert(message, "error", "red", allowHtml);
                 };
-                AlertService.prototype.criticalError = function (message, error) {
+                AlertService.prototype.criticalError = function (message, error, allowHtml) {
+                    if (allowHtml === void 0) { allowHtml = false; }
                     this.appInsights.trackException(error);
-                    return this.alert(message, "error", "red");
+                    return this.alert(message, "error", "red", allowHtml);
                 };
                 AlertService.prototype.confirmToast = function (message, timeout) {
                     this.toast.show(message, timeout || this.defaultTimeout);
