@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.21.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.4...v2.21.0) (2019-10-31)
+
+
+### Features
+
+* **alert-service:** allow html in dialogs ([949ee88](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/949ee88))
+
 ### [2.20.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.3...v2.20.4) (2019-10-23)
 
 
