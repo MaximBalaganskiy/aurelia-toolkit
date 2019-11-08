@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.21.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.0...v2.21.1) (2019-11-08)
+
+
+### Bug Fixes
+
+* **alert-service:** do not track with uninitialised app insights ([28660c9](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/28660c9))
+
 ## [2.21.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.20.4...v2.21.0) (2019-10-31)
 
 
