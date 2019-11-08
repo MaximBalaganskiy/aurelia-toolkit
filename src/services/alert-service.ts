@@ -55,7 +55,9 @@ export class AlertService {
 	}
 
 	criticalError(message: string, error: any, allowHtml = false): Promise<boolean> {
-		this.appInsights.trackException(error);
+		if (this.appInsights.config.instrumentationKey) {
+			this.appInsights.trackException(error);
+		}
 		return this.alert(message, "error", "red", allowHtml);
 	}
 
