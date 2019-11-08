@@ -57,7 +57,9 @@ var AlertService = /** @class */ (function () {
     };
     AlertService.prototype.criticalError = function (message, error, allowHtml) {
         if (allowHtml === void 0) { allowHtml = false; }
-        this.appInsights.trackException(error);
+        if (this.appInsights.config.instrumentationKey) {
+            this.appInsights.trackException(error);
+        }
         return this.alert(message, "error", "red", allowHtml);
     };
     AlertService.prototype.confirmToast = function (message, timeout) {
