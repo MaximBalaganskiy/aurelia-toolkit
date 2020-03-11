@@ -1,0 +1,22 @@
+html {
+	height: 100%;
+
+	body {
+		height: 100%;
+
+		div[aurelia-app] {
+			display: flex !important;
+			flex-direction: column !important;
+			height: 100%;
+			min-height: 100vh !important;
+
+			main {
+				flex: 1 0 auto !important;
+			}
+
+			footer.page-footer {
+				padding-top: 0px;
+			}
+		}
+	}
+}

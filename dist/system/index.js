@@ -17,6 +17,8 @@ System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/au
             aurelia_1.PLATFORM.moduleName("./elements/select/at-select"),
             aurelia_1.PLATFORM.moduleName("./elements/variant-editor/variant-editor"),
             aurelia_1.PLATFORM.moduleName("./elements/variant-viewer/variant-viewer"),
+            aurelia_1.PLATFORM.moduleName("./elements/md-tweaks/md-tweaks"),
+            aurelia_1.PLATFORM.moduleName("./elements/sticky-footer/sticky-footer"),
             aurelia_1.PLATFORM.moduleName("./elements/filter/filter"),
             aurelia_1.PLATFORM.moduleName("./elements/filter/text-filter-line"),
             aurelia_1.PLATFORM.moduleName("./elements/filter/lookup-filter-line"),

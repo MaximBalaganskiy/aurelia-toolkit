@@ -1,0 +1,74 @@
+// this fixes the issue with "jumping" scroll when a date picker is clicked
+.picker {
+	position: fixed !important;
+}
+
+// transition to make background changes on hover smooth
+.collection {
+	.collection-item {
+		transition: background-color .25s ease;
+	}
+}
+
+// make hover background not that bright
+md-collection-item.collection-item:not(.active):hover {
+	background-color: #f2f2f2;
+}
+
+.row {
+	.col {
+		&.m0 {
+			@media(min-width: 601px) {
+				width: auto !important;
+			}
+		}
+	}
+}
+
+// make scrollbar always visible to prevent jerking when menu or datepicker is open
+body {
+	overflow-y: visible !important;
+}
+
+// fix for Materialize select not having enought height due to collapsed input margin
+div.input-field.md-select {
+	display: inline-block;
+	width: 100%;
+}
+
+// move radio button text closer to the circle
+[type=radio]:not(:checked)+span,
+[type=radio]:checked+span {
+	padding-left: 25px;
+	padding-right: 15px;
+}
+
+// align checkbox with other input fields
+.input-field {
+	md-checkbox {
+		display: block;
+		height: 47px;
+		margin-top: 20px;
+	}
+}
+
+// display drop downs for month and year selectors
+.datepicker-controls {
+	.select-wrapper {
+		&.select-month {
+			input {
+				width: 120px !important;
+			}
+		}
+
+		&.select-year {
+			input {
+				width: 80px !important;
+			}
+		}
+
+		.caret {
+			display: block !important;
+		}
+	}
+}
