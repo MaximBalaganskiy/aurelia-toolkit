@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.21.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.1...v2.21.2) (2020-03-11)
+
 ### [2.21.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.0...v2.21.1) (2019-11-08)
 
 
