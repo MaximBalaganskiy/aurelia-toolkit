@@ -26,6 +26,7 @@ export function configure(frameworkConfiguration: au.FrameworkConfiguration) {
 		PLATFORM.moduleName("./elements/variant-editor/variant-editor"),
 		PLATFORM.moduleName("./elements/variant-viewer/variant-viewer"),
 		PLATFORM.moduleName("./elements/md-tweaks/md-tweaks"),
+		PLATFORM.moduleName("./elements/sticky-footer/sticky-footer"),
 
 		PLATFORM.moduleName("./elements/filter/filter"),
 		PLATFORM.moduleName("./elements/filter/text-filter-line"),
