@@ -1,6 +1,7 @@
 import * as tslib_1 from "tslib";
 import * as au from "../../aurelia";
-import * as _ from "lodash";
+import orderBy from "lodash/orderBy";
+import groupBy from "lodash/groupBy";
 var AppNavBar = /** @class */ (function () {
     function AppNavBar(taskQueue) {
         this.taskQueue = taskQueue;
@@ -8,7 +9,7 @@ var AppNavBar = /** @class */ (function () {
     AppNavBar.prototype.navModelsChanged = function () {
         var _a;
         var _this = this;
-        var groupedModels = _.groupBy(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
+        var groupedModels = groupBy(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
         this.menuItems = [];
         if (groupedModels["root"]) {
             (_a = this.menuItems).push.apply(_a, tslib_1.__spread(groupedModels["root"].map(function (x) { return _this.createMenuItem(x); })));
@@ -18,11 +19,11 @@ var AppNavBar = /** @class */ (function () {
                 this.menuItems.push({
                     title: menu,
                     order: groupedModels[menu][0].configEx.menu.order,
-                    menuItems: _.orderBy(groupedModels[menu].map(function (x) { return _this.createMenuItem(x); }), function (x) { return x.order; })
+                    menuItems: orderBy(groupedModels[menu].map(function (x) { return _this.createMenuItem(x); }), function (x) { return x.order; })
                 });
             }
         }
-        this.menuItems = _.orderBy(this.menuItems, function (x) { return x.order; });
+        this.menuItems = orderBy(this.menuItems, function (x) { return x.order; });
     };
     AppNavBar.prototype.highlightMenuButton = function () {
         this.tapTarget.open();

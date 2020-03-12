@@ -1,6 +1,6 @@
-System.register(["tslib", "../../aurelia", "lodash"], function (exports_1, context_1) {
+System.register(["tslib", "../../aurelia", "lodash/orderBy", "lodash/groupBy"], function (exports_1, context_1) {
     "use strict";
-    var tslib_1, au, _, AppNavBar;
+    var tslib_1, au, orderBy_1, groupBy_1, AppNavBar;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -10,8 +10,11 @@ System.register(["tslib", "../../aurelia", "lodash"], function (exports_1, conte
             function (au_1) {
                 au = au_1;
             },
-            function (_1) {
-                _ = _1;
+            function (orderBy_1_1) {
+                orderBy_1 = orderBy_1_1;
+            },
+            function (groupBy_1_1) {
+                groupBy_1 = groupBy_1_1;
             }
         ],
         execute: function () {
@@ -22,7 +25,7 @@ System.register(["tslib", "../../aurelia", "lodash"], function (exports_1, conte
                 AppNavBar.prototype.navModelsChanged = function () {
                     var _a;
                     var _this = this;
-                    var groupedModels = _.groupBy(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
+                    var groupedModels = groupBy_1.default(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
                     this.menuItems = [];
                     if (groupedModels["root"]) {
                         (_a = this.menuItems).push.apply(_a, tslib_1.__spread(groupedModels["root"].map(function (x) { return _this.createMenuItem(x); })));
@@ -32,11 +35,11 @@ System.register(["tslib", "../../aurelia", "lodash"], function (exports_1, conte
                             this.menuItems.push({
                                 title: menu,
                                 order: groupedModels[menu][0].configEx.menu.order,
-                                menuItems: _.orderBy(groupedModels[menu].map(function (x) { return _this.createMenuItem(x); }), function (x) { return x.order; })
+                                menuItems: orderBy_1.default(groupedModels[menu].map(function (x) { return _this.createMenuItem(x); }), function (x) { return x.order; })
                             });
                         }
                     }
-                    this.menuItems = _.orderBy(this.menuItems, function (x) { return x.order; });
+                    this.menuItems = orderBy_1.default(this.menuItems, function (x) { return x.order; });
                 };
                 AppNavBar.prototype.highlightMenuButton = function () {
                     this.tapTarget.open();

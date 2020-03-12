@@ -1,4 +1,4 @@
-define(["require", "exports", "tslib", "../../aurelia", "lodash"], function (require, exports, tslib_1, au, _) {
+define(["require", "exports", "tslib", "../../aurelia", "lodash/orderBy", "lodash/groupBy"], function (require, exports, tslib_1, au, orderBy_1, groupBy_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var AppNavBar = /** @class */ (function () {
@@ -8,7 +8,7 @@ define(["require", "exports", "tslib", "../../aurelia", "lodash"], function (req
         AppNavBar.prototype.navModelsChanged = function () {
             var _a;
             var _this = this;
-            var groupedModels = _.groupBy(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
+            var groupedModels = groupBy_1.default(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
             this.menuItems = [];
             if (groupedModels["root"]) {
                 (_a = this.menuItems).push.apply(_a, tslib_1.__spread(groupedModels["root"].map(function (x) { return _this.createMenuItem(x); })));
@@ -18,11 +18,11 @@ define(["require", "exports", "tslib", "../../aurelia", "lodash"], function (req
                     this.menuItems.push({
                         title: menu,
                         order: groupedModels[menu][0].configEx.menu.order,
-                        menuItems: _.orderBy(groupedModels[menu].map(function (x) { return _this.createMenuItem(x); }), function (x) { return x.order; })
+                        menuItems: orderBy_1.default(groupedModels[menu].map(function (x) { return _this.createMenuItem(x); }), function (x) { return x.order; })
                     });
                 }
             }
-            this.menuItems = _.orderBy(this.menuItems, function (x) { return x.order; });
+            this.menuItems = orderBy_1.default(this.menuItems, function (x) { return x.order; });
         };
         AppNavBar.prototype.highlightMenuButton = function () {
             this.tapTarget.open();

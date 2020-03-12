@@ -1,6 +1,6 @@
+/// <reference types="lodash" />
 import * as au from "../../aurelia";
 import { IMenuItem } from "./i-menu-item";
-import * as _ from "lodash";
 export declare class AppNavBar {
     private taskQueue;
     constructor(taskQueue: au.TaskQueue);
