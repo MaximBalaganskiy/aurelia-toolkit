@@ -23,7 +23,8 @@
 		"strict": true,
 		"skipLibCheck": true,
 		"downlevelIteration": true,
-		"sourceMap": true
+		"sourceMap": true,
+		"allowSyntheticDefaultImports": true
 	},
 	"include": [
 		"src/**/*"

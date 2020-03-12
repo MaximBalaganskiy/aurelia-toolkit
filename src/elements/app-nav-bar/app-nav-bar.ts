@@ -1,6 +1,7 @@
 ﻿import * as au from "../../aurelia";
 import { IMenuItem } from "./i-menu-item";
-import * as _ from "lodash";
+import orderBy from "lodash/orderBy";
+import groupBy from "lodash/groupBy";
 
 @au.autoinject
 export class AppNavBar {
@@ -9,7 +10,7 @@ export class AppNavBar {
 	@au.bindable
 	navModels: _.List<au.NavModel>;
 	navModelsChanged() {
-		let groupedModels = _.groupBy(this.navModels, x => x.config.menu ? x.config.menu.title : "root");
+		let groupedModels = groupBy(this.navModels, x => x.config.menu ? x.config.menu.title : "root");
 		this.menuItems = [];
 		if (groupedModels["root"]) {
 			this.menuItems.push(...groupedModels["root"].map(x => this.createMenuItem(x)));
@@ -19,11 +20,11 @@ export class AppNavBar {
 				this.menuItems.push({
 					title: menu,
 					order: groupedModels[menu][0].configEx.menu.order,
-					menuItems: _.orderBy(groupedModels[menu].map(x => this.createMenuItem(x)), x => x.order)
+					menuItems: orderBy(groupedModels[menu].map(x => this.createMenuItem(x)), x => x.order)
 				});
 			}
 		}
-		this.menuItems = _.orderBy(this.menuItems, x => x.order);
+		this.menuItems = orderBy(this.menuItems, x => x.order);
 	}
 
 	menuItems: IMenuItem[];
