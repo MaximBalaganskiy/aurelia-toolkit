@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.21.5](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.4...v2.21.5) (2020-03-24)
+
+
+### Bug Fixes
+
+* **sticky-footer:** remove element ([1dffc27](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/1dffc27))
+
 ### [2.21.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.3...v2.21.4) (2020-03-23)
 
 
