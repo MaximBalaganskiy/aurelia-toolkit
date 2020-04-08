@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.22.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.5...v2.22.0) (2020-04-08)
+
+
+### Features
+
+* **exception-service:** add http configurator ([7aa4b51](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/7aa4b51))
+
 ### [2.21.5](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.21.4...v2.21.5) (2020-03-24)
 
 
