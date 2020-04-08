@@ -13,7 +13,7 @@ System.register(["numeral"], function (exports_1, context_1) {
                 function NumberValueConverter() {
                 }
                 NumberValueConverter.prototype.toView = function (value) {
-                    if (!value) {
+                    if (value === undefined || value === null || value === "") {
                         return undefined;
                     }
                     else {

@@ -5,7 +5,7 @@ var NumberValueConverter = /** @class */ (function () {
     function NumberValueConverter() {
     }
     NumberValueConverter.prototype.toView = function (value) {
-        if (!value) {
+        if (value === undefined || value === null || value === "") {
             return undefined;
         }
         else {

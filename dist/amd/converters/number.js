@@ -5,7 +5,7 @@ define(["require", "exports", "numeral"], function (require, exports, numeral) {
         function NumberValueConverter() {
         }
         NumberValueConverter.prototype.toView = function (value) {
-            if (!value) {
+            if (value === undefined || value === null || value === "") {
                 return undefined;
             }
             else {
