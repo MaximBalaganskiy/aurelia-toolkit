@@ -4,6 +4,8 @@ var tslib_1 = require("tslib");
 var exception_1 = require("../exceptions/exception");
 var unauthorized_1 = require("../exceptions/unauthorized");
 var forbidden_1 = require("../exceptions/forbidden");
+var aurelia_fetch_client_1 = require("aurelia-fetch-client");
+var aurelia_framework_1 = require("aurelia-framework");
 var ExceptionService = /** @class */ (function () {
     function ExceptionService(http) {
         this.http = http;
@@ -45,6 +47,10 @@ var ExceptionService = /** @class */ (function () {
             c.withInterceptor({ response: function (r) { return _this.assertResponse(r); } });
         });
     };
+    ExceptionService = tslib_1.__decorate([
+        aurelia_framework_1.autoinject,
+        tslib_1.__metadata("design:paramtypes", [aurelia_fetch_client_1.HttpClient])
+    ], ExceptionService);
     return ExceptionService;
 }());
 exports.ExceptionService = ExceptionService;

@@ -1,6 +1,6 @@
-System.register(["tslib", "../exceptions/exception", "../exceptions/unauthorized", "../exceptions/forbidden"], function (exports_1, context_1) {
+System.register(["tslib", "../exceptions/exception", "../exceptions/unauthorized", "../exceptions/forbidden", "aurelia-fetch-client", "aurelia-framework"], function (exports_1, context_1) {
     "use strict";
-    var tslib_1, exception_1, unauthorized_1, forbidden_1, ExceptionService;
+    var tslib_1, exception_1, unauthorized_1, forbidden_1, aurelia_fetch_client_1, aurelia_framework_1, ExceptionService;
     var __moduleName = context_1 && context_1.id;
     return {
         setters: [
@@ -15,6 +15,12 @@ System.register(["tslib", "../exceptions/exception", "../exceptions/unauthorized
             },
             function (forbidden_1_1) {
                 forbidden_1 = forbidden_1_1;
+            },
+            function (aurelia_fetch_client_1_1) {
+                aurelia_fetch_client_1 = aurelia_fetch_client_1_1;
+            },
+            function (aurelia_framework_1_1) {
+                aurelia_framework_1 = aurelia_framework_1_1;
             }
         ],
         execute: function () {
@@ -59,6 +65,10 @@ System.register(["tslib", "../exceptions/exception", "../exceptions/unauthorized
                         c.withInterceptor({ response: function (r) { return _this.assertResponse(r); } });
                     });
                 };
+                ExceptionService = tslib_1.__decorate([
+                    aurelia_framework_1.autoinject,
+                    tslib_1.__metadata("design:paramtypes", [aurelia_fetch_client_1.HttpClient])
+                ], ExceptionService);
                 return ExceptionService;
             }());
             exports_1("ExceptionService", ExceptionService);

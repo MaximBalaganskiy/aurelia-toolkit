@@ -1,4 +1,4 @@
-define(["require", "exports", "tslib", "../exceptions/exception", "../exceptions/unauthorized", "../exceptions/forbidden"], function (require, exports, tslib_1, exception_1, unauthorized_1, forbidden_1) {
+define(["require", "exports", "tslib", "../exceptions/exception", "../exceptions/unauthorized", "../exceptions/forbidden", "aurelia-fetch-client", "aurelia-framework"], function (require, exports, tslib_1, exception_1, unauthorized_1, forbidden_1, aurelia_fetch_client_1, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var ExceptionService = /** @class */ (function () {
@@ -42,6 +42,10 @@ define(["require", "exports", "tslib", "../exceptions/exception", "../exceptions
                 c.withInterceptor({ response: function (r) { return _this.assertResponse(r); } });
             });
         };
+        ExceptionService = tslib_1.__decorate([
+            aurelia_framework_1.autoinject,
+            tslib_1.__metadata("design:paramtypes", [aurelia_fetch_client_1.HttpClient])
+        ], ExceptionService);
         return ExceptionService;
     }());
     exports.ExceptionService = ExceptionService;

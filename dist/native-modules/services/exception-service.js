@@ -2,6 +2,8 @@ import * as tslib_1 from "tslib";
 import { Exception } from "../exceptions/exception";
 import { UnauthorizedException } from "../exceptions/unauthorized";
 import { ForbiddenException } from "../exceptions/forbidden";
+import { HttpClient } from "aurelia-fetch-client";
+import { autoinject } from "aurelia-framework";
 var ExceptionService = /** @class */ (function () {
     function ExceptionService(http) {
         this.http = http;
@@ -43,6 +45,10 @@ var ExceptionService = /** @class */ (function () {
             c.withInterceptor({ response: function (r) { return _this.assertResponse(r); } });
         });
     };
+    ExceptionService = tslib_1.__decorate([
+        autoinject,
+        tslib_1.__metadata("design:paramtypes", [HttpClient])
+    ], ExceptionService);
     return ExceptionService;
 }());
 export { ExceptionService };
