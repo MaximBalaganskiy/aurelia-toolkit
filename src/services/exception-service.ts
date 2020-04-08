@@ -3,7 +3,9 @@ import { IApiException } from "../interfaces/i-api-exception";
 import { UnauthorizedException } from "../exceptions/unauthorized";
 import { ForbiddenException } from "../exceptions/forbidden";
 import { HttpClient } from "aurelia-fetch-client";
+import { autoinject } from "aurelia-framework";
 
+@autoinject
 export class ExceptionService {
 	constructor(private http: HttpClient) { }
 
