@@ -2,7 +2,7 @@
 
 export class NumberValueConverter {
 	toView(value: string | number): string | undefined {
-		if (!value) {
+		if (value === undefined || value === null || value === "") {
 			return undefined;
 		}
 		else {
