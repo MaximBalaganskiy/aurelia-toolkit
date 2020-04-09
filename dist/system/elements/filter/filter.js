@@ -95,7 +95,7 @@ System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
                 var Filter_1;
                 Filter.id = 1;
                 tslib_1.__decorate([
-                    au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line"),
+                    au.children(".filter-line"),
                     tslib_1.__metadata("design:type", Array)
                 ], Filter.prototype, "availableFilterLines", void 0);
                 tslib_1.__decorate([
