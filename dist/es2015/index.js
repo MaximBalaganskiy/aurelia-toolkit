@@ -108,6 +108,7 @@ export { UnauthorizedException } from "./exceptions/unauthorized";
 export { ValidationControllerFactory } from "./validation/validation-controller-factory";
 export { Filter } from "./elements/filter/filter";
 export { FilterOperator } from "./elements/filter/filter-operator";
+export { FilterLineBase } from "./elements/filter/filter-line-base";
 export { AppNavBar } from "./elements/app-nav-bar/app-nav-bar";
 PLATFORM.moduleName("./elements/variant-editor/variant-editor.boolean.html");
 PLATFORM.moduleName("./elements/variant-editor/variant-editor.date.html");

@@ -28,6 +28,7 @@ export { IFileRow } from "./elements/files/i-file-row";
 export { IFilterLine } from "./elements/filter/i-filter-line";
 export { Filter } from "./elements/filter/filter";
 export { FilterOperator } from "./elements/filter/filter-operator";
+export { FilterLineBase } from "./elements/filter/filter-line-base";
 export { AppNavBar } from "./elements/app-nav-bar/app-nav-bar";
 export { SettingsEditor } from "./elements/settings-editor/settings-editor";
 export { SettingVM } from "./elements/settings-editor/setting-vm";

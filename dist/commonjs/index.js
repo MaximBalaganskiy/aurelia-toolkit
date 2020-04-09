@@ -129,6 +129,8 @@ var filter_1 = require("./elements/filter/filter");
 exports.Filter = filter_1.Filter;
 var filter_operator_1 = require("./elements/filter/filter-operator");
 exports.FilterOperator = filter_operator_1.FilterOperator;
+var filter_line_base_1 = require("./elements/filter/filter-line-base");
+exports.FilterLineBase = filter_line_base_1.FilterLineBase;
 var app_nav_bar_1 = require("./elements/app-nav-bar/app-nav-bar");
 exports.AppNavBar = app_nav_bar_1.AppNavBar;
 aurelia_1.PLATFORM.moduleName("./elements/variant-editor/variant-editor.boolean.html");

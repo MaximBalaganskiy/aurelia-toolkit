@@ -1,4 +1,4 @@
-System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/augmentation/aurelia-typed-observable", "./augmentation/aurelia-router", "./augmentation/element", "aurelia-i18n", "aurelia-logging", "./validation/validation-rules", "./interfaces/i-app-route-config", "./interfaces/i-server-date-provider", "./services/alert-service", "./services/auth-service", "./services/date-service", "./services/app-insights-step", "./services/exception-service", "./services/load-script", "./exceptions/exception", "./exceptions/too-many-records", "./exceptions/unconfirmed-email", "./exceptions/invalid-credentials", "./exceptions/forbidden", "./exceptions/unauthorized", "./validation/validation-controller-factory", "./elements/filter/filter", "./elements/filter/filter-operator", "./elements/app-nav-bar/app-nav-bar", "./elements/settings-editor/settings-editor", "./elements/settings-editor/setting-vm"], function (exports_1, context_1) {
+System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/augmentation/aurelia-typed-observable", "./augmentation/aurelia-router", "./augmentation/element", "aurelia-i18n", "aurelia-logging", "./validation/validation-rules", "./interfaces/i-app-route-config", "./interfaces/i-server-date-provider", "./services/alert-service", "./services/auth-service", "./services/date-service", "./services/app-insights-step", "./services/exception-service", "./services/load-script", "./exceptions/exception", "./exceptions/too-many-records", "./exceptions/unconfirmed-email", "./exceptions/invalid-credentials", "./exceptions/forbidden", "./exceptions/unauthorized", "./validation/validation-controller-factory", "./elements/filter/filter", "./elements/filter/filter-operator", "./elements/filter/filter-line-base", "./elements/app-nav-bar/app-nav-bar", "./elements/settings-editor/settings-editor", "./elements/settings-editor/setting-vm"], function (exports_1, context_1) {
     "use strict";
     var aurelia_1, aurelia_i18n_1, aurelia_logging_1, validation_rules_1;
     var __moduleName = context_1 && context_1.id;
@@ -192,6 +192,11 @@ System.register(["./aurelia", "aurelia-materialize-bridge/dist/native-modules/au
             function (filter_operator_1_1) {
                 exports_1({
                     "FilterOperator": filter_operator_1_1["FilterOperator"]
+                });
+            },
+            function (filter_line_base_1_1) {
+                exports_1({
+                    "FilterLineBase": filter_line_base_1_1["FilterLineBase"]
                 });
             },
             function (app_nav_bar_1_1) {
