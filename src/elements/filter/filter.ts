@@ -15,7 +15,7 @@ export class Filter {
 	itemsCollection: HTMLDivElement;
 	i18nResource: I18NResource["filter"];
 
-	@au.children("text-filter-line,lookup-filter-line,date-filter-line,number-filter-line,select-filter-line,bool-filter-line")
+	@au.children(".filter-line")
 	availableFilterLines: IFilterLine[];
 	availableFilterLinesResolve: () => void;
 	availableFilterLinesPromise = new Promise(resolve => this.availableFilterLinesResolve = resolve);
