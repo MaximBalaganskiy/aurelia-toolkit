@@ -54,6 +54,10 @@ var Filter = /** @class */ (function () {
             container.setAttribute("lock", "");
         }
         var filter = au.DOM.createElement(i.element.tagName.toLowerCase());
+        var content = i.element.getAttribute("content");
+        if (content) {
+            filter.innerHTML = content;
+        }
         container.appendChild(filter);
         var view = this.templatingEngine.enhance(container);
         var filterVm = filter.au.controller.viewModel;
