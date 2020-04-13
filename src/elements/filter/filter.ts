@@ -61,6 +61,10 @@ export class Filter {
 			container.setAttribute("lock", "");
 		}
 		let filter = au.DOM.createElement(i.element.tagName.toLowerCase());
+		const content = i.element.getAttribute("content");
+		if (content) {
+			filter.innerHTML = content;
+		}
 		container.appendChild(filter);
 		let view = this.templatingEngine.enhance(container);
 		let filterVm = filter.au.controller.viewModel as IFilterLine;
