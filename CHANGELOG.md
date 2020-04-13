@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.23.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.23.0...v2.23.1) (2020-04-13)
+
+
+### Bug Fixes
+
+* **filter:** clone filter item content as well ([5b3cc75](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/5b3cc75))
+
 ## [2.23.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.22.3...v2.23.0) (2020-04-09)
 
 
