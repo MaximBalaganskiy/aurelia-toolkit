@@ -7,10 +7,21 @@ export class AtSelect {
 	constructor(private element: Element) { }
 
 	@au.bindable
-	options: any[] = [];
+	options: unknown[] = [];
+	optionsChanged() {
+		this.valueChanged();
+	}
 
 	@au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
-	value: any;
+	value: unknown;
+	valueChanged() {
+		this.selectedOption = this.options?.find(x => this.getValue(x) === this.value);
+		if (!this.selectedOption) {
+			this.value = undefined;
+		}
+	}
+
+	selectedOption: unknown;
 
 	@au.ato.bindable.stringMd
 	label: string;
@@ -24,14 +35,24 @@ export class AtSelect {
 	@au.ato.bindable.booleanMd
 	allowEmpty: boolean;
 
+	@au.bindable
+	displayFieldName: ((option: unknown) => string) | string;
+
+	@au.bindable
+	valueFieldName: ((option: unknown) => unknown) | string;
+
 	input: HTMLDivElement;
 	validateResults: ValidateResult[] = [];
 	validationClass: string;
 
-	select(o) {
+	select(o: unknown) {
 		if (o || this.allowEmpty) {
-			this.value = o;
+			this.value = this.getValue(o);
 		}
+	}
+
+	bind() {
+		this.valueChanged();
 	}
 
 	attached() {
@@ -53,4 +74,33 @@ export class AtSelect {
 		this.validateResults.push(...results.filter(x => !x.valid));
 		this.validationClass = results.find(x => !x.valid) ? "invalid" : "valid";
 	}
+
+	getValue(option: unknown): unknown {
+		if (this.valueFieldName) {
+			if (this.valueFieldName instanceof Function) {
+				return this.valueFieldName(option);
+			}
+			else {
+				return option[this.valueFieldName];
+			}
+		} else {
+			return option;
+		}
+	}
+
+	getDisplayValue(option: unknown): string {
+		if (option === null || option === undefined) {
+			return null;
+		}
+		if (!this.displayFieldName) {
+			return option.toString();
+		}
+		else if (this.displayFieldName instanceof Function) {
+			return this.displayFieldName(option);
+		}
+		else {
+			return option[this.displayFieldName];
+		}
+	}
+
 }
