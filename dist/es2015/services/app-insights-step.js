@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../aurelia";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
 var AppInsightsStep = /** @class */ (function () {
@@ -14,9 +14,9 @@ var AppInsightsStep = /** @class */ (function () {
         this.appInsights.trackPageView({ name: navigationInstruction.config.name, uri: path, properties: navigationInstruction.params });
         return next();
     };
-    AppInsightsStep = tslib_1.__decorate([
+    AppInsightsStep = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [ApplicationInsights])
+        __metadata("design:paramtypes", [ApplicationInsights])
     ], AppInsightsStep);
     return AppInsightsStep;
 }());

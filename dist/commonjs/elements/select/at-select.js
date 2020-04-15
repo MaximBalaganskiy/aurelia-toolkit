@@ -18,10 +18,24 @@ var AtSelect = /** @class */ (function () {
             _this.validationClass = results.find(function (x) { return !x.valid; }) ? "invalid" : "valid";
         };
     }
+    AtSelect.prototype.optionsChanged = function () {
+        this.valueChanged();
+    };
+    AtSelect.prototype.valueChanged = function () {
+        var _this = this;
+        var _a;
+        this.selectedOption = (_a = this.options) === null || _a === void 0 ? void 0 : _a.find(function (x) { return _this.getValue(x) === _this.value; });
+        if (!this.selectedOption) {
+            this.value = undefined;
+        }
+    };
     AtSelect.prototype.select = function (o) {
         if (o || this.allowEmpty) {
-            this.value = o;
+            this.value = this.getValue(o);
         }
+    };
+    AtSelect.prototype.bind = function () {
+        this.valueChanged();
     };
     AtSelect.prototype.attached = function () {
         this.element.mdRenderValidateResults = this.mdRenderValidateResults;
@@ -30,6 +44,33 @@ var AtSelect = /** @class */ (function () {
     AtSelect.prototype.detached = function () {
         this.element.mdRenderValidateResults = null;
         this.element.mdUnrenderValidateResults = null;
+    };
+    AtSelect.prototype.getValue = function (option) {
+        if (this.valueFieldName) {
+            if (this.valueFieldName instanceof Function) {
+                return this.valueFieldName(option);
+            }
+            else {
+                return option[this.valueFieldName];
+            }
+        }
+        else {
+            return option;
+        }
+    };
+    AtSelect.prototype.getDisplayValue = function (option) {
+        if (option === null || option === undefined) {
+            return null;
+        }
+        if (!this.displayFieldName) {
+            return option.toString();
+        }
+        else if (this.displayFieldName instanceof Function) {
+            return this.displayFieldName(option);
+        }
+        else {
+            return option[this.displayFieldName];
+        }
     };
     tslib_1.__decorate([
         au.bindable,
@@ -55,6 +96,14 @@ var AtSelect = /** @class */ (function () {
         au.ato.bindable.booleanMd,
         tslib_1.__metadata("design:type", Boolean)
     ], AtSelect.prototype, "allowEmpty", void 0);
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Object)
+    ], AtSelect.prototype, "displayFieldName", void 0);
+    tslib_1.__decorate([
+        au.bindable,
+        tslib_1.__metadata("design:type", Object)
+    ], AtSelect.prototype, "valueFieldName", void 0);
     AtSelect = tslib_1.__decorate([
         au.autoinject,
         tslib_1.__metadata("design:paramtypes", [Element])

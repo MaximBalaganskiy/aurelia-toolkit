@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __awaiter, __generator } from "tslib";
 var SettingVM = /** @class */ (function () {
     function SettingVM(key, value, isObject, info, taskQueue, alertService) {
         var _this = this;
@@ -32,9 +32,9 @@ var SettingVM = /** @class */ (function () {
         this.isExpanded = !this.isExpanded;
     };
     SettingVM.prototype.save = function (saveDelegate) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var _a;
-            return tslib_1.__generator(this, function (_b) {
+            return __generator(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         _b.trys.push([0, 2, 3, 4]);

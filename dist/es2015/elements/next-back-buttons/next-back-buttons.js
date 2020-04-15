@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../../aurelia";
 var NextBackButtons = /** @class */ (function () {
     function NextBackButtons(element) {
@@ -19,37 +19,37 @@ var NextBackButtons = /** @class */ (function () {
     NextBackButtons.prototype.next = function () {
         au.fireEvent(this.element, "next");
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Boolean)
+        __metadata("design:type", Boolean)
     ], NextBackButtons.prototype, "readonly", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], NextBackButtons.prototype, "backCaption", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], NextBackButtons.prototype, "backIcon", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], NextBackButtons.prototype, "saveCaption", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], NextBackButtons.prototype, "saveIcon", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], NextBackButtons.prototype, "nextCaption", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], NextBackButtons.prototype, "nextIcon", void 0);
-    NextBackButtons = tslib_1.__decorate([
+    NextBackButtons = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], NextBackButtons);
     return NextBackButtons;
 }());

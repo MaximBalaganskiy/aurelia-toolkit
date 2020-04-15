@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __values } from "tslib";
 import { viewEngineHooks } from "../aurelia";
 var EnhanceMask = /** @class */ (function () {
     function EnhanceMask() {
@@ -7,7 +7,7 @@ var EnhanceMask = /** @class */ (function () {
         var e_1, _a;
         var inputs = template.querySelectorAll("[inputmask]");
         try {
-            for (var _b = tslib_1.__values(Array.from(inputs)), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = __values(Array.from(inputs)), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var i = _c.value;
                 i.setAttribute("md-inputmask", "");
             }
@@ -20,7 +20,7 @@ var EnhanceMask = /** @class */ (function () {
             finally { if (e_1) throw e_1.error; }
         }
     };
-    EnhanceMask = tslib_1.__decorate([
+    EnhanceMask = __decorate([
         viewEngineHooks
     ], EnhanceMask);
     return EnhanceMask;

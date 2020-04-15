@@ -1,9 +1,9 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __extends, __metadata } from "tslib";
 import * as au from "../../aurelia";
 import { FilterLineBase } from "./filter-line-base";
 import { FilterOperator } from "./filter-operator";
 var SelectFilterLine = /** @class */ (function (_super) {
-    tslib_1.__extends(SelectFilterLine, _super);
+    __extends(SelectFilterLine, _super);
     function SelectFilterLine(element) {
         var _this = _super.call(this, element) || this;
         _this.operators = [FilterOperator.Is, FilterOperator.IsNot];
@@ -36,21 +36,21 @@ var SelectFilterLine = /** @class */ (function (_super) {
             return option[this.valueFieldName];
         }
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Array)
+        __metadata("design:type", Array)
     ], SelectFilterLine.prototype, "options", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], SelectFilterLine.prototype, "displayFieldName", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], SelectFilterLine.prototype, "valueFieldName", void 0);
-    SelectFilterLine = tslib_1.__decorate([
+    SelectFilterLine = __decorate([
         au.customElement("select-filter-line"),
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], SelectFilterLine);
     return SelectFilterLine;
 }(FilterLineBase));

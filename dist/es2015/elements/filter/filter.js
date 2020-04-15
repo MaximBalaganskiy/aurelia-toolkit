@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __awaiter, __decorate, __generator, __metadata, __read, __spread } from "tslib";
 import * as au from "../../aurelia";
 var Filter = /** @class */ (function () {
     function Filter(element, templatingEngine, i18n) {
@@ -16,10 +16,10 @@ var Filter = /** @class */ (function () {
         this.availableFilterLinesResolve();
     };
     Filter.prototype.attached = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var lines;
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: 
                     // in IE11 availableFilterLines is assigned after attached, so we need to wait till this happens
@@ -28,7 +28,7 @@ var Filter = /** @class */ (function () {
                         // in IE11 availableFilterLines is assigned after attached, so we need to wait till this happens
                         _a.sent();
                         if (this.lines.length) {
-                            lines = tslib_1.__spread(this.lines);
+                            lines = __spread(this.lines);
                             this.lines.splice(0);
                             lines.forEach(function (x) {
                                 var fl = _this.availableFilterLines.find(function (l) { return l.name === x.name; });
@@ -86,29 +86,29 @@ var Filter = /** @class */ (function () {
     };
     var Filter_1;
     Filter.id = 1;
-    tslib_1.__decorate([
+    __decorate([
         au.children(".filter-line"),
-        tslib_1.__metadata("design:type", Array)
+        __metadata("design:type", Array)
     ], Filter.prototype, "availableFilterLines", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Array)
+        __metadata("design:type", Array)
     ], Filter.prototype, "pageSizes", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.ato.bindable.numberMd({ defaultBindingMode: au.bindingMode.twoWay }),
-        tslib_1.__metadata("design:type", Number)
+        __metadata("design:type", Number)
     ], Filter.prototype, "pageSize", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Array)
+        __metadata("design:type", Array)
     ], Filter.prototype, "lines", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.ato.bindable.booleanMd,
-        tslib_1.__metadata("design:type", Boolean)
+        __metadata("design:type", Boolean)
     ], Filter.prototype, "lock", void 0);
-    Filter = Filter_1 = tslib_1.__decorate([
+    Filter = Filter_1 = __decorate([
         au.customElement("filter"),
-        tslib_1.__metadata("design:paramtypes", [Element, au.TemplatingEngine, au.I18N])
+        __metadata("design:paramtypes", [Element, au.TemplatingEngine, au.I18N])
     ], Filter);
     return Filter;
 }());

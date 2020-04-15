@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __awaiter, __decorate, __generator, __metadata } from "tslib";
 import * as au from "../aurelia";
 import { IServerDateProvider } from "../interfaces/i-server-date-provider";
 var DateService = /** @class */ (function () {
@@ -18,9 +18,9 @@ var DateService = /** @class */ (function () {
         return au.moment(this.now());
     };
     DateService.prototype.initialise = function () {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var serverDate;
-            return tslib_1.__generator(this, function (_a) {
+            return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.dateClient.getServerDate()];
                     case 1:
@@ -31,9 +31,9 @@ var DateService = /** @class */ (function () {
             });
         });
     };
-    DateService = tslib_1.__decorate([
+    DateService = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [IServerDateProvider])
+        __metadata("design:paramtypes", [IServerDateProvider])
     ], DateService);
     return DateService;
 }());

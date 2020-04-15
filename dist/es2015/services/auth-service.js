@@ -1,8 +1,8 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import * as au from "../aurelia";
 var logger = au.getLogger("AuthService");
 var AuthService = /** @class */ (function (_super) {
-    tslib_1.__extends(AuthService, _super);
+    __extends(AuthService, _super);
     function AuthService() {
         return _super !== null && _super.apply(this, arguments) || this;
     }

@@ -1,9 +1,9 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __extends, __metadata } from "tslib";
 import * as au from "../../aurelia";
 import { FilterLineBase } from "./filter-line-base";
 import { FilterOperator } from "./filter-operator";
 var LookupFilterLine = /** @class */ (function (_super) {
-    tslib_1.__extends(LookupFilterLine, _super);
+    __extends(LookupFilterLine, _super);
     function LookupFilterLine(element) {
         var _this = _super.call(this, element) || this;
         _this.operators = [FilterOperator.Is, FilterOperator.IsNot];
@@ -19,25 +19,25 @@ var LookupFilterLine = /** @class */ (function (_super) {
         fl.optionHtml = this.optionHtml;
         fl.getOptionHtml = this.getOptionHtml;
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Function)
+        __metadata("design:type", Function)
     ], LookupFilterLine.prototype, "optionsFunction", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], LookupFilterLine.prototype, "displayFieldName", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], LookupFilterLine.prototype, "valueFieldName", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], LookupFilterLine.prototype, "optionHtml", void 0);
-    LookupFilterLine = tslib_1.__decorate([
+    LookupFilterLine = __decorate([
         au.customElement("lookup-filter-line"),
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], LookupFilterLine);
     return LookupFilterLine;
 }(FilterLineBase));

@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../../aurelia";
 var AtProgress = /** @class */ (function () {
     function AtProgress(element, eventAggregator) {
@@ -35,18 +35,18 @@ var AtProgress = /** @class */ (function () {
             this.progressCounter--;
         }
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], AtProgress.prototype, "size", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Number)
+        __metadata("design:type", Number)
     ], AtProgress.prototype, "opacity", void 0);
-    AtProgress = tslib_1.__decorate([
+    AtProgress = __decorate([
         au.customElement("at-progress"),
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element, au.EventAggregator])
+        __metadata("design:paramtypes", [Element, au.EventAggregator])
     ], AtProgress);
     return AtProgress;
 }());

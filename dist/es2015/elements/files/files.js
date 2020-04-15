@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata, __values } from "tslib";
 import * as au from "../../aurelia";
 var Files = /** @class */ (function () {
     function Files(element) {
@@ -20,7 +20,7 @@ var Files = /** @class */ (function () {
         };
         var this_1 = this;
         try {
-            for (var _b = tslib_1.__values(Array.from(this.selectedFiles)), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = __values(Array.from(this.selectedFiles)), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var newFile = _c.value;
                 _loop_1(newFile);
             }
@@ -38,45 +38,45 @@ var Files = /** @class */ (function () {
         this.files.splice(this.files.indexOf(f), 1);
         au.fireEvent(this.element, "change", { action: "remove", file: f });
     };
-    tslib_1.__decorate([
+    __decorate([
         au.observable,
-        tslib_1.__metadata("design:type", FileList)
+        __metadata("design:type", FileList)
     ], Files.prototype, "selectedFiles", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Array)
+        __metadata("design:type", Array)
     ], Files.prototype, "files", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Number)
+        __metadata("design:type", Number)
     ], Files.prototype, "maxFileSize", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], Files.prototype, "maxFileSizeText", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], Files.prototype, "buttonLabel", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], Files.prototype, "selectTypeLabel", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], Files.prototype, "accept", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Array)
+        __metadata("design:type", Array)
     ], Files.prototype, "types", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Boolean)
+        __metadata("design:type", Boolean)
     ], Files.prototype, "readonly", void 0);
-    Files = tslib_1.__decorate([
+    Files = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], Files);
     return Files;
 }());

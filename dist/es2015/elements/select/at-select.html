@@ -6,7 +6,7 @@
 			<div class="dropdown" if.bind="readonly">
 				<div class="selector-caption">
 					<template replaceable part="value-template">
-						<div>${value}</div>
+						<div>${getDisplayValue(selectedOption)}</div>
 					</template>
 				</div>
 				<div class="selector-arrow">▼</div>
@@ -15,7 +15,7 @@
 				<div md-dropdown="ref.bind: dropdown; constrain-width: false; container: body">
 					<div class="selector-caption">
 						<template replaceable part="value-template">
-							<div>${value}</div>
+							<div>${getDisplayValue(selectedOption)}</div>
 						</template>
 					</div>
 					<div class="selector-arrow">▼</div>
@@ -25,7 +25,7 @@
 					<li repeat.for="option of options" click.delegate="select(option)">
 						<a>
 							<template replaceable part="option-template">
-								${option}
+								${getDisplayValue(option)}
 							</template>
 						</a>
 					</li>

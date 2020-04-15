@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata, __read, __spread } from "tslib";
 import * as au from "../../aurelia";
 import orderBy from "lodash/orderBy";
 import groupBy from "lodash/groupBy";
@@ -12,7 +12,7 @@ var AppNavBar = /** @class */ (function () {
         var groupedModels = groupBy(this.navModels, function (x) { return x.config.menu ? x.config.menu.title : "root"; });
         this.menuItems = [];
         if (groupedModels["root"]) {
-            (_a = this.menuItems).push.apply(_a, tslib_1.__spread(groupedModels["root"].map(function (x) { return _this.createMenuItem(x); })));
+            (_a = this.menuItems).push.apply(_a, __spread(groupedModels["root"].map(function (x) { return _this.createMenuItem(x); })));
         }
         for (var menu in groupedModels) {
             if (menu !== "root") {
@@ -31,29 +31,29 @@ var AppNavBar = /** @class */ (function () {
     AppNavBar.prototype.createMenuItem = function (x) {
         return { title: x.config.title, href: x.href, icon: x.configEx.icon, tooltip: x.configEx.tooltip, navModel: x, order: x.configEx.order };
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], AppNavBar.prototype, "navModels", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], AppNavBar.prototype, "logoUrl", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Number)
+        __metadata("design:type", Number)
     ], AppNavBar.prototype, "sidenavVisibilityWidth", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.ato.bindable.booleanMd,
-        tslib_1.__metadata("design:type", Boolean)
+        __metadata("design:type", Boolean)
     ], AppNavBar.prototype, "showHome", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], AppNavBar.prototype, "menuLabel", void 0);
-    AppNavBar = tslib_1.__decorate([
+    AppNavBar = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [au.TaskQueue])
+        __metadata("design:paramtypes", [au.TaskQueue])
     ], AppNavBar);
     return AppNavBar;
 }());

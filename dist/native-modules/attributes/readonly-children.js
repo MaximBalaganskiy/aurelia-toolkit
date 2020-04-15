@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata, __values } from "tslib";
 import * as au from "../aurelia";
 var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
     function ReadonlyChildrenCustomAttribute(element) {
@@ -16,7 +16,7 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
         var e_1, _a, e_2, _b, e_3, _c, e_4, _d, e_5, _e, e_6, _f;
         var inputs = this.element.querySelectorAll("md-input");
         try {
-            for (var _g = tslib_1.__values(Array.from(inputs)), _h = _g.next(); !_h.done; _h = _g.next()) {
+            for (var _g = __values(Array.from(inputs)), _h = _g.next(); !_h.done; _h = _g.next()) {
                 var input = _h.value;
                 if (!input.hasAttribute("readonly") && !input.hasAttribute("readonly.bind")) {
                     input.au["md-input"].viewModel.readonly = this.value;
@@ -32,7 +32,7 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
         }
         var checkboxes = this.element.querySelectorAll("md-checkbox");
         try {
-            for (var _j = tslib_1.__values(Array.from(checkboxes)), _k = _j.next(); !_k.done; _k = _j.next()) {
+            for (var _j = __values(Array.from(checkboxes)), _k = _j.next(); !_k.done; _k = _j.next()) {
                 var checkbox = _k.value;
                 if (!checkbox.hasAttribute("readonly") && !checkbox.hasAttribute("readonly.bind")) {
                     checkbox.au["md-checkbox"].viewModel.readonly = this.value;
@@ -48,7 +48,7 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
         }
         var selects = this.element.querySelectorAll("select[md-select]");
         try {
-            for (var _l = tslib_1.__values(Array.from(selects)), _m = _l.next(); !_m.done; _m = _l.next()) {
+            for (var _l = __values(Array.from(selects)), _m = _l.next(); !_m.done; _m = _l.next()) {
                 var select = _m.value;
                 select.au["md-select"].viewModel.readonly = this.value;
             }
@@ -62,7 +62,7 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
         }
         var mdlookups = this.element.querySelectorAll("md-lookup");
         try {
-            for (var _o = tslib_1.__values(Array.from(mdlookups)), _p = _o.next(); !_p.done; _p = _o.next()) {
+            for (var _o = __values(Array.from(mdlookups)), _p = _o.next(); !_p.done; _p = _o.next()) {
                 var lookup = _p.value;
                 if (!lookup.hasAttribute("readonly") && !lookup.hasAttribute("readonly.bind")) {
                     lookup.au["md-lookup"].viewModel.readonly = this.value;
@@ -78,7 +78,7 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
         }
         var buttons = this.element.querySelectorAll("next-back-buttons");
         try {
-            for (var _q = tslib_1.__values(Array.from(buttons)), _r = _q.next(); !_r.done; _r = _q.next()) {
+            for (var _q = __values(Array.from(buttons)), _r = _q.next(); !_r.done; _r = _q.next()) {
                 var button = _r.value;
                 if (!button.hasAttribute("readonly") && !button.hasAttribute("readonly.bind")) {
                     button.au["next-back-buttons"].viewModel.readonly = this.value;
@@ -94,7 +94,7 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
         }
         var datepickers = this.element.querySelectorAll("datepicker");
         try {
-            for (var _s = tslib_1.__values(Array.from(datepickers)), _t = _s.next(); !_t.done; _t = _s.next()) {
+            for (var _s = __values(Array.from(datepickers)), _t = _s.next(); !_t.done; _t = _s.next()) {
                 var datepicker = _t.value;
                 if (!datepicker.hasAttribute("readonly") && !datepicker.hasAttribute("readonly.bind")) {
                     datepicker.au["datepicker"].viewModel.readonly = this.value;
@@ -112,9 +112,9 @@ var ReadonlyChildrenCustomAttribute = /** @class */ (function () {
     ReadonlyChildrenCustomAttribute.prototype.attached = function () {
         this.valueChanged();
     };
-    ReadonlyChildrenCustomAttribute = tslib_1.__decorate([
+    ReadonlyChildrenCustomAttribute = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], ReadonlyChildrenCustomAttribute);
     return ReadonlyChildrenCustomAttribute;
 }());

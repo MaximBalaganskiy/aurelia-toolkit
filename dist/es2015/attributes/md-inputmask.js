@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../aurelia";
 var MdInputmaskCustomAttribute = /** @class */ (function () {
     function MdInputmaskCustomAttribute(element) {
@@ -23,9 +23,9 @@ var MdInputmaskCustomAttribute = /** @class */ (function () {
             this.element.removeEventListener("inputmask-change", this.inputmaskChangeHandler);
         }
     };
-    MdInputmaskCustomAttribute = tslib_1.__decorate([
+    MdInputmaskCustomAttribute = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], MdInputmaskCustomAttribute);
     return MdInputmaskCustomAttribute;
 }());

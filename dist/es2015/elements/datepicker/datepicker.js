@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata, __read, __spread } from "tslib";
 import * as au from "../../aurelia";
 var Datepicker = /** @class */ (function () {
     function Datepicker(element, taskQueue) {
@@ -12,7 +12,7 @@ var Datepicker = /** @class */ (function () {
         };
         this.mdRenderValidateResults = function (results, renderer) {
             var _a;
-            (_a = _this.validateResults).push.apply(_a, tslib_1.__spread(results.filter(function (x) { return !x.valid; })));
+            (_a = _this.validateResults).push.apply(_a, __spread(results.filter(function (x) { return !x.valid; })));
             _this.validationClass = results.find(function (x) { return !x.valid; }) ? "invalid" : "valid";
         };
         this.controlId = "datepicker-" + Datepicker_1.id++;
@@ -65,37 +65,37 @@ var Datepicker = /** @class */ (function () {
     };
     var Datepicker_1;
     Datepicker.id = 0;
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Boolean)
+        __metadata("design:type", Boolean)
     ], Datepicker.prototype, "readonly", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], Datepicker.prototype, "label", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], Datepicker.prototype, "yearRange", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
-        tslib_1.__metadata("design:type", Date)
+        __metadata("design:type", Date)
     ], Datepicker.prototype, "minDate", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
-        tslib_1.__metadata("design:type", Date)
+        __metadata("design:type", Date)
     ], Datepicker.prototype, "maxDate", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
-        tslib_1.__metadata("design:type", Function)
+        __metadata("design:type", Function)
     ], Datepicker.prototype, "disableDayFn", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
-        tslib_1.__metadata("design:type", Date)
+        __metadata("design:type", Date)
     ], Datepicker.prototype, "value", void 0);
-    Datepicker = Datepicker_1 = tslib_1.__decorate([
+    Datepicker = Datepicker_1 = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element, au.TaskQueue])
+        __metadata("design:paramtypes", [Element, au.TaskQueue])
     ], Datepicker);
     return Datepicker;
 }());

@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __awaiter, __decorate, __generator, __metadata } from "tslib";
 import { Exception } from "../exceptions/exception";
 import { UnauthorizedException } from "../exceptions/unauthorized";
 import { ForbiddenException } from "../exceptions/forbidden";
@@ -20,9 +20,9 @@ var ExceptionService = /** @class */ (function () {
         throw new exceptionType(apiException);
     };
     ExceptionService.prototype.assertResponse = function (r) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
+        return __awaiter(this, void 0, void 0, function () {
             var _this = this;
-            return tslib_1.__generator(this, function (_a) {
+            return __generator(this, function (_a) {
                 if (r.ok) {
                     return [2 /*return*/, r];
                 }
@@ -45,9 +45,9 @@ var ExceptionService = /** @class */ (function () {
             c.withInterceptor({ response: function (r) { return _this.assertResponse(r); } });
         });
     };
-    ExceptionService = tslib_1.__decorate([
+    ExceptionService = __decorate([
         autoinject,
-        tslib_1.__metadata("design:paramtypes", [HttpClient])
+        __metadata("design:paramtypes", [HttpClient])
     ], ExceptionService);
     return ExceptionService;
 }());

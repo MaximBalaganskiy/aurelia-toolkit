@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __awaiter, __decorate, __generator, __metadata } from "tslib";
 import * as au from "../aurelia";
 import { ProgressHandle } from "./progress-handle";
 import { ApplicationInsights } from "@microsoft/applicationinsights-web";
@@ -76,8 +76,8 @@ var AlertService = /** @class */ (function () {
         this.eventAggregator.publish("progress:off");
     };
     AlertService.prototype.usingProgress = function (action, catchHandler) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
                 return [2 /*return*/, using(this.progress(), action, catchHandler)];
             });
         });
@@ -85,17 +85,17 @@ var AlertService = /** @class */ (function () {
     AlertService.prototype.progress = function () {
         return new ProgressHandle(this);
     };
-    AlertService = tslib_1.__decorate([
+    AlertService = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, ApplicationInsights])
+        __metadata("design:paramtypes", [au.MdToastService, au.EventAggregator, au.TemplatingEngine, au.I18N, ApplicationInsights])
     ], AlertService);
     return AlertService;
 }());
 export { AlertService };
 export function using(disposable, action, catchHandler) {
-    return tslib_1.__awaiter(this, void 0, void 0, function () {
+    return __awaiter(this, void 0, void 0, function () {
         var e_1;
-        return tslib_1.__generator(this, function (_a) {
+        return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, 6, 7]);

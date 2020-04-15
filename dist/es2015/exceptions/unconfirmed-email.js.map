@@ -1,1 +1,1 @@
-{"version":3,"file":"unconfirmed-email.js","sourceRoot":"","sources":["../../../src/exceptions/unconfirmed-email.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAExC;IAA+C,qDAAS;IAAxD;;IACA,CAAC;IAAD,gCAAC;AAAD,CAAC,AADD,CAA+C,SAAS,GACvD"}
+{"version":3,"file":"unconfirmed-email.js","sourceRoot":"","sources":["../../../src/exceptions/unconfirmed-email.ts"],"names":[],"mappings":";AAAA,OAAO,EAAE,SAAS,EAAE,MAAM,aAAa,CAAC;AAExC;IAA+C,6CAAS;IAAxD;;IACA,CAAC;IAAD,gCAAC;AAAD,CAAC,AADD,CAA+C,SAAS,GACvD"}

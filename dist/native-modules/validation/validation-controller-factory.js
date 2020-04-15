@@ -1,8 +1,8 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import * as au from "../aurelia";
 import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge";
 var ValidationControllerFactory = /** @class */ (function (_super) {
-    tslib_1.__extends(ValidationControllerFactory, _super);
+    __extends(ValidationControllerFactory, _super);
     function ValidationControllerFactory(container) {
         return _super.call(this, container) || this;
     }

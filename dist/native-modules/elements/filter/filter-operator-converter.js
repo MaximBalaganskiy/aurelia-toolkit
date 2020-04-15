@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../../aurelia";
 import { FilterOperator } from "./filter-operator";
 var FilterOperatorValueConverter = /** @class */ (function () {
@@ -21,9 +21,9 @@ var FilterOperatorValueConverter = /** @class */ (function () {
     FilterOperatorValueConverter.prototype.fromView = function (value) {
         throw new Error("Not implemented");
     };
-    FilterOperatorValueConverter = tslib_1.__decorate([
+    FilterOperatorValueConverter = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [au.I18N])
+        __metadata("design:paramtypes", [au.I18N])
     ], FilterOperatorValueConverter);
     return FilterOperatorValueConverter;
 }());

@@ -1,7 +1,7 @@
-import * as tslib_1 from "tslib";
+import { __extends } from "tslib";
 import { Exception } from "./exception";
 var ForbiddenException = /** @class */ (function (_super) {
-    tslib_1.__extends(ForbiddenException, _super);
+    __extends(ForbiddenException, _super);
     function ForbiddenException() {
         return _super !== null && _super.apply(this, arguments) || this;
     }

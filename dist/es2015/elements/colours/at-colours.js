@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../../aurelia";
 import { AtColoursService } from "../../services/at-colours-service";
 var AtColors = /** @class */ (function () {
@@ -14,17 +14,17 @@ var AtColors = /** @class */ (function () {
     AtColors.prototype.menuButtonColorChanged = function () {
         this.atCs.menuButtonColor = this.menuButtonColor;
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], AtColors.prototype, "headerColor", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", String)
+        __metadata("design:type", String)
     ], AtColors.prototype, "menuButtonColor", void 0);
-    AtColors = tslib_1.__decorate([
+    AtColors = __decorate([
         au.customElement("at-colors"),
-        tslib_1.__metadata("design:paramtypes", [au.MdColorsService, AtColoursService])
+        __metadata("design:paramtypes", [au.MdColorsService, AtColoursService])
     ], AtColors);
     return AtColors;
 }());

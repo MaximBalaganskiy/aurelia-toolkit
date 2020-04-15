@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../aurelia";
 var AutoFocusCustomAttribute = /** @class */ (function () {
     function AutoFocusCustomAttribute(element, taskQueue) {
@@ -22,9 +22,9 @@ var AutoFocusCustomAttribute = /** @class */ (function () {
             }
         });
     };
-    AutoFocusCustomAttribute = tslib_1.__decorate([
+    AutoFocusCustomAttribute = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element, au.TaskQueue])
+        __metadata("design:paramtypes", [Element, au.TaskQueue])
     ], AutoFocusCustomAttribute);
     return AutoFocusCustomAttribute;
 }());

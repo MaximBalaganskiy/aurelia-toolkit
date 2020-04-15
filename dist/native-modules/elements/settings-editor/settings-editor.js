@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __awaiter, __decorate, __generator, __metadata } from "tslib";
 import * as au from "../../aurelia";
 import { SettingVM } from "./setting-vm";
 import { ClientEditor } from "./client-editor";
@@ -31,32 +31,32 @@ var SettingsEditor = /** @class */ (function () {
         s.value = s.oldValue;
     };
     SettingsEditor.prototype.save = function (s) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
                 au.fireEvent(this.element, "save", s);
                 return [2 /*return*/];
             });
         });
     };
     SettingsEditor.prototype.history = function (s) {
-        return tslib_1.__awaiter(this, void 0, void 0, function () {
-            return tslib_1.__generator(this, function (_a) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
                 au.fireEvent(this.element, "history", s);
                 return [2 /*return*/];
             });
         });
     };
-    tslib_1.__decorate([
+    __decorate([
         au.bindable,
-        tslib_1.__metadata("design:type", Object)
+        __metadata("design:type", Object)
     ], SettingsEditor.prototype, "info", void 0);
-    tslib_1.__decorate([
+    __decorate([
         au.ato.bindable.booleanMd,
-        tslib_1.__metadata("design:type", Boolean)
+        __metadata("design:type", Boolean)
     ], SettingsEditor.prototype, "showHistory", void 0);
-    SettingsEditor = tslib_1.__decorate([
+    SettingsEditor = __decorate([
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element, au.TaskQueue, AlertService])
+        __metadata("design:paramtypes", [Element, au.TaskQueue, AlertService])
     ], SettingsEditor);
     return SettingsEditor;
 }());

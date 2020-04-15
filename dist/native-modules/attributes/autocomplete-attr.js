@@ -1,4 +1,4 @@
-import * as tslib_1 from "tslib";
+import { __decorate, __metadata } from "tslib";
 import * as au from "../aurelia";
 var AutocompleteAttrCustomAttribute = /** @class */ (function () {
     function AutocompleteAttrCustomAttribute(element) {
@@ -18,10 +18,10 @@ var AutocompleteAttrCustomAttribute = /** @class */ (function () {
     AutocompleteAttrCustomAttribute.prototype.detached = function () {
         this.attributeManager.removeAttributes(["autocomplete"]);
     };
-    AutocompleteAttrCustomAttribute = tslib_1.__decorate([
+    AutocompleteAttrCustomAttribute = __decorate([
         au.customAttribute("autocomplete-attr"),
         au.autoinject,
-        tslib_1.__metadata("design:paramtypes", [Element])
+        __metadata("design:paramtypes", [Element])
     ], AutocompleteAttrCustomAttribute);
     return AutocompleteAttrCustomAttribute;
 }());
