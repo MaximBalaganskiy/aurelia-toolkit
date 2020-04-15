@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.24.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.23.1...v2.24.0) (2020-04-15)
+
+
+### Features
+
+* **at-select:** add value and display field selectors ([27a6978](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/27a6978))
+
 ### [2.23.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.23.0...v2.23.1) (2020-04-13)
 
 
