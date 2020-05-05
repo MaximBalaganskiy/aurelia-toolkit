@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.24.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.0...v2.24.1) (2020-05-05)
+
+
+### Bug Fixes
+
+* **datepicker:** add missing options ([9e60b59](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/9e60b59))
+* **validation:** remove errors on detached ([94b3bf1](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/94b3bf1))
+* **validation-container:** shift errors correctly ([1e1c8bc](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/1e1c8bc))
+
 ## [2.24.0](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.23.1...v2.24.0) (2020-04-15)
 
 
