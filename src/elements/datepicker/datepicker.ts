@@ -34,7 +34,7 @@ export class Datepicker {
 	disableWeekends: boolean;
 
 	@au.ato.bindable.numberMd({ defaultBindingMode: au.bindingMode.oneTime })
-	firstDay: number;
+	firstDay: number = 1;
 
 	labelElement: HTMLLabelElement;
 
@@ -75,6 +75,8 @@ export class Datepicker {
 	}
 
 	detached() {
+		this.validationClass = undefined;
+		this.validateResults = [];
 		this.element.mdRenderValidateResults = null;
 		this.element.mdUnrenderValidateResults = null;
 	}

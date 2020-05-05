@@ -61,6 +61,8 @@ export class AtSelect {
 	}
 
 	detached() {
+		this.validationClass = undefined;
+		this.validateResults = [];
 		this.element.mdRenderValidateResults = null;
 		this.element.mdUnrenderValidateResults = null;
 	}
