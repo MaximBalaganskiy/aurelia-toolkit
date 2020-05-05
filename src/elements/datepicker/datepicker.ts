@@ -30,6 +30,12 @@ export class Datepicker {
 	@au.bindable({ defaultBindingMode: au.bindingMode.oneTime })
 	disableDayFn: (day: Date) => boolean;
 
+	@au.ato.bindable.booleanMd({ defaultBindingMode: au.bindingMode.oneTime })
+	disableWeekends: boolean;
+
+	@au.ato.bindable.numberMd({ defaultBindingMode: au.bindingMode.oneTime })
+	firstDay: number;
+
 	labelElement: HTMLLabelElement;
 
 	@au.bindable({ defaultBindingMode: au.bindingMode.twoWay })
