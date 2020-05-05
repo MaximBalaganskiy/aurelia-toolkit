@@ -5,6 +5,7 @@ var Datepicker = /** @class */ (function () {
         var _this = this;
         this.element = element;
         this.taskQueue = taskQueue;
+        this.firstDay = 1;
         this.validateResults = [];
         this.mdUnrenderValidateResults = function (results, renderer) {
             _this.validateResults = _this.validateResults.filter(function (x) { return !results.find(function (y) { return y.id === x.id; }); });
@@ -44,6 +45,8 @@ var Datepicker = /** @class */ (function () {
         this.labelElement.classList.add(this.value ? "active" : "inactive");
     };
     Datepicker.prototype.detached = function () {
+        this.validationClass = undefined;
+        this.validateResults = [];
         this.element.mdRenderValidateResults = null;
         this.element.mdUnrenderValidateResults = null;
     };
@@ -89,6 +92,14 @@ var Datepicker = /** @class */ (function () {
         au.bindable({ defaultBindingMode: au.bindingMode.oneTime }),
         __metadata("design:type", Function)
     ], Datepicker.prototype, "disableDayFn", void 0);
+    __decorate([
+        au.ato.bindable.booleanMd({ defaultBindingMode: au.bindingMode.oneTime }),
+        __metadata("design:type", Boolean)
+    ], Datepicker.prototype, "disableWeekends", void 0);
+    __decorate([
+        au.ato.bindable.numberMd({ defaultBindingMode: au.bindingMode.oneTime }),
+        __metadata("design:type", Number)
+    ], Datepicker.prototype, "firstDay", void 0);
     __decorate([
         au.bindable({ defaultBindingMode: au.bindingMode.twoWay }),
         __metadata("design:type", Date)

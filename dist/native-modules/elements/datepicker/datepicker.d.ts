@@ -13,6 +13,8 @@ export declare class Datepicker {
     minDate: Date;
     maxDate: Date;
     disableDayFn: (day: Date) => boolean;
+    disableWeekends: boolean;
+    firstDay: number;
     labelElement: HTMLLabelElement;
     value: Date;
     valueChanged(): void;

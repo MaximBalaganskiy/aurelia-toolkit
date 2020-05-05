@@ -41,6 +41,8 @@ define(["require", "exports", "tslib", "../../aurelia"], function (require, expo
             this.element.mdUnrenderValidateResults = this.mdUnrenderValidateResults;
         };
         AtSelect.prototype.detached = function () {
+            this.validationClass = undefined;
+            this.validateResults = [];
             this.element.mdRenderValidateResults = null;
             this.element.mdUnrenderValidateResults = null;
         };

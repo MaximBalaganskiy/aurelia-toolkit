@@ -52,6 +52,8 @@ System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
                     this.element.mdUnrenderValidateResults = this.mdUnrenderValidateResults;
                 };
                 AtSelect.prototype.detached = function () {
+                    this.validationClass = undefined;
+                    this.validateResults = [];
                     this.element.mdRenderValidateResults = null;
                     this.element.mdUnrenderValidateResults = null;
                 };

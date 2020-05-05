@@ -84,10 +84,11 @@ nav {
 
 validation-container {
 	>div.wrapper {
-		>.helper-text {
-			position: absolute;
-			bottom: -18px;
-			width: 100%;
+		>div {
+			+.helper-text {
+				margin-top: -8px;
+				width: 100%;
+			}
 		}
 	}
 }
