@@ -34,7 +34,9 @@ body {
 // padding prevents margin collapse
 // we could also reset input.display, but this would requre fixing the dropdown shevron
 div.input-field.md-select {
-	padding-bottom: 0.1px;
+	padding-bottom: 1px;
+	// compensate for the added pixel, for some reason it has to be 2
+	margin-bottom: calc(1rem - 2px);
 	width: 100%;
 }
 
