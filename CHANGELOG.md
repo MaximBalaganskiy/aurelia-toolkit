@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.24.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.1...v2.24.2) (2020-05-06)
+
+
+### Bug Fixes
+
+* **select:** prevent margin collapse differently ([6bdf9de](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/6bdf9de))
+
 ### [2.24.1](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.0...v2.24.1) (2020-05-05)
 
 
