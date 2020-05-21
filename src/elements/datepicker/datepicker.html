@@ -8,7 +8,7 @@
 		<i ref="icon" class="material-icons opener" click.delegate="open()">today</i>
 		<span repeat.for="r of validateResults" class="helper-text" data-error.bind="r.message"></span>
 	</div>
-	<md-datepicker view-model.ref="mdDatepicker" container="body" year-range.bind="yearRange" type="date" hidden disabled 
+	<md-datepicker view-model.ref="mdDatepicker" container="body" year-range.bind="yearRange" type="date" hidden
 		readonly tabindex="-1" value.bind="value" change.delegate="suppressMaterializeChange($event)"
 		min-date.bind="minDate" max-date.bind="maxDate" disable-day-fn.bind="disableDayFn"
 		disable-weekends.bind="disableWeekends" first-day.bind="firstDay"></md-datepicker>
