@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.24.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.2...v2.24.3) (2020-05-21)
+
+
+### Bug Fixes
+
+* **datepicker:** do not disable hidden element ([7123c1c](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/7123c1c))
+
 ### [2.24.2](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.1...v2.24.2) (2020-05-06)
 
 
