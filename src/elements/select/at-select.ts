@@ -1,6 +1,6 @@
 ﻿import * as au from "../../aurelia";
 import { ValidateResult } from "aurelia-validation";
-import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge";
+import { MaterializeFormValidationRenderer, MdDropdown } from "aurelia-materialize-bridge";
 
 @au.autoinject
 export class AtSelect {
@@ -44,11 +44,13 @@ export class AtSelect {
 	input: HTMLDivElement;
 	validateResults: ValidateResult[] = [];
 	validationClass: string;
+	dropdownVM: MdDropdown;
 
 	select(o: unknown) {
 		if (o || this.allowEmpty) {
 			this.value = this.getValue(o);
 		}
+		this.dropdownVM.close();
 	}
 
 	bind() {
