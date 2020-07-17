@@ -43,6 +43,7 @@ System.register(["tslib", "../../aurelia"], function (exports_1, context_1) {
                     if (o || this.allowEmpty) {
                         this.value = this.getValue(o);
                     }
+                    this.dropdownVM.close();
                 };
                 AtSelect.prototype.bind = function () {
                     this.valueChanged();

@@ -33,6 +33,7 @@ var AtSelect = /** @class */ (function () {
         if (o || this.allowEmpty) {
             this.value = this.getValue(o);
         }
+        this.dropdownVM.close();
     };
     AtSelect.prototype.bind = function () {
         this.valueChanged();

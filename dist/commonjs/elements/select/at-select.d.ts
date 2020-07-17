@@ -1,5 +1,5 @@
 import { ValidateResult } from "aurelia-validation";
-import { MaterializeFormValidationRenderer } from "aurelia-materialize-bridge";
+import { MaterializeFormValidationRenderer, MdDropdown } from "aurelia-materialize-bridge";
 export declare class AtSelect {
     private element;
     constructor(element: Element);
@@ -17,6 +17,7 @@ export declare class AtSelect {
     input: HTMLDivElement;
     validateResults: ValidateResult[];
     validationClass: string;
+    dropdownVM: MdDropdown;
     select(o: unknown): void;
     bind(): void;
     attached(): void;

@@ -32,6 +32,7 @@ define(["require", "exports", "tslib", "../../aurelia"], function (require, expo
             if (o || this.allowEmpty) {
                 this.value = this.getValue(o);
             }
+            this.dropdownVM.close();
         };
         AtSelect.prototype.bind = function () {
             this.valueChanged();

@@ -12,7 +12,7 @@
 				<div class="selector-arrow">▼</div>
 			</div>
 			<template if.bind="!readonly">
-				<div md-dropdown="ref.bind: dropdown; constrain-width: false; container: body">
+				<div md-dropdown="close-on-click: false; ref.bind: dropdown; constrain-width: false; container: body" md-dropdown.ref="dropdownVM">
 					<div class="selector-caption">
 						<template replaceable part="value-template">
 							<div>${getDisplayValue(selectedOption)}</div>
