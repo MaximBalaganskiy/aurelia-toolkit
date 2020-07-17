@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.24.4](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.3...v2.24.4) (2020-07-17)
+
+
+### Bug Fixes
+
+* **select:** close dropdown manually ([2505b9d](https://github.com/MaximBalaganskiy/aurelia-toolkit/commit/2505b9d))
+
 ### [2.24.3](https://github.com/MaximBalaganskiy/aurelia-toolkit/compare/v2.24.2...v2.24.3) (2020-05-21)
 
 
