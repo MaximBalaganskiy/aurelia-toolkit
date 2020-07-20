@@ -16,6 +16,9 @@ System.register(["moment"], function (exports_1, context_1) {
                     if (!value) {
                         return "";
                     }
+                    else if (value === "(empty)") {
+                        return value;
+                    }
                     var m = moment(value);
                     if (m.isAfter("9999-12-31")) {
                         return "";
