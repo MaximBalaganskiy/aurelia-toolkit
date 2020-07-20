@@ -4,6 +4,8 @@ export class DateValueConverter {
 	toView(value: string | Date | moment.Moment, format: string): string {
 		if (!value) {
 			return "";
+		} else if (value === "(empty)") {
+			return value;
 		}
 		const m = moment(value);
 		if (m.isAfter("9999-12-31")) {
